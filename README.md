@@ -6,7 +6,7 @@ A Python tool for extracting content from PDFs and other documents, then splitti
 
 - Extract text from PDFs with PyMuPDF (plus direct reading for plain text files)
 - Smart text chunking with configurable size and overlap
-- Optional LlamaIndex-powered sentence splitter for an alternate chunking mode
+- Optional LlamaIndex-powered sentence splitter and LangChain recursive splitter modes
 - Token-aware splitting (uses mlx-embeddings for efficient token counts)
 - Hierarchical splitting strategy (paragraphs → lines → sentences → words)
 - Output format: one chunk per line for easy processing
@@ -16,7 +16,7 @@ A Python tool for extracting content from PDFs and other documents, then splitti
 1. Install required dependencies:
 
 ```bash
-pip install PyMuPDF mlx-embeddings llama-index
+pip install PyMuPDF mlx-embeddings llama-index langchain langchain-text-splitters
 ```
 
 2. Make the script executable (optional):
@@ -56,13 +56,18 @@ python pdf_chunker.py document.pdf chunks.txt --chunk-size 800 --chunk-overlap 1
 python pdf_chunker.py document.pdf chunks.txt --strategy llama --chunk-size 512 --chunk-overlap 40
 ```
 
+**Use the LangChain recursive splitter:**
+```bash
+python pdf_chunker.py document.pdf chunks.txt --strategy langchain --chunk-size 512 --chunk-overlap 40
+```
+
 ### Command-Line Options
 
 - `input_file` - Path to input file (PDF, TXT, or Markdown)
 - `output_file` - Base name for output files (will create `*_extracted.txt` and `*_chunks.txt`)
 - `--chunk-size` - Maximum tokens per chunk (default: 256)
 - `--chunk-overlap` - Token overlap between consecutive chunks (default: 30 tokens)
-- `--strategy` - Chunking approach to use (`smart`, `sentence`, or `llama`)
+- `--strategy` - Chunking approach to use (`smart`, `sentence`, `llama`, or `langchain`)
 
 ### Output Format
 
@@ -121,7 +126,9 @@ The `chunker.py` module implements a recursive text splitting algorithm:
 
 4. **Greedy packing** - Efficiently packs text into chunks without exceeding the token limit
 
-If you select the `llama` strategy, the tool delegates chunking to `llama_index.core.node_parser.SentenceSplitter`, using the same chunk size and overlap budgets you provide.
+All strategies share a common separator hierarchy (double newline → newline → period → comma → space → Unicode specials → characters) to keep boundaries consistent.
+
+If you select the `llama` strategy, the tool delegates chunking to `llama_index.core.node_parser.SentenceSplitter`, using the same chunk size and overlap budgets you provide. The `langchain` strategy leverages `langchain.text_splitter.RecursiveCharacterTextSplitter` with the same separator list for comparison.
 
 ### 3. Output
 
@@ -200,7 +207,8 @@ for i, chunk in enumerate(chunks, 1):
 
 - **PyMuPDF** - PDF extraction
 - **mlx-embeddings** - Token counting
-- **llama-index** - Optional sentence-splitter strategy (required if you choose `--strategy llama`)
+- **llama-index** - Optional sentence-splitter strategy (`--strategy llama`)
+- **langchain** / **langchain-text-splitters** - Optional RecursiveCharacterTextSplitter (`--strategy langchain`)
 
 ## Troubleshooting
 

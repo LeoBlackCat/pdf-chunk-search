@@ -1,3 +1,5 @@
 PyMuPDF
 mlx-embeddings
 llama-index
+langchain
+langchain-text-splitters

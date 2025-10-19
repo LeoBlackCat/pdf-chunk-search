@@ -26,7 +26,7 @@ def extract_and_chunk(
         output_file: Path to the output file (one chunk per line)
         chunk_size: Maximum tokens per chunk (default: 256)
         chunk_overlap: Token overlap between chunks (default: 30 tokens)
-        strategy: Chunking strategy ("smart", "sentence", or "llama")
+        strategy: Chunking strategy ("smart", "sentence", "llama", or "langchain")
     """
     # Validate input file exists
     if not Path(input_file).exists():
@@ -125,9 +125,12 @@ Examples:
 
     parser.add_argument(
         "--strategy",
-        choices=["smart", "sentence", "llama"],
+        choices=["smart", "sentence", "llama", "langchain"],
         default="smart",
-        help="Chunking strategy to apply (default: smart; use 'llama' for LlamaIndex SentenceSplitter)"
+        help=(
+            "Chunking strategy to apply (default: smart; "
+            "use 'llama' for LlamaIndex SentenceSplitter or 'langchain' for RecursiveCharacterTextSplitter)"
+        )
     )
     
     args = parser.parse_args()

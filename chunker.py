@@ -16,6 +16,19 @@ try:
 except ImportError:  # pragma: no cover - optional dependency
     LlamaSentenceSplitter = None
 
+try:
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+except ImportError:  # pragma: no cover - optional dependency
+    try:
+        from langchain.text_splitter import RecursiveCharacterTextSplitter
+    except ImportError:  # pragma: no cover - optional dependency
+        RecursiveCharacterTextSplitter = None
+
+
+def _llama_token_stub(text: str) -> List[str]:
+    count = token_count(text)
+    return [""] * max(0, count)
+
 
 def _load_tokenizer():
     global _tokenizer, _tokenizer_error
@@ -51,6 +64,27 @@ def token_count(text: str) -> int:
 MAX_CHUNK_TOKENS = 8192
 DEFAULT_OVERLAP_TOKENS = 30
 
+LANGCHAIN_SEPARATORS: List[str] = [
+    "\n\n",
+    "\n",
+    ". ",
+    ".",
+    ", ",
+    ",",
+    " ",
+    "\u200b",
+    "\u200c",
+    "\u200d",
+    "\u2060",
+    "\ufeff",
+    "\uff0c",
+    "\uff0e",
+    "\uff1a",
+    "\uff1b",
+    "\uff1f",
+    "\uff01",
+    "",
+]
 
 @dataclass(frozen=True)
 class Separator:
@@ -67,6 +101,8 @@ class TextUnit:
 
 SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?。！？])\s+")
 CLAUSE_SEPARATORS: tuple[Separator, ...] = (
+    Separator(re.compile(r"\s*\n\s*\n\s*"), keep_with_previous=False),  # double newline
+    Separator(re.compile(r"\s*\n\s*"), keep_with_previous=False),  # single newline
     Separator(re.compile(r"\s*…\s*")),  # ellipsis
     Separator(re.compile(r"\s*(?:—|–)\s*")),  # em/en dash
     Separator(re.compile(r"(?<=[,;:])\s+")),  # punctuation-based clause breaks
@@ -77,7 +113,7 @@ CLAUSE_SEPARATORS: tuple[Separator, ...] = (
     ),  # coordinating conjunctions
 )
 
-SplitStrategy = Literal["smart", "sentence", "llama"]
+SplitStrategy = Literal["smart", "sentence", "llama", "langchain"]
 
 
 def split_text(
@@ -110,11 +146,14 @@ def split_text(
     if separators:
         # Custom separator lists are no longer configurable; parameter kept for compatibility.
         pass
-    if strategy in {"smart", "llama"}:
+    if strategy in {"smart", "llama", "langchain"}:
         if chunk_overlap is None:
             overlap = min(DEFAULT_OVERLAP_TOKENS, max(0, max_size - 1))
         else:
             overlap = max(0, min(chunk_overlap, max(0, max_size - 1)))
+
+    if strategy == "langchain":
+        return _split_with_langchain(txt, max_size, overlap)
 
     if strategy == "llama":
         return _split_with_llama(txt, max_size, overlap)
@@ -542,6 +581,24 @@ def _split_with_llama(text: str, chunk_size: int, chunk_overlap: int) -> List[st
     splitter = LlamaSentenceSplitter(
         chunk_size=chunk_size,
         chunk_overlap=chunk_overlap,
+        tokenizer=_llama_token_stub,
+        paragraph_separator="\n\n",
+    )
+    chunks = splitter.split_text(text)
+    normalized = [_normalize(chunk) for chunk in chunks]
+    return [chunk for chunk in normalized if chunk]
+
+
+def _split_with_langchain(text: str, chunk_size: int, chunk_overlap: int) -> List[str]:
+    if RecursiveCharacterTextSplitter is None:
+        raise ImportError(
+            "langchain is not installed. Install langchain to use the 'langchain' strategy."
+        )
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=chunk_size,
+        chunk_overlap=chunk_overlap,
+        length_function=token_count,
+        separators=LANGCHAIN_SEPARATORS,
     )
     chunks = splitter.split_text(text)
     normalized = [_normalize(chunk) for chunk in chunks]
