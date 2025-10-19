@@ -301,6 +301,8 @@ def main(argv: Iterable[str]) -> int:
             print(f"  DocIdx   : {result['doc_chunk_index']}")
         if result.get("page"):
             print(f"  Page     : {result['page']}")
+        if result.get("page_end") and result.get("page_end") != result.get("page"):
+            print(f"  PageEnd  : {result['page_end']}")
         if result.get("span"):
             print(f"  Span     : {result['span']}")
         if result.get("clean_span"):

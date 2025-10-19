@@ -59,6 +59,8 @@ class PageContent:
 @dataclass(frozen=True)
 class ExtractionResult:
     final_text: str
+    final_pages: List[str]
+    final_page_offsets: List[int]
     clean_text: str
     pages: List[PageContent]
     clean_page_offsets: List[int]
@@ -172,26 +174,40 @@ def extract_text_from_pdf(pdf_path: str, use_ai_cleanup: bool = False) -> Extrac
         doc.close()
 
     clean_parts: List[str] = []
-    offsets: List[int] = []
-    current_offset = 0
+    clean_offsets: List[int] = []
+    current_offset_clean = 0
     for page in page_contents:
-        offsets.append(current_offset)
+        clean_offsets.append(current_offset_clean)
         clean_parts.append(page.clean)
-        current_offset += len(page.clean)
+        current_offset_clean += len(page.clean)
     combined_clean = "".join(clean_parts)
 
-    if use_ai_cleanup:
-        final_text, ai_used = apply_ai_cleanup_if_configured(combined_clean)
-    else:
-        final_text, ai_used = combined_clean, False
+    final_pages: List[str] = []
+    final_offsets: List[int] = []
+    current_final_offset = 0
+    ai_used_any = False
+    for page in page_contents:
+        page_text = page.clean
+        if use_ai_cleanup and page_text.strip():
+            cleaned_page, page_ai_used = apply_ai_cleanup_if_configured(page_text)
+        else:
+            cleaned_page, page_ai_used = page_text, False
+        ai_used_any = ai_used_any or page_ai_used
+        final_offsets.append(current_final_offset)
+        final_pages.append(cleaned_page)
+        current_final_offset += len(cleaned_page)
+    final_text = "".join(final_pages)
+
     extractor_info = _build_extractor_info(extraction_flags)
 
     return ExtractionResult(
         final_text=final_text,
+        final_pages=final_pages,
+        final_page_offsets=final_offsets,
         clean_text=combined_clean,
         pages=page_contents,
-        clean_page_offsets=offsets,
-        ai_used=ai_used,
+        clean_page_offsets=clean_offsets,
+        ai_used=ai_used_any,
         extractor=extractor_info,
     )
 

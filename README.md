@@ -120,7 +120,7 @@ Each run emits three artifacts:
 Chunk records use `span_scope="doc_final"` so `char_start/char_end` are offsets within the cleaned (and optionally AI-polished) document text. If `clean_span` is present it references the pre-AI cleaned text (`clean_span_scope="doc_clean"`). Both document and chunk records include `schema_version`, `pipeline_version`, and `metric` fields for future migrations.
 
 Each chunk line retains only metadata (no inline vectors). Embeddings are stored in `*_embeddings.npy`, in the same order as the JSONL records, which makes it easy to rebuild FAISS indices or migrate to a different vector database.
-Chunk IDs are monotonically increasing integers (`id`) and double as FAISS vector IDs.
+Chunk IDs are monotonically increasing integers (`id`) and double as FAISS vector IDs. Chunk metadata now contains precise page ranges (`page`, `page_end`, and `pages`) computed directly from the per-page text, so no heuristic page estimates.
 Document records include matching provenance (e.g., `pipeline_version="extract=pymupdf@1.26.5;clean=python-clean-v1+gpt-4o-mini;chunk=sentence-v1(256/0);embed=mlx-community/all-MiniLM-L6-v2-4bit@384"`).
 
 Because the chunks are JSON, you can inspect or filter them with standard tools:

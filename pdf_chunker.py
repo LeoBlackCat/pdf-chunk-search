@@ -191,13 +191,15 @@ def _extract_document(input_path: Path, use_ai_cleanup: bool) -> ExtractionResul
         return extract_text_from_pdf(str(input_path), use_ai_cleanup=use_ai_cleanup)
     if suffix in {".txt", ".md"}:
         raw_text = input_path.read_text(encoding="utf-8")
-        if use_ai_cleanup:
+        if use_ai_cleanup and raw_text.strip():
             final_text, ai_used = apply_ai_cleanup_if_configured(raw_text)
         else:
             final_text, ai_used = raw_text, False
         page = PageContent(number=1, raw=raw_text, clean=raw_text)
         return ExtractionResult(
             final_text=final_text,
+            final_pages=[final_text],
+            final_page_offsets=[0],
             clean_text=raw_text,
             pages=[page],
             clean_page_offsets=[0],
@@ -312,8 +314,11 @@ def _build_chunk_records(
     records: List[dict] = []
     final_text = extraction.final_text
     clean_text = extraction.clean_text
-    total_pages = len(extraction.pages)
     total_length = len(final_text)
+    final_offsets = extraction.final_page_offsets or [0]
+    final_page_texts = extraction.final_pages or [final_text]
+    page_numbers = [page.number for page in extraction.pages] or [1]
+    final_page_lengths = [len(text) for text in final_page_texts]
     search_pos = 0
     clean_search_pos = 0
 
@@ -339,13 +344,14 @@ def _build_chunk_records(
             if clean_pos != -1:
                 clean_search_pos = clean_pos + len(chunk_text)
 
-        page_number = _estimate_page(
+        page_list = _pages_for_span(
             char_start=start,
-            clean_pos=clean_pos,
-            extraction=extraction,
-            total_pages=total_pages,
-            total_length=total_length,
+            char_end=end,
+            offsets=final_offsets,
+            lengths=final_page_lengths,
+            page_numbers=page_numbers,
         )
+        page_number = page_list[0] if page_list else (page_numbers[0] if page_numbers else 1)
 
         emb_dim = embeddings.shape[1] if embeddings.ndim == 2 else 0
 
@@ -356,6 +362,8 @@ def _build_chunk_records(
             "doc_chunk_index": idx,
             "text": chunk_text,
             "page": page_number,
+            "page_end": page_list[-1] if page_list else page_number,
+            "pages": page_list,
             "span_scope": "doc_final",
             "span": {"char_start": start, "char_end": end},
             "model": EMBEDDING_MODEL_ID,
@@ -378,6 +386,35 @@ def _build_chunk_records(
             record["clean_span_scope"] = "doc_clean"
         records.append(record)
     return records
+
+
+def _pages_for_span(
+    *,
+    char_start: int,
+    char_end: int,
+    offsets: List[int],
+    lengths: List[int],
+    page_numbers: List[int],
+) -> List[int]:
+    pages: List[int] = []
+    span_end = max(char_end, char_start)
+    for idx, offset in enumerate(offsets):
+        length = lengths[idx] if idx < len(lengths) else 0
+        page_start = offset
+        page_end = offset + length
+        if length == 0:
+            continue
+        if span_end <= page_start:
+            break
+        if char_start < page_end and span_end > page_start:
+            pages.append(page_numbers[idx] if idx < len(page_numbers) else idx + 1)
+    if not pages and page_numbers:
+        # Fallback: assign to the last page if span starts beyond known offsets
+        if char_start >= (offsets[-1] + lengths[-1] if lengths else offsets[-1]):
+            pages.append(page_numbers[-1])
+        else:
+            pages.append(page_numbers[0])
+    return pages
 
 
 def _estimate_page(
