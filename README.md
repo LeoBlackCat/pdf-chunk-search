@@ -7,6 +7,7 @@ A Python tool for extracting content from PDFs and other documents, then splitti
 - Extract text from PDFs with PyMuPDF (plus direct reading for plain text files)
 - Smart text chunking with configurable size and overlap
 - Optional LlamaIndex-powered sentence splitter and LangChain recursive splitter modes
+- Automatic MLX embeddings generated for every chunk
 - Token-aware splitting (uses mlx-embeddings for efficient token counts)
 - Hierarchical splitting strategy (paragraphs → lines → sentences → words)
 - Output format: one chunk per line for easy processing
@@ -16,7 +17,7 @@ A Python tool for extracting content from PDFs and other documents, then splitti
 1. Install required dependencies:
 
 ```bash
-pip install PyMuPDF mlx-embeddings llama-index langchain langchain-text-splitters
+pip install PyMuPDF mlx-embeddings numpy llama-index langchain langchain-text-splitters
 ```
 
 2. Make the script executable (optional):
@@ -35,9 +36,9 @@ python pdf_chunker.py input.pdf output.txt
 
 This will:
 - Extract text from `input.pdf`
-- Write raw extracted text to `output_extracted.txt`
 - Split it into chunks of ~256 tokens each
 - Write chunks to `output_chunks.txt` (one per line)
+- Save MLX embeddings to `output_embeddings.npy`
 
 ### Advanced Usage
 
@@ -73,8 +74,8 @@ python pdf_chunker.py document.pdf chunks.txt --strategy langchain --chunk-size 
 
 The tool creates two output files:
 
-1. **`*_extracted.txt`** - Raw extracted text from the document (preserves original formatting)
-2. **`*_chunks.txt`** - Chunked text with one chunk per line
+1. **`*_chunks.txt`** - Chunked text with one chunk per line
+2. **`*_embeddings.npy`** - NumPy array containing an embedding vector for each chunk
 
 The chunks file has newlines within chunks escaped as `\n` so each chunk occupies exactly one line. This makes it easy to process with standard Unix tools:
 
@@ -84,9 +85,6 @@ wc -l output_chunks.txt
 
 # View first chunk
 head -n 1 output_chunks.txt
-
-# View raw extracted text
-less output_extracted.txt
 
 # Process each chunk
 while IFS= read -r chunk; do
@@ -136,6 +134,7 @@ Chunks are written to the output file with:
 - One chunk per line
 - Newlines escaped as `\n`
 - Statistics printed to console
+- Embeddings saved alongside the chunks for downstream vector search
 
 ## Examples
 
@@ -151,14 +150,17 @@ Extracting content from: research_paper.pdf
 Extracted 45230 characters
 Estimated tokens: 11307
 
-Writing extracted text to: chunks_extracted.txt
-✓ Successfully wrote extracted text to chunks_extracted.txt
-
-Chunking with size=500, overlap=75
+Chunking with size=500, overlap=75, strategy=smart
 Created 24 chunks
 
 Writing chunks to: chunks_chunks.txt
 ✓ Successfully wrote 24 chunks to chunks_chunks.txt
+
+Generating embeddings for 24 chunks
+Embeddings shape: (24, 384)
+
+Writing embeddings to: chunks_embeddings.npy
+✓ Successfully wrote embeddings to chunks_embeddings.npy
 
 Chunk statistics:
   Min tokens: 387
@@ -166,8 +168,8 @@ Chunk statistics:
   Avg tokens: 476.2
 
 📄 Output files:
-  Raw text: chunks_extracted.txt
-  Chunks:   chunks_chunks.txt
+  Chunks:     chunks_chunks.txt
+  Embeddings: chunks_embeddings.npy
 ```
 
 ### Example 2: Large documents with bigger chunks
@@ -179,13 +181,13 @@ python pdf_chunker.py large_book.pdf book_chunks.txt --chunk-size 2000 --chunk-o
 ### Example 3: Process the output
 
 ```python
-# Read raw extracted text
-with open("output_extracted.txt", "r", encoding="utf-8") as f:
-    raw_text = f.read()
-
 # Read chunks back in Python
 with open("output_chunks.txt", "r", encoding="utf-8") as f:
     chunks = [line.strip().replace("\\n", "\n") for line in f]
+
+# Load embeddings
+import numpy as np
+embeddings = np.load("output_embeddings.npy")
 
 # Process each chunk
 for i, chunk in enumerate(chunks, 1):
@@ -206,7 +208,8 @@ for i, chunk in enumerate(chunks, 1):
 ## Dependencies
 
 - **PyMuPDF** - PDF extraction
-- **mlx-embeddings** - Token counting
+- **mlx-embeddings** - Token counting and embeddings
+- **numpy** - Embedding storage
 - **llama-index** - Optional sentence-splitter strategy (`--strategy llama`)
 - **langchain** / **langchain-text-splitters** - Optional RecursiveCharacterTextSplitter (`--strategy langchain`)
 

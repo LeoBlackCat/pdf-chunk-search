@@ -7,7 +7,10 @@ import sys
 from pathlib import Path
 from typing import Optional
 
+import numpy as np
+
 from chunker import split_text, token_count
+from embeddings import embed_texts
 from pdf_extractor import extract_text_from_pdf
 
 
@@ -42,14 +45,8 @@ def extract_and_chunk(
     
     # Generate output filenames
     output_path = Path(output_file)
-    extracted_file = output_path.parent / f"{output_path.stem}_extracted.txt"
     chunks_file = output_path.parent / f"{output_path.stem}_chunks.txt"
-    
-    # Write raw extracted text
-    print(f"\nWriting extracted text to: {extracted_file}")
-    with open(extracted_file, "w", encoding="utf-8") as f:
-        f.write(text_content)
-    print(f"✓ Successfully wrote extracted text to {extracted_file}")
+    embeddings_file = output_path.parent / f"{output_path.stem}_embeddings.npy"
     
     # Split into chunks
     if strategy == "sentence":
@@ -74,6 +71,18 @@ def extract_and_chunk(
             f.write(chunk + "\n")
     
     print(f"✓ Successfully wrote {len(chunks)} chunks to {chunks_file}")
+
+    # Generate embeddings
+    print(f"\nGenerating embeddings for {len(chunks)} chunks")
+    embeddings = embed_texts(chunks)
+    if embeddings.size == 0:
+        print("Warning: No embeddings generated")
+    else:
+        print(f"Embeddings shape: {embeddings.shape}")
+
+    print(f"\nWriting embeddings to: {embeddings_file}")
+    np.save(embeddings_file, embeddings)
+    print(f"✓ Successfully wrote embeddings to {embeddings_file}")
     
     # Print statistics
     chunk_sizes = [token_count(c) for c in chunks]
@@ -83,8 +92,8 @@ def extract_and_chunk(
     print(f"  Avg tokens: {sum(chunk_sizes) / len(chunk_sizes):.1f}")
     
     print(f"\n📄 Output files:")
-    print(f"  Raw text: {extracted_file}")
-    print(f"  Chunks:   {chunks_file}")
+    print(f"  Chunks:     {chunks_file}")
+    print(f"  Embeddings: {embeddings_file}")
 
 
 def main():
