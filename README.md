@@ -85,7 +85,7 @@ This prints the best-matching chunk(s) with doc IDs, page numbers, spans, and op
 - `output_file` - Base name for output files (creates `*_extracted.txt`, `*_docs.jsonl`, and `*_chunks.jsonl`)
 - `--chunk-size` - Maximum tokens per chunk (default: 256)
 - `--chunk-overlap` - Token overlap between consecutive chunks (default: 30 tokens)
-- `--strategy` - Chunking approach to use (`smart`, `sentence`, `llama`, or `langchain`)
+- `--strategy` - Chunking approach to use (`smart`, `sentence`, `llama`, or `langchain`; default: `sentence`)
 
 Add an `.env` file with `OPENAI_API_KEY=...` (or export the variable in your shell) to enable OpenAI-powered cleanup during extraction.
 

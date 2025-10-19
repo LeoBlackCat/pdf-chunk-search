@@ -28,7 +28,9 @@ if load_dotenv is not None:  # load variables from .env automatically if availab
     load_dotenv()
 
 
-CLEANUP_MODEL = "gpt-5"
+CLEANUP_MODEL = "gpt-4o-mini"
+CLEANUP_TEMPERATURE = 0.0
+CLEANUP_MAX_TOKENS = 8000
 CLEANUP_SYSTEM_PROMPT = """# GOAL
 
 Adjust the content below to make it clean and readable:
@@ -211,6 +213,8 @@ def _apply_ai_cleanup_if_configured(text: str) -> Tuple[str, bool]:
                 {"role": "system", "content": CLEANUP_SYSTEM_PROMPT},
                 {"role": "user", "content": text},
             ],
+            temperature=CLEANUP_TEMPERATURE,
+            max_tokens=CLEANUP_MAX_TOKENS,
         )
         cleaned = response.choices[0].message.content
         if cleaned:

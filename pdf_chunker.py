@@ -26,7 +26,7 @@ def extract_and_chunk(
     output_file: str,
     chunk_size: int = 256,
     chunk_overlap: Optional[int] = None,
-    strategy: str = "smart",
+    strategy: str = "sentence",
 ) -> None:
     """
     Extract content from a file and split it into chunks, emitting JSONL metadata.
@@ -333,9 +333,9 @@ Examples:
     parser.add_argument(
         "--strategy",
         choices=["smart", "sentence", "llama", "langchain"],
-        default="smart",
+        default="sentence",
         help=(
-            "Chunking strategy to apply (default: smart; "
+            "Chunking strategy to apply (default: sentence; "
             "use 'llama' for LlamaIndex SentenceSplitter or 'langchain' for RecursiveCharacterTextSplitter)"
         )
     )
