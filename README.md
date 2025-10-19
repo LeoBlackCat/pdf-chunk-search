@@ -1,4 +1,4 @@
-# PDF Chunker
+# PDF Chunk Search
 
 A Python tool for extracting content from PDFs and other documents, then splitting the text into manageable chunks for processing with LLMs or other text analysis tools.
 
