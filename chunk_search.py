@@ -307,12 +307,11 @@ def main(argv: Iterable[str]) -> int:
             print(f"  Span     : {result['span']}")
         if result.get("clean_span"):
             print(f"  CleanSpan: {result['clean_span']}")
-        print(f"  Text     : {result['text']}")
-        if args.with_context:
-            if result.get("previous"):
-                print(f"  Prev  : {result['previous']}")
-            if result.get("next"):
-                print(f"  Next  : {result['next']}")
+        if args.with_context and result.get("previous"):
+            print(f"  Prev  : {result['previous']}")
+        print(f"  Text  : {result['text']}")
+        if args.with_context and result.get("next"):
+            print(f"  Next  : {result['next']}")
 
     return 0
 
