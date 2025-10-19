@@ -66,6 +66,19 @@ def clean_pdf_text(text: str) -> str:
     text = re.sub(r"\n\t+", "\n", text)
     text = re.sub(r"\t+\n", "\n", text)
     text = re.sub(r"\t+", " ", text)
+
+    def _collapse_ligature_gap(match: re.Match[str]) -> str:
+        token = match.group(1)
+        if any(ch.islower() for ch in token):
+            return token
+        return match.group(0)
+
+    text = re.sub(
+        r"((?:ffi|fi|fl))[ ]+(?=\w)",
+        _collapse_ligature_gap,
+        text,
+        flags=re.IGNORECASE,
+    )
     text = re.sub(r"\n{3,}", "\n\n", text)
     text = re.sub(r"^\s+", "", text)
     text = re.sub(r"\s+$", "", text)

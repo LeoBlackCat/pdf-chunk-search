@@ -1,0 +1,2942 @@
+Professor Robert Greenberg
+San Francisco Conservatory of Music
+Course Guidebook
+Fine Arts & Music
+Topic
+Music Appreciation
+Subtopic
+How to Listen to
+and Understand Opera
+PUBLISHED BY:
+THE GREAT COURSES
+Corporate Headquarters
+4840 Westfields Boulevard, Suite 500
+Chantilly, Virginia 20151-2299
+Phone: 1-800-832-2412
+Fax: 703-378-3819
+www.thegreatcourses.com
+Copyright (c) The Teaching Company, 1997
+Printed in the United States of America
+This book is in copyright. All rights reserved.
+Without limiting the rights under copyright reserved above,
+no part of this publication may be reproduced, stored in
+or introduced into a retrieval system, or transmitted,
+in any form, or by any means
+(electronic, mechanical, photocopying, recording, or otherwise),
+without the prior written permission of
+The Teaching Company.
+i
+Robert Greenberg, Ph.D.
+Chairman, Department of Music History
+and Literature
+San Francisco Conservatory of Music
+P
+rofessor Robert Greenberg has composed
+over 40 works for a wide variety of
+instrumental and vocal ensembles. Recent
+performances of Greenberg’s work have taken
+place in New York, San Francisco, Los Angeles,
+Chicago, England, Ireland, Italy, Greece, and The Netherlands, where his
+“Child’s Play” for String Quartet was performed at the Concertgebouw of
+Amsterdam in 1993.
+Dr. Greenberg holds degrees from Princeton University and the University
+of California at Berkeley, where he received a Ph.D. in music composition
+in 1984. His principal teachers were Edward Cone, Claudio Spies, Andrew
+Imbrie, and Olly Wilson. His awards include three Nicola De Lorenzo Prizes
+in composition, three Meet the Composer grants, and commissions from the
+Koussevitzky Foundation of the Library of Congress, the Alexander String
+Quartet, XTET, and the Dancer’s Stage Ballet Company.
+He is on the faculty of the San Francisco Conservatory of Music, where he
+is chair of the Department of Music History and Literature and director of
+curriculum of the Adult Extension Division. He is creator, host, and lecturer
+for the San Francisco Symphony’s “Discovery Series.”
+He has taught and lectured extensively across North America and Europe,
+speaking to such corporations and musical institutions as the Van Cliburn
+Foundation, Arthur Andersen, Bechtel Investments, the Shaklee Corporation,
+the University of California/Haas School of Business Executive Seminar, the
+Association of California Symphony Orchestras, the Texas Association of
+Symphony Orchestras, and the Commonwealth Club of San Francisco.
+ii
+His work as a teacher and lecturer has been profiled in The Wall Street
+Journal, Inc. magazine, and the San Francisco Chronicle. He is an artistic
+co-director and board member of Composers, Inc. His music is published by
+Fallen Leaf Press and CPP/Belwin and is recorded on the Innova label. ■
+iii
+Table of Contents
+LECTURE GUIDES
+INTRODUCTION
+LECTURE GUIDES
+Professor Biography............................................................................i
+Course Scope.....................................................................................1
+LECTURES 1 AND 2
+Introduction and Words and Music.....................................................5
+LECTURES 3 AND 4
+A Brief History of Vocal Expression in Music......................................8
+LECTURES 5-8
+The Invention of Opera and Monteverdi’s Orfeo..............................13
+LECTURES 9-12
+The Growth of Opera, the Development of Italian Opera Seria,
+and Mozart’s Idomeneo............................................................51
+LECTURES 13-16
+The Rise of Opera Buffa and Mozart’sThe Marriage of Figaro.........57
+LECTURES 17 AND 18
+The Bel Canto Style and Rossini’s The Barber of Seville............... 111
+LECTURES 19-22
+Verdi and Otello..............................................................................116
+LECTURES 23 AND 24
+French Opera.................................................................................122
+LECTURE 25
+German Opera Comes of Age........................................................183
+Table of Contents
+iviv
+LECTURES 26 AND 27
+Richard Wagner and Tristan und Isolde.........................................186
+LECTURE 28
+Late Romantic German Opera-Richard Strauss and Salome......190
+LECTURES 29 AND 30
+Russian Opera................................................................................192
+LECTURES 31 AND 32
+Verismo, Puccini, and Tosca..........................................................196
+SUPPLEMENTAL MATERIAL
+Timeline..........................................................................................246
+Glossary.........................................................................................251
+Biographical Notes.........................................................................256
+Bibliography....................................................................................261
+1
+How to Listen to and Understand Opera
+Scope:
+T
+his course is designed as a methodology, a guide to listening
+and understanding opera. For this reason it does not provide a
+comprehensive overview of the entire operatic repertory. Armed with
+the knowledge of opera gained from this course, however, the listener will
+be able to explore in greater depth the extraordinary and compelling world
+of opera for himself or herself. The listener will come to appreciate how
+music has the power to reveal truths beyond the spoken word; how opera is
+a unique marriage of words and music in which the whole is far greater than
+its parts.
+He or she will learn the reasons for opera’s enduring popularity.The history
+of opera is traced from its beginning in the early seventeenth century to
+around 1924, with references to landmark operas, musical, cultural, and
+social developments, and historical events that influenced opera’s growth.
+We learn how operatic style and form have changed continuously throughout
+the history of European music, as they were influenced by political, social
+and cultural developments, and how different national languages and cultures
+have shaped their own types of opera and operatic style.
+The course opens with one of the most powerful moments in opera: the
+dramatically loaded aria “Nessun dorma” (“No one shall sleep”) from
+Giacomo Puccini’s Turandot. We are exposed to opera’s unique incorporation
+of soliloquy, dialogue, scenery, action, and continuous music into an
+incredibly expressive and exciting whole that is far greater than the sum of
+its parts. This famous aria shows us the power of the composer in creating
+music that goes beyond the words of the libretto to evoke unspoken thoughts
+and feelings-that which cannot be said in words alone.
+The study continues with a discussion of how music can flesh out a dramatic
+character and evoke the unconscious state. We are introduced to operatic
+archetypes such as Figaro and Carmen. We learn that the ancient Greeks
+revered music as a microcosm of all creation, believing music can change the
+Scope
+2
+face of nature and alter souls. The monophonic and, later, polyphonic music
+of the Middle Ages is examined. We see how the end of the absolute authority
+of the Roman Church encouraged the rise of secular and instrumental music.
+We examine the Renaissance, its rediscovery of ancient Greek and Roman
+culture and the evolution of the madrigal, ultimately rejected in favor of a
+more expressive vocal medium: early opera. The renaissance intermezzo is
+discussed as the precursor of modern opera. The reforms of the Florentine
+Camerata are examined as they relate to the earliest operas. Part I of the
+course concludes with an analysis of the first successful attempt to combine
+words and music into musical drama, Monteverdi’s Orfeo of 1607.
+In Part II we see how recitative, the essence of Monteverdi’s style, made
+music subservient to words and how, because of its forward-driving nature,
+recitative cannot express personal reflection. We learn how the invention
+of aria gave opera composers a powerful tool to stop the dramatic action
+for moments of self-reflection. Gluck’s reforms and his Orfeo ed Euridice
+of 1762 are addressed as the starting point for the modern opera repertory.
+The explosion of operas in the Golden Age/Dark Age of opera is discussed,
+along with the formulaic reforms of Pietro Metastasio (including his da
+capo structure for arias) and the vocal abuses that those reforms provoked.
+We learn how different voice types are assigned different roles. The rise of
+opera seria and its characteristics are discussed, along with an analysis of the
+second act of Mozart’s Idomeneo-opera seria transcendent.
+The second part of this study continues with the development of opera buffa,
+from its origins in the popular folklore of the commedia dell’arte to its
+eventual replacement of opera seria. The role of Enlightenment progressives
+in this development is addressed and Mozart’s brilliant The Marriage
+of Figaro is discussed as one of the greatest contributions to the opera
+buffa genre.
+Part III opens with a discussion of the bel canto style of opera. We see how the
+nature of the Italian language and culture gave rise to this type of opera, with
+its comic, predictable plots, one-dimensional characters, appealing melodies,
+and florid melodic embellishments. The highly pressurized business of opera
+in the 18th century is revealed, and we are introduced to Rossini’s The Barber
+of Seville of 1816 as the quintessential bel canto opera.
+3
+Giuseppe Verdi is the focus of Lectures 19 through 22 of Part III. His career
+is summarized, and his operatic inheritance is reviewed. We learn how Verdi
+broke the bel canto mold; how he dominated Italian opera for over half a
+century by virtue of his lyricism, his emphasis on human emotions and
+psychological insight, and his use of the orchestra and parlante to drive the
+dramatic action and maintain musical continuity. Verdi’s Otello is discussed
+as one of the greatest operas of all time.
+Part III of this course concludes with an examination of French opera. We
+learn how it developed as a distinctly different genre from Italian opera,
+shaped as it was by the French language, culture and political history. We
+learn how Jean-Baptiste Lully set the foundation for a French language
+operatic tradition, and how his greatest contribution was the design of
+a recitative style suited to the French language. The reforms of JeanPhilippe Rameau are discussed, along with the influence of Enlightenment
+progressives such as Jean-Jacques Rousseau, who championed a more
+natural operatic style. Christoph Willibald von Gluck’s position as the model
+for the next generation of French composers is reviewed. Finally, the subject
+of 19th-century French opera is addressed. Grand opera, opéra comique and
+lyric opera are examined as distinctive French genres and Act Two of Bizet’s
+dramatically powerful Carmen is analyzed.
+Part IV opens with an examination of the rise of German opera, with its
+roots in German folklore. We discover how German singspiel grew from
+humble origins as a lower class entertainment to high art with Wolfgang
+Amadeus Mozart’s The Rescue from the Harem (1782) and The Magic Flute
+of 1791. We learn how 19th-century German opera grew out of the tradition
+of singspiel and how Carl Maria von Weber’s Der Freischütz established
+19th-century German opera.
+The discussion of German opera continues with an examination of Richard
+Wagner: the man, his personal beliefs, musical theories, and operatic
+innovations. We see how Wagner went back to the ancient Greek ideal for
+inspiration and how he conceived the idea of an all-encompassing art work,
+or music drama, in which the role of the orchestra is that of a purveyor of
+unspoken truths. We are introduced to Wagner’s concept of leitmotif and his
+revolutionary use of dissonance. Wagner’s Tristan und Isolde is discussed as
+Scope
+4
+the most influential composition of the 19th century, aside from Beethoven’s
+Ninth Symphony.
+The subject of late romantic German opera is addressed and exemplified by
+Richard Strauss and his controversial opera Salome. We go on to an overview
+of Russian opera and the concept of nationalism. The late development of
+Russian opera is outlined from Mikhail Glinka’s Ruslan and Lyudmila to
+Modest Mussorgsky’s Boris Godunov. We see how the Russian language
+shaped the syllabic vocal style of Russian opera and how Russian rhythms,
+with their asymmetrical groupings of accents, are distinct from Italian,
+German and French rhythms.
+The course draws to its conclusion with an overview of opera verismo, a
+19th/20th century genre that favors depictions of the darker side of the human
+condition. The pivotal second act of Giacomo Puccini’s Tosca is discussed
+as a transcendent example of opera verismo. Finally, we hear part of a scene
+from Richard Strauss’s Capriccio in which the essence of opera is debated.
+Is it words or is it music? It is neither. It is an indefinable combination of
+both, with the whole greater than the parts. ■
+5
+Introduction and Words and Music
+Lectures 1 and 2
+Lectures 1 through 4 [of this course] are conceived of as a large
+introductory set, consisting of three separate parts.... Part I... is
+a general introduction to and definition of opera.... Part II... is a
+presentation I call “Words and Music.”... The third part... is a brief
+but extremely intense history of expression in vocal music.
+W
+e will begin our consideration of opera by examining Giacomo
+Puccini’s Turandot (1924). The scene is set in the city of Beijing
+in ancient China. Turandot, the daughter of the Chinese emperor,
+has promised to marry the man who can solve three riddles. So far no one has
+succeeded in answering these riddles. Calaf, the young Tartar prince, falls in
+love at first sight with Turandot and promptly announces his challenge to
+the riddles. He solves the riddles and then volunteers that if Turandot can
+discover his name before dawn, she will be freed from her vow to marry
+him and he will die. Turandot commands that no one shall sleep until the
+stranger’s name and identity are discovered. Calaf sings a magnificent
+aria reflecting his love for Turandot and his confidence that his identity
+will remain a secret until morning. His aria, which begins with the phrase
+“Nessun dorma” (“No one shall sleep”), is one of opera’s most dramatic and
+emotionally powerful moments.
+Puccini could have set Calaf’s aria in a variety of different ways. For dramatic
+reasons, he chose to set it as a love song. It is significant for its sense of joy
+and redemption not seen in the opera up until this point. Does this feeling
+come from the words or the music? This question forces us to examine the
+nature of opera.
+First, we will look at some derivations and generalizations about opera.
+An opera is a drama that combines soliloquy, dialogue, scenery, action and
+continuous music, the whole greater than the parts. Literally, opera means
+musical work or composition.
+6
+Lectures 1 and 2: Introduction and Words and Music
+The repertory we call opera is a diverse one. In its four hundred-year
+history opera has run the gamut from aristocratic to popular entertainment.
+Throughout its history, operatic singing style
+has changed constantly, depending upon the
+language being sung, the size of the room being
+sung in, the ability and taste of the singers, and
+the expectation of the audience. For most of its
+history, opera was the single greatest spectacle
+available to its audiences. It is the oldest
+continuously active musical genre.
+To what might we attribute the popularity of
+opera? It is posited on the idea that music has
+the power to distill, crystallize, and intensify
+the meaning of words. Children at play, who sing-song their words to
+themselves and their toys, exemplify the operatic ideal.
+The primary reason for opera’s lasting popularity is the expressive power
+of the musical experience. T.S. Eliot said that music “evokes the fringe
+of indefinite feeling which we can only detect out of the corner of the
+eye.” Music has the power to evoke the ineffable, moods and states of
+consciousness that other arts cannot.
+In opera, the composer is a dramatist. He or she uses music to create the
+character. For example, Wolfgang Amadeus Mozart chills us with Electra’s
+crazed fury as she sings “Of Orestes and Ajax” from Idomeneo (1780).
+Similarly, Gustav Mahler hits us off guard with the bittersweet feeling of
+lost love in “As I Walked through the Field this Morning” from his Songs of
+a Wayfarer (1884). Georges Bizet likewise intrigues us with his revelation
+of Carmen’s power of sexual manipulation in the “Seguidilla” from Carmen
+(1875), and Gioacchino Antonio Rossini warms our hearts with Figaro’s
+upbeat personality in the famous “Largo al factotum” from The Barber of
+Seville (1816).
+These arias exemplify the reasons for the enduring popularity of opera. The
+sheer beauty of the vocal music, along with the excitement of the theater,
+is an irresistible force. Moreover, there is an incredible intensification
+For most of its
+history, opera was
+the single greatest
+spectacle available to
+its audiences. It is the
+oldest continuously
+active musical genre.
+7
+of feeling and meaning when words and music are combined, and this is
+the essence of opera. The music rounds out the character. It begins where
+words leave off. The combination of the
+self-reflective nature of words with the
+emotionally reflective nature of music
+packs a powerful appeal.
+Married to words, music has the ability to
+evoke symbolic meaning and universally
+appealing character archetypes. Bizet’s
+Carmen is the archetypal, street-smart,
+seductress. Rossini’s Figaro is a comic,
+clever, fast-talking servant archetype,
+whose
+predecessors
+date
+back
+to
+Roman comedy.
+This course has several goals. First, we
+will review an outline of the history of
+opera from 1600 to 1924 or so. Second,
+we will observe the development of national schools of opera. Third, we
+will develop a methodology for listening to and understanding opera. And
+ultimately, we will celebrate the power of words joined to music! ■
+George Bizet’s characters are
+strongly archetypal.
+Library of Congress, Prints and Photographs Division, LC-USZ62-84734.
+8
+Lectures 3 and 4: A Brief History of Vocal Expression in Music
+A Brief History of Vocal Expression in Music
+Lectures 3 and 4
+We are midway through our introductory set of... four lectures, and
+for Lectures 3 and 4 we encounter the last part... “A Brief History of
+Vocal Expression in Western”-meaning European-based-“Music.”
+Really, the real title, my friends, should be “An All-Too-Brief History
+of Vocal Expression in Western Music,” as we pave our way inevitably
+towards the invention of opera.
+T
+he phrase “music as a mirror” means that stylistic change in music
+and the arts reflects the greater realities of the society in which the
+composer, artist, and writer live and work. Musical style in the West
+(European sphere) has constantly adapted to ever-changing societal and
+cultural realities.
+There are four tenets to the idea of music as a mirror. The first tenet is that
+Western music has exhibited ongoing stylistic change since the High Middle
+Ages. The second is that composers since the High Middle Ages have sought
+to express something of themselves or their world in their music. The third
+is that what is considered expressive changes from era to era, and the fourth
+is that the rate of change has increased exponentially as we move toward the
+present day.
+We begin by considering the role of music in the ancient Greek world. The
+association of music with drama dates back to ancient times. The composers,
+poets, philosophers, and historians who invented opera believed they were
+recreating the environment and techniques of ancient Greek drama.
+The ancient Greeks believed music to be a microcosm of all creation.
+Music was present everywhere in ancient Greece. It was played throughout
+sporting events. Probably most, if not all, ancient Greek drama was sung
+with accompaniment. Only about forty fragments of ancient (pre-Christian)
+music have survived.
+9
+As a musical example of music in ancient Greek drama, we consider the
+Stasimon Chorus from the drama Orestes, possibly composed by Euripides
+himself (408 B.C.E.). (A stasimon was the lip between the stage and the
+audience, where the chorus sat. This area today is called the “orchestra.”)
+There are two essential elements in this style of music: A single voice is
+accompanied by a double reed instrument, and the setting is syllabic in that
+there is a single pitch for each syllable. This ensures clear articulation. The
+music is subservient to clarity of speech.
+The Greek view of music was humanistic. Ancient Greeks believed that
+music represented the true heart of humankind and the order of the cosmos.
+They also believed that music could change the face of nature and alter
+the souls of people and animals. This view of music would last for about
+1000 years.
+In the developments in performance, words, and music that would
+culminate in opera, another key period was that of the Middle Ages (6001400). During this period, an important nexus of musical-and culturaldevelopment was the Church. Indeed, the Middle Ages were dominated
+by the church; thus the era is often called the Theocratic Age or the Age of
+Theocracy. By 600 C.E. or so, Roman municipal authority had collapsed,
+leaving the Rome-based Christian church as one of the few bastions against
+encroaching barbarity. The Rome-based Christian church was founded
+by Emperor Constantine in the 4th century. The survival of the Church
+provided a framework for the reemergence of European civilization around
+the years 900-1000.
+During the first part of the Middle Ages-the Dark Ages (600-1000)-the
+great bulk of the music created was for use in worship. The predominant
+style was monophonic vocal music, as, for example, Gregorian chant. It has
+only one, unaccompanied melody. Instrumental music was discouraged,
+even outlawed by the church. Its earthy nature was not considered conducive
+to worship. A musical example is the Mass for Christmas Day, Introit, “Puer
+natus est nobis.”
+10
+Lectures 3 and 4: A Brief History of Vocal Expression in Music
+The High Middle Ages (1000-1400) saw the rebirth of Europe. Populations
+and food production grew, cities developed, universities were founded, and
+Romanesque and Gothic architecture
+developed. Vernacular literature also
+developed. The power of secular rulers
+grew, and trade and alliances formed
+ever-larger political units.
+The High Middle Ages also saw the
+creation of several musical innovations.
+Polyphony was a major development
+in the 12th through 14th centuries.
+Composers became named and known,
+in contrast to the anonymous, itinerant
+composers of previous eras, and a
+new class of professional performers
+began to grow. Musicians began to develop a system of musical notation.
+In tandem with these developments, a new, secular audience began to grow,
+and they started adopting a new ritual of respectful listening. In general,
+increasingly complex modes of musical expression mirrored an increasingly
+complex world.
+A new type of organum was developed at the cathedral of Notre Dame in
+Paris, France. Organum is an early type of polyphony. The new type of
+organum is illustrated by Leonin’s “Alleluia pascha nostrum” and “Gaudeat
+devotio fidelium” (circa 1190). The poet/composer Leonin raised the art
+of polyphony to a new level. He combined different styles in one piece of
+music: the old form of plainchant is combined with a new florid organum in
+which a sustained plainchant in the lower voice is accompanied by fastermoving embellishments in the upper voice. He also added a very new type of
+dance-like rhythm. We will listen to an example of this in lecture.
+Secular music grew by leaps and bounds as royal courts and the aristocratic
+classes grew. A school of troubadour composers of popular music sprung
+up. An example of this type of music is Bernart de Ventadorn’s “Can vei la
+lauzeta mover” (circa 1170).
+Ancient Greeks believed
+that music represented the
+true heart of humankind and
+the order of the cosmos.
+They also believed that
+music could change the face
+of nature and alter the souls
+of people and animals.
+11
+The 14th century saw an end to the absolute authority of the Church as a
+result of a series of events. First, the Babylonian Captivity occurred. This
+was a period between 1305 and 1378 when the entire papal court settled
+in Avignon, France. The Babylonian Captivity led to the Great Schism
+between 1378 and 1417, when there were two, or even three, claimants to
+the papacy at any one time. People grew tired of this chaos. Over time, the
+behavior of some high clergy became increasingly corrupt and scandalous.
+Additionally, the Black Death of 1348-50 caused widespread devastation
+and soul-searching, and the Hundred Years’ War wreaked enormous havoc.
+Rulers became increasingly powerful. In general, the world was in transition
+from one dominated by the Church with its immutable rules to a new world
+of increasing secularism, humanistic pursuit, and doubt.
+As a result of all of these changes and events, secular music became high
+art. Much of it exhibits a structural complexity not equaled again until the
+1950s. As an example, we will consider Guillaume de Machaut’s “Rose, liz”
+(circa 1350), a spiky, complex, and beautiful piece by one of the great poet/
+composers of the 14th century. The essence of this music is the control of
+emotion and polyphonic structure.
+Another important historical period in the development of music, language,
+and performance was the Renaissance (1400-1600). This period saw the
+rediscovery of ancient Greek and Roman culture. Artists, architects, poets,
+dramatists, philosophers, and composers turned increasingly to pre-Christian
+models for their inspiration and guidance.
+Renaissance composers wanted their music to have the same impact on
+their listeners as that which the Greeks attributed to their music. By the
+mid-Renaissance an entirely new view of vocal articulation and system of
+harmony had come into place to accommodate the new, more humanistic,
+expressive aims of composers. This was homophony in which one melody
+predominates with all other musical material heard as accompaniment.
+Josquin des Prez (circa 1440-1521), the preeminent composer of the midRenaissance, was a master of sacred and secular music. There are several
+musical examples of this. First, “El Grillo” (circa 1480) exemplifies Josquin’s
+use of homophony and word painting. Unlike the music of Machaut one
+12
+Lectures 3 and 4: A Brief History of Vocal Expression in Music
+hundred years before, this music serves the words. Also, “Je me complains”
+(circa 1480) is a polyphonic piece in which five voices weave in and out
+of each other. The clarity of the words is not the issue here. Two or three
+words are being sung simultaneously. The essence of this music lies in its
+expressive power. It is focused on a depiction of romantic malaise.
+In the late Renaissance, the most important genre of secular music was the
+madrigal, a work for four to six singers, based on high art poetry, that freely
+mixes homophony and polyphony and focuses on word painting. Madrigals
+were sung at aristocratic gatherings at European courts, especially in Italy.
+Thomas Weelkes’ “As Vesta was from Latmos Hill descending” (1601) is
+a lighthearted madrigal of the late Renaissance in which word painting is
+taken to extremes. Note that “maiden Queen” and Oriana refer to the “Virgin
+Queen” Elizabeth I. Diana was the Roman goddess of virginity and Vesta
+was a virgin goddess. ■
+13
+The Invention of Opera and Monteverdi’s Orfeo
+Lectures 5-8
+The intermedio was important-in fact, vital-as a forerunner
+of opera for two essential reasons: first, because it kept alive in the
+minds of Italian poets and musicians the idea of close collaboration
+between drama and music; and second, because in these works, in
+these intermezzi, the external form of opera is already clear: a drama
+with interludes of music, dancing, splendid scenery, and spectacular
+stage effects.
+W
+e begin this lecture by reviewing the material we have discussed
+up to this point. First, the Greek ideal of music posited that music
+is a force that can move nature and change the hearts and souls of
+people. Second, the Renaissance saw a growing awareness of the Greek ideal
+of music. And third, the madrigal is a late-Renaissance experimental genre
+in which “expression” is based on word painting. Carlo Gesualdo’s madrigal
+“Io parto e non piu dissi” (circa 1595) is expressive of a lovers’ quarrel. It
+is full of unbelievable harmonic complexity. Major amounts of unresolved
+dissonance (known as chromaticism) correspond to the dissonance felt by
+the lovers. We will listen to a musical example.
+We now move on to a consideration of the intermezzo/intermedio. This
+performance component developed alongside the madrigal. It was presented
+between the acts of spoken plays. Many intermezzi/intermedi became more
+interesting than the plays in which they were inserted, and they were an
+important forerunner of opera.
+Another important development in the progression towards opera was the
+pastorale. This style of dramatic poetry dominated Italian theater in the late
+16th and early 17th centuries. Pastorales feature sylvan settings and mild love
+adventures, usually ending happily.
+14
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+From an intellectual and theoretical standpoint, another important event in
+the story of opera was the collaboration of the Florentine Camerata. The
+Florentine Camerata was a ridotto, or a private academy or intellectual
+club, that met in the home of Giovanni Bardi di Vernio from 1573 to 1592.
+Of special interest to this group was the nature of musical and dramatic
+expression. Among the members of the Florentine Camerata was Vincenzo
+Galilei, who wrote a scathing attack on the artificiality of expression in
+madrigals. Based largely on the ideas of scholar Girolamo Mei, the group
+decreed that true musical expression could only be achieved by a single
+singer employing an actor’s dramatic and oratorical skills.
+The Florentine Camerata developed a new theory of music. Their theory was
+based on the Greek expressive ideal and involved several rules for music and
+musical performance:
+*
+The text must be sung by one singer, accompanied as simply as
+possible so that the words are clearly understood.
+*
+The words must be sung the way they are spoken (natural
+declamation). No dance rhythms can be imposed upon the words.
+*
+The music must depict the feelings and emotions of the
+character singing.
+The first works that we today call operas were created by members of the
+Florentine Camerata. Daphne was created by the poet Ottavio Rinuccini and
+the composer Jacopo Peri in 1598. The music is lost today. Euridice was
+created by Rinuccini and Peri in 1600, and in the same year a second version
+was produced by Rinuccini and Giulio Caccini.
+Euridice was first performed on October 6, 1600 in Florence, Italy. A fully
+staged production with alternating choruses, rhyming pop-type songs, and
+early recitative (stile rappresentativo), Peri’s Euridice is a play set to music,
+not a play conceived musically. The character of Orfeo (Orpheus), with his
+ability to change souls and the very face of nature with his music, personifies
+both opera and the Greek view of music.
+15
+The first great composer of opera was Claudio Monteverdi (1567-1643). He
+did not invent opera but was inspired to create a new operatic ideal. Born
+in Cremona, Italy, he rose to the pinnacle of the musical profession in the
+17th century as choirmaster at St. Mark’s cathedral in Venice. Of his nineteen
+stage works only six have survived intact, including his first opera Orfeo,
+which represents the first completely successful attempt to apply the full
+resources of musical and dramatic art to the new genre of opera.
+Orfeo (1607) is an extraordinary synthesis of the musical genres and
+compositional techniques available in the time when it was produced. The
+toccata (overture) demonstrates the large instrumental ensemble (around forty
+players) Monteverdi calls for in Orfeo. The character of Orpheus lies at the
+heart of the drama as the personification
+of dramatic musical art. He symbolizes the
+power of music. Yet while he can control
+external forces with his music, he cannot
+control his own emotions.
+In Act 1 of Orfeo, there is happiness and
+joy in arcadia. Eurydice has finally agreed
+to marry Orpheus. They celebrate with
+friends. Monteverdi’s style of recitative
+(half sung, half spoken music) is known
+as arioso, closer to actual song than
+Peri’s. As a musical example, consider “In questo lieto.” Another musical
+example is ballet/chorus, “Lasciate i monti.” This chorus is full of sexual
+symbolism. The excitement builds up to the entrance of the star couple.
+Orpheus, appropriately, sings a richer arioso, “Rosa del ciel,” than the
+other characters.
+Act 1, like most first operatic first acts, is dramatically static. It represents an
+incredible synthesis of various musical forms: the toccata (opening music,
+or overture), ritornello (orchestral refrain), recitative (in Monteverdi’s
+inimitable style), symbolic chorus (“Vieni, Imeneo”), ballet, popular song
+(“Lasciate i monti”), religious-type music (“Ma se il nostro”), and final,
+celebratory music.
+The first great composer
+of opera was Claudio
+Monteverdi (1567-1643).
+He did not invent opera
+but was inspired to create
+a new operatic ideal.
+16
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+In the second act of Orfeo, grief comes to paradise. Orpheus sings his last bit
+of joy in “Vi ricorda,” but then the celebrations are cut short with the news of
+Eurydice’s death. The messenger’s story is a brilliant, masterful composition.
+She begins slowly, almost monotonically, and builds up to a powerful climax
+as she tells her tragic tale. Then, exhausted, she concludes on a bleak note.
+This is exemplified by “Ahi, caso acerbo.” Orpheus’s response, “Tu se’
+morta,” is a profoundly moving and brilliantly written moment. It is followed
+by a madrigal-style chorus replete with word painting: “Ahi, caso acerbo.”
+Monteverdi employs a stunning stroke. He brings back the ritornello heard
+at the beginning of the opera. Now it takes on a whole new dimension as it
+reflects both the tragic events of the act as well as Orpheus’s determination
+to rescue Eurydice from death, armed with a single weapon-the power of
+music itself.
+Act 3 involves the journey to Hades in search of Eurydice. The opening
+sinfonia is dominated by brass instruments, which were associated with the
+underworld. Charon, the boatman who takes souls to the underworld, is a
+deep bass, accompanied by a regal (reed organ). He sings “O tu, ch’innanzi
+morte.” Orpheus’s plea, “Possente spirito” is-as it should be-the crown
+jewel of the opera. While he does not succeed in softening Charon’s heart
+and gaining entry to Hades, his music does have a beneficial effect on the
+formidable boatman. It puts him to sleep! A firm comment on the nature
+of opera audiences everywhere! For a musical example, we will listen to
+Orpheus’s “Ei dorme.”
+In Act 4, Pluto presents a challenge and Orpheus experiences a downfall.
+Pluto, king of the underworld, agrees to allow Eurydice to follow Orpheus
+back up to the world of mortals as long as he does not look back at her.
+Orpheus disobeys and Eurydice is forced back to Hades. Her “Ahi, vista
+troppo” is memorable for its extraordinarily dissonant harmonies. Act 5 is
+marked by Orpheus’s despair and Apollo’s divine intervention.
+17
+In conclusion, we note that in Orfeo Monteverdi succeeds on every level.
+His opera synthesizes all the different genres. It is a brilliant example of
+the power of recitative to embody and magnify the power of words. It also
+represents the marriage of drama and music. The whole is greater than the
+parts. Additionally, in Orfeo the Greek ideal of the power of music to “calm
+every troubled heart and... kindle the most icy souls”, as described in the
+prologue, has been redefined and reinvented. ■
+18
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+19
+
+20
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+21
+
+22
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+23
+
+24
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+25
+
+26
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+27
+
+28
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+29
+
+30
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+31
+
+32
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+33
+
+34
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+35
+
+36
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+37
+
+38
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+39
+
+40
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+41
+
+42
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+43
+
+44
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+45
+
+46
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+47
+
+48
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+49
+
+50
+Lectures 5-8: The Invention of Opera and Monteverdi’s Orfeo
+
+The Growth of Opera, the Development of Italian
+Opera Seria, and Mozart’s Idomeneo
+Lectures 9-12
+The earliest operas were a synthesis.... We tend to treat the word
+“synthetic” today as something bad; if something is synthetic, it’s not
+made out of real stuff. But in terms of music, the word “synthesis” is an
+important and a good word, because it indicates various different styles
+and types of music combined, where the whole hopefully is greater than
+the parts.
+W
+e will begin by reviewing the birth of opera and its early history,
+and then we will move on to discussion of the invention of the
+aria. The earliest operas were a synthesis of old and new musical
+and dramatic genres and compositional techniques. Four elements were
+inherited from the Renaissance: stage scenery and machinery, dance/ballet
+episodes, popular songs/ballads, and madrigal-style choruses. These early
+operas also included the recitative element, which was new. Monteverdi’s
+Orfeo was the first successful work to combine all these elements into a
+singularity greater than the parts.
+Recitative was the essence of Monteverdi’s operatic art. It was used for
+everything: action, narrative, dialogue and description of feelings. Because
+of the non-reflective and ever forward-moving nature of recitative, time
+cannot stop for consideration and reflection. For example, Orfeo’s reaction
+to Euridice’s death is recitative, and in it, he does not stop to reflect. There
+was little emotional depth in this genre at this point in its development. The
+concept of aria, in which music is divorced from words and creates a whole
+expressive world of its own, had not yet been realized. Moreover, recitative
+focuses on words, not music, which further limits emotional depth. A musical
+example in Orfeo is Orpheus’ response.
+In considering aria, we begin with the musical example of “Chiamo il mio
+ben cosi” from Christoph Willibald von Gluck’s Orfeo ed Euridice (1762).
+In an aria, the words and music are on an equal footing. Additionally, real
+51
+52
+Lectures 9-12: The Growth of Opera, the Development of Italian Opera Seria, and Mozart’s Idomeneo
+time stops. Orpheus can experience and express in music a depth of feeling
+far beyond that of words alone. The use of music as an expressive vehicle,
+which began with the earliest arias, is revolutionary. Gluck’s operas mark the
+starting point for the modern opera repertory.
+The period between Monteverdi (1567-1643) and Gluck (1714-1787) is
+sometimes called both the golden age of opera and the dark age of opera (a
+period which runs from 1640 through 1750). This period was very secular
+in terms of philosophy and science. It saw logical thought as transcendent.
+This development influenced music, resulting in a hugely expanded musical
+language. The harmonic system came
+into its own. Instrumental music became
+as popular as vocal music, and with the
+development of instrumental music there
+came a self-sufficient, pure, abstract
+musical language. This was Gluck’s
+inheritance: a musical language that could
+create what could not be expressed in
+words alone.
+The first phase of this period ran from 1640
+through 1700. During this phase, the first
+public opera houses were opened. Also,
+opera quickly became a ubiquitous public
+entertainment in Italy. Huge numbers of operas were created and produced.
+The popularity of opera during this era can be compared with the popularity
+of television for modern audiences. Singing style and stage design developed
+rapidly. Opera captured the exuberant, expressive spirit of the Baroque. The
+quality of libretti declined in order to meet the growing public demand for
+spectacle, situation, and virtuosic singing (a situation again comparable with
+much contemporary television programming). Opera pulled further away
+from the Greek ideal. Choruses were used less and less as the demand for
+virtuoso soloists grew. Despite their number and fame, however, Baroque
+operas are seldom produced, due to their dramatic stupidity and strange,
+often bizarre content; thus the dark age of opera.
+The period between
+Monteverdi (1567-1643)
+and Gluck (1714-1787)
+is sometimes called both
+the golden age of opera
+and the dark age of opera
+(a period which runs
+from 1640 through 1750).
+53
+By the late 17th and early 18th centuries, literary devotees of opera were
+determined to reform the medium and return to it a degree of literary
+and dramatic substance. These reforms characterized the second phase of the
+golden/dark age of opera, which ran from 1700 through 1760.
+Chief among the reformers of this phase was Pietro Metastasio (1698-1782).
+He was the great librettist of the first half of the 18th century. He standardized
+his libretti into a formulaic dramatic procedure (comparable with today’s
+television sitcoms).
+In opera developed during the second phase of the golden/dark age of opera,
+dry recitative (accompanied only by a harpsichord and, sometimes, a cello)
+alternated with arias. The principal characters had to sing one or two arias
+in each act. Subsidiary singers were only permitted one or two arias in the
+course of the entire opera. Every opera had three acts. No two successive
+arias could use the same singer, mood, or orchestration; and choruses, duets,
+and other ensembles were very rare, except for the final number, when all
+principal singers had to line up for an ensemble in block harmony.
+Plots were based on mythological characters and ancient history. This is the
+formula for Italian opera seria. Metastasio formularized arias into a structure
+called the da capo aria: A-B-A form. As a musical example we consider “Mi
+rivedi” from Alessandro Scarlatti’s La Griselda (1721).
+Arias became classified into standard types. There are many different types,
+including the five we will describe here. First, the aria cantabile showcases
+all of the singer’s lyrical ability. The aria di portamento is a dignified aria
+designed to show off the singer’s breath and tone control. The aria di mezzo
+caratere is a compromise between the aria cantabile and the aria di bravura.
+The aria parlante (patter aria) demonstrates the singer’s agility, and the aria
+di bravura (or aria d’agilità) is highly florid and designed to show off the
+singer’s agility and extraordinary vocal compass.
+As a result of the predictability of the Metastasian operatic formula, singers
+and vocal virtuosity increasingly became the focal points of reform opera.
+Singers embellished the written notes and improvised solo passages at the
+ends of arias. These embellished and extended cadences became known
+54
+Lectures 9-12: The Growth of Opera, the Development of Italian Opera Seria, and Mozart’s Idomeneo
+as cadenzas. The greatest vocal abuses were promulgated by the castrati.
+For a musical example, we will review “Siam navi all’onde” from Antonio
+Vivaldi’s L’Olimpiade of 1734.
+We now turn to a discussion of voice types. Basic voice classifications
+include soprano, alto, tenor, and bass. The soprano is the highest female
+voice, and the coloratura soprano is the highest of the soprano voices. The
+term coloratura refers to virtuosic singing, not vocal range. Coloratura
+sopranos are distinguished by their range, clarity, and agility as exemplified
+in the Queen of the Night’s aria, “Der Hölle Rache” from Mozart’s The
+Magic Flute of 1791 (musical example).
+The lyric soprano is a fairly light, warm, and flexible voice. The dramatic
+soprano on the other hand is a heavier, darker, and larger voice than
+lyric. The spinto soprano is a voice lying between a lyric and a dramatic
+soprano, and the mezzo-soprano is heavier, darker, and lower than a true
+soprano, approaching the alto voice. The contralto (alto) is a female voice of
+exceptionally low focus.
+The tenor is the highest male voice. The lyric tenor is a light, clear, and
+flexible voice, while the dramatic tenor is a more forceful, powerful voice,
+capable of greater volume and endurance. As a musical example, please
+consider Otello’s entrance from Act 1 of Verdi’s Otello (1886). The baritone
+is slightly lower in range, heavier, and fuller in sound than the tenor, and the
+bass is the lowest male voice. It is a rich, dark, heavy, and powerful voice
+that is not particularly agile. A good musical example is Charon’s song from
+Monteverdi’s Orfeo, Act 3 (1607).
+We now return to Christoph Willibald von Gluck (1714-1787) and a
+consideration of his reforms. Gluck was Bohemian by birth. He split his
+mature career between Vienna and Paris and was a brilliant composer of
+Italian-style operas.
+Gluck’s operas were along the lines of traditional opera seria. They
+distinguished themselves, however, in their dramatic viability. Gluck
+believed strongly in telling a good story. To do so, he used his orchestra
+much more flexibly. He also simplified and streamlined his arias to reduce
+55
+singers’ abuses and to restore the dramatic integrity of his operas. His operas
+became models for the next generation of opera composers.
+Wolfgang Amadeus Mozart’s (1756-1791) Idomeneo, Re di Creta
+(Idomeneo, King of Crete) is the greatest opera seria. The libretto is by
+G. B. Varesco. Mozart is one of the few great opera composers not to have
+been an opera specialist. He wrote operas in all the styles popular in his time:
+opera seria, Gluck’s reform-style opera,
+opera buffa, and Singspiel. His first opera
+was La finta semplice (The Pretended
+Simpleton) of 1768.
+Idomeneo is the transcendent opera
+seria. In its story, Ilia (lyric soprano), the
+daughter of Priam, King of Troy, is in
+love with Idamante, who is also in love
+with her. He (soprano or tenor; the part
+was originally written for a castrato) is
+the prince and heir to the Cretan throne.
+Half-mad Greek princess Elektra is also
+in love with Idamante. Idomeneo is the
+King of Crete and father of Idamante. The
+action takes place on Crete, ten years after
+the end of the Trojan War. Idomeneo, in
+order to survive a shipwreck, promises
+to sacrifice to Neptune the first person
+he sees on landing in Crete. This turns out to be Idamante, his son and
+heir. Idomeneo desperately tries to find a way to avoid keeping his oath
+to Neptune.
+In Act 2, the momentum builds to a tremendous degree as Mozart employs
+every device he can to avoid the formulaic and predictable dramatic action
+typical of opera seria. Each vocal number merges with the next. The use of a
+trio was rare in Mozart’s day. He uses one in this act to break the predictable
+pattern. He also uses recitative for Idomeneo’s monologue “Eccoti in me,
+barbaro Nume!” He knew that an aria at this point would have slowed the
+pace and killed the dramatic momentum. Musical examples abound and
+Mozart, whose Idomeneo
+is the greatest opera seria,
+transcending the formulas and
+predictability of the genre.
+The Teaching Company Collection.
+56
+Lectures 9-12: The Growth of Opera, the Development of Italian Opera Seria, and Mozart’s Idomeneo
+include Elektra’s recitative, “Parto, e l’unico” and no. 14 (march); Elektra’s
+recitative “Sidonie sponde”; the No. 15 (chorus), “Placido è il mar”/Elektra’s
+aria, “Soavi zeffiri” and Idomeneo’s recitative, “Troppo t’arresti”; the No.
+16 (trio) from “Deh cessi il scompiglio”; the No. 17 (chorus), “Qual nuovo
+terrore!”; Idomeneo’s recitative, “Eccoti in me, barbaro nume!”; and the No.
+18 (chorus), “Corriamo, fuggiamo.”
+In conclusion, we note that the seamlessness of this music takes Idomeneo
+out of the category of traditional opera seria. The non-seria elements are
+as follows: The recitatives are accompanied, recitatives and arias do not
+automatically alternate, the use of a trio is unusual, flexible use is made
+of the chorus, and the orchestra transitions smoothly from one section
+to the next. ■
+The Rise of Opera Buffa and Mozart’s
+The Marriage of Figaro
+Lectures 13-16
+Comic opera-slapstick, satirical, often bawdy, and almost always
+irreverent-has had a very different history than that of serious opera
+or what we call opera seria.... Comic opera has its roots in popular
+entertainment, and this is a huge and very enduring difference
+C
+omic opera developed quite separately from opera seria, which was
+an entertainment of the aristocracy. Comic opera had its roots in
+popular entertainment. It grew out of comic musical entertainment
+that traveling musicians had staged since the Middle Ages. In 16th-century
+Italy, these developed into a tradition of traveling companies called commedia
+dell’arte. During the second half of the 17th century, comic interludes, drawn
+from the situations and characters of commedia dell’arte, were inserted
+between the acts of serious operas. By the end of the 18th century, the once
+lowbrow comic intermezzi had developed into the dominant operatic genre
+of opera buffa.
+Comic opera/opera buffa grew out of the Enlightenment, with its emphasis
+on popular, nonelitist art and its spirit of dramatic and musical naturalism.
+The melodic content of the new opera buffa reflected the more natural,
+populist, melodic spirit of Classical-era Enlightenment music.
+To understand opera buffa more fully, we will compare two musical
+examples: “Siam navi all’onde algenti” from Vivaldi’s L’Olimpiade (1734)
+and “Non più andrai” from Mozart’s The Marriage of Figaro (1786).
+Vivaldi’s music is highly artificial and extreme in its use of embellishments
+and in its sentiments. Mozart’s music is far more natural-sounding.
+This new, Enlightenment-inspired music, with its focus on accessible
+melodies, is known as the Classical style. It is classical in the ancient Greek
+sense because of its clarity of line, balanced structures, emotional restraint,
+and elegance.
+57
+58
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+Opera buffa also was affected by the political conditions of its time. By
+the mid-18th century, Baroque opera seria came to represent the old, elite,
+aristocratic order. Its main elements were formulaic use of recitative and ariathey followed one another predictably; grandiose and expensive productions;
+libretti based on ancient history and mythology; stiff, overblown characters;
+and da capo arias, with very few ensembles and almost no choruses. The
+predictability of the arias led to abuses by the singers. Enlightenment
+philosophers and artists saw opera buffa-with its accessible melodies,
+small casts, and everyday dramatic situations-as the ideal opera for the new
+spirit of the Enlightenment. Jean-Jacques Rousseau (1712-1778) took the
+lead in this rejection of Baroque opera
+seria. He and his followers embraced
+Giovanni Pergolesi’s La serva padrona
+as the new ideal for opera.
+La serva padrona (1733) is early
+opera buffa. It began as an intermezzo,
+although it was later performed as an
+opera. Typical of the early version
+of its genre, it features lively, catchy
+music in which no particular formulas are followed. It also features a cast of
+only three characters: Serpina (soprano), Uberto (bass) and Vespone (mute).
+The plot involves a simple ruse by which a servant (Serpina) tricks an old
+bachelor (Uberto) into marriage. A musical example is the recitative and
+aria, “Son imbrogliato io già.”
+Even as it evolved, opera buffa continued to use commedia dell’arte character
+archetypes. The most significant character division in opera buffa is between
+savvy, street-smart servants and members of the lower class, on the one
+hand, and blundering, pompous aristocrats, merchants, doctors, and lawyers,
+on the other. Almost by their nature, then, opera buffa plots were politicized
+in an era when class distinctions underwent profound reexamination.
+Mozart wrote many operas buffa. In his youth he wrote La finta semplice
+(1768) and La finta giardiniera (1775). He created his best known and most
+esteemed works with librettist Lorenzo da Ponte, a brilliant and controversial
+figure. Da Ponte remains, along with Metastasio, Boito and Hofmannsthal,
+Almost by their nature...
+opera buffa plots were
+politicized in an era when
+class distinctions underwent
+profound reexamination.
+59
+one of the great librettists in opera history. The works that he and Mozart
+developed together include The Marriage of Figaro (1786), Don Giovanni
+(1787), and Così fan tutte (1789).
+We will look at The Marriage of Figaro in greater detail. Its basic story line
+is adapted from two plays by the French dramatist Pierre de Beaumarchais
+(1732-1799): The Barber of Seville (1772) and The Marriage of Figaro
+(1784). In The Barber of Seville we meet a young Count Almaviva, who, with
+the help of his former valet Figaro, wins and weds the young and cunning
+Rosina. This play concludes with the count’s renunciation of his feudal right
+to deflower any maiden in his service on her wedding night. The Marriage
+of Figaro takes place three years later. The count has become a shameless
+philanderer. Rosina (the countess) is wise beyond her years. Figaro is to
+marry Susanna, whom the count intends to bed before her marriage. The
+action of the play (and opera) revolves around the count’s determination to
+seduce Susanna, and Figaro and Susanna’s determination to marry before he
+can force the issue.
+Beaumarchais’ play was a clear attack on the French aristocracy. The play
+was initially banned in France and permanently banned in Austria. Da
+Ponte’s libretto removed much of what was politically offensive (although
+Mozart’s music puts much of it back in!).
+Our game plan in discussing this play will involve two components. First,
+we will meet the main characters and observe Mozart’s incredible musical
+portraiture. Second, we will observe the quintessence of Mozart’s dramatic
+craft by examining the Act 2 finale.
+We will begin our discussion of Act 1 of The Marriage of Figaro by
+considering some musical examples. First, the overture; this is a perfect
+combination of great musical substance and great musical beauty. Also, the
+opera opens with a duet for Figaro and Susanna, “Cinque, dieci, venti,” that
+is memorable for the way Mozart conveys perfect harmony between Susanna
+and Figaro by writing their music in thirds and sixths. Susanna tells her fiancé
+Figaro that Count Almaviva is planning to seduce her: no. 2 (duet), “Se a
+caso madama.” In his recitative, “Bravo, signor padrone!” and his cavatina,
+“Se vuol ballare,” Figaro shows his determination to outwit the count.
+60
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+Dr. Bartolo and Marcellina are introduced. Dr. Bartolo is the former guardian
+of Rosina. He had planned to marry Rosina himself, but was thwarted by
+Figaro and Count Almaviva. (The role of Dr. Bartolo is sung by a bass, in
+the Italian tradition of assigning the bass voice to older men and villains.)
+Marcellina is Bartolo’s former maid. She once lent Figaro money and this
+loan has now come due. Figaro promised to marry Marcellina if he could
+not repay the loan. Figaro and Susanna are planning to repay the loan with
+the dowry to be given them by the count. For their own personal reasons, Dr.
+Bartolo and Marcellina want Figaro to fail to repay the loan. The relevant
+musical example here is no. 4 (aria) “La vendetta.”
+We will now examine the ways in which the characters in The Marriage
+of Figaro are, and are not, archetypes of commedia dell’arte. First, the
+inspiration for Dr. Bartolo comes from Pantalone, a character who prides
+himself on being an expert on many subjects, but one who actually knows
+very little and is always being caught out. The character of Figaro on the other
+hand is based on harlequin, an athletic, graceful, cunning valet and ladies’
+man, who claims noble birth. Rosina’s character comes from Colombina, a
+pretty, young girl with a sharp wit and an acid tongue. Marcellina is the only
+character not based on commedia dell’arte. She is an old, rapacious spinster,
+inspired by a character in classic Roman comedies.
+Cherubino, an oversexed adolescent, is introduced. Mozart’s depicts his
+character in an aria brilliantly evocative of a breathless, love-sick adolescent:
+no. 6 (aria) “Non so più cosa son.” The predatory and unscrupulous Count
+Almaviva is also introduced with “Ah, no Susanna.”
+The count decides that Cherubino is getting in his way and tries to pack him
+off to the army. Figaro sings a satirical farewell to Cherubino. He paints a
+dire picture of life in the army in the hope of dissuading Cherubino from
+leaving. He needs the boy as an ally in his plan to thwart the count’s designs
+on Susanna. Figaro’s aria, “Non più andrai,” (in rondo form) is what first
+made this opera a success.
+In Act 2 of The Marriage of Figaro, the countess (Rosina) is introduced.
+Still very young, and wise beyond her years, she prays for the return of
+her philandering husband’s affections in one of Mozart’s most beautiful
+61
+and moving arias, “Porgi amor.” As a result of various intrigues, the count
+becomes convinced that the countess is having an affair. He is incensed and
+determined to learn the truth.
+An opera buffa finale is itself conceived as a miniature comedy. Mozart’s
+Act 2 finale is in eight distinct parts, 20 minutes (or so) of continuous music.
+In Part 1, the count is convinced that Cherubino and the countess have been
+having an affair and that Cherubino is hiding in the countess’s closet. At this
+point there are two characters onstage: the count and countess. In Part 2, the
+count discovers, to his surprise, not Cherubino but Susanna in the closet. In
+Part 3, the mood completely changes as the count calms down and asks for
+his wife’s forgiveness, and in Parts 4 and 5, Figaro enters and there are now
+four characters onstage. The mood grows quieter as the count tries to figure
+out what is going on. He questions Figaro about an anonymous note he
+received, but Figaro refuses to answer. In Part 6, Antonio, the gardener, enters
+the scene. We now have a quintet. Antonio unwittingly stirs up more trouble
+when he complains that someone jumped out of a window and ruined his
+flowerbed. This is followed by Parts 7 and 8, in which the comic confusion
+increases and the dramatic and musical tension comes to a climax with the
+entrance of Don Basilio, Dr. Bartolo, and Marcellina, who has come to claim
+Figaro as her husband! We now have seven characters onstage singing their
+own lines simultaneously in a variety of ensembles and solos.
+The Act 2 finale is a brilliant continuous sequence of ensembles of
+increasingly long, separate musical lines, all coming together. Only a great
+writer of symphonies or string quartets could have written this finale, which
+is equally remarkable for its dramatic power. Mozart’s music enhances
+dramatic momentum and creates a whole new drama of underlying subtleties
+and truths not revealed in the libretto.
+Mozart’s operas are not “easy-listening.” They require our total involvement.
+Nor were they considered easy to listen to in Mozart’s own time. His characters
+live and breathe; his music imbues them with an extraordinary range of
+moods, emotions, subtlety, unconscious motivation, and humanity. ■
+62
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+`
+
+63
+
+64
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+65
+
+66
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+67
+
+68
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+69
+
+70
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+71
+
+72
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+73
+
+74
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+75
+
+76
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+77
+
+78
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+79
+
+80
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+81
+
+82
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+83
+
+84
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+85
+
+86
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+87
+
+88
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+89
+
+90
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+91
+
+92
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+93
+
+94
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+95
+
+96
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+97
+
+98
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+99
+
+100
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+101
+
+102
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+103
+
+104
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+105
+
+106
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+107
+
+108
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+109
+
+110
+Lectures 13-16: The Rise of Opera Buffa and Mozart’s The Marriage of Figaro
+
+The Bel Canto Style and Rossini’s
+The Barber of Seville
+Lectures 17 and 18
+I’m about to tell you how quickly these Italian opera composers wrote
+operas, and how many operas they were expected to turn out with great
+rapidity. It might seem stunning to us... and to a degree it is stunning.
+We’ve got to remember there were tried and true techniques. There
+were... compositional processes that [allow]... you [to]... turn out a
+lot really quickly, as long as you don’t seek to be original.
+B
+y the early 19th century, opera in Italy was widely popular, and
+its popularity led it to become a conventional, highly profitable
+commercial enterprise. Italian composers were not so susceptible to
+the romanticism sweeping the rest of Europe. Instead, they focused more
+attention on opera, often to the exclusion of other musical forms. They did
+not experiment to the extent that their French and German neighbors did. All
+of this led to a conservative type of opera. The type of opera in favor was the
+opera buffa, or comic opera.
+The melodic style of these predominantly comic, early-19th-century Italian
+operas was direct, tuneful, and, in every sense of the word, popular. It is
+known as the bel canto style. This style also favored directness and simplicity
+of harmonic language and character development and a predictable comic and
+dramatic setup. The principal composers of bel canto operas were Gaetano
+Donizetti (1797-1848), Vincenzo Bellini (1801-1835), and Gioacchino
+Antonio Rossini (1792-1868).
+In terms of the business conditions under which bel canto operas were
+created, it is important to know that composers and librettists traveled
+from city to city creating operas in as little as two weeks before moving
+on. In order to meet their deadlines, composers would often reuse in newly
+commissioned operas music written for earlier ones. Operas could be written
+quickly and in profusion thanks to widely accepted formulas for composing
+stock material.
+111
+112
+Lectures 17 and 18: The Bel Canto Style and Rossini’s The Barber of Seville
+One typical bel canto opera is Rossini’s The Barber of Seville, a favorite
+since its composition in 1816. Rossini’s contract for The Barber was typical
+for the time. The libretto was chosen by the local impresario, and Rossini had
+to agree to any and all modifications requested by the singers. He also had
+to room with the baritone so that the impresario could keep an eye on him.
+Additionally, he was required to be present for rehearsals and the first three
+performances. Dates were specified for completion of the first act and for
+opening night, and compensation was the equivalent of two hundred dollars
+plus a coat with gold buttons.
+The libretto was written by Cesare Sterbini and based on a play by PierreAugustin Beaumarchais. Though written by a French dramatist, The Barber
+of Seville is based on character archetypes drawn from the Italian commedia
+dell’arte.
+The Barber of Seville was first turned into an opera by composer Giovanni
+Paisello and librettist Giuseppe Petrosellini in 1782. Paisello’s Barber was
+considered a classic, and there was considerable audience resistance to
+another opera based on the same story. Despite opening night problems with
+Paisello’s clique, Rossini’s Barber was almost immediately recognized as
+the superior work.
+In considering this opera, we will begin by meeting the main characters
+and considering musical examples that convey their identities and goals to
+the audience. Then we will review the music lesson scene as an example of
+Rossini’s superb comedic craft. Lastly, we will address elements that make
+this a bel canto opera.
+The cast of characters of The Barber of Seville is as follows:
+*
+Rosina, a witty, vivacious sixteen-year-old, is the ward of Dr.
+Bartolo.
+*
+Dr. Bartolo, Rosina’s guardian, is a ponderous, pompous, nasty old
+fogey who intends to marry Rosina for her inheritance.
+113
+*
+Count Almaviva, a young nobleman desperately in love with
+Rosina, is posing as a love-struck soldier named Lindoro.
+*
+Figaro, Almaviva’s former valet, is now a jack-of-all-trades
+(factotum) living in Seville, where the opera takes place.
+*
+Count Almaviva.
+In terms of musical examples, we begin with the aria “Ecco, redente in
+cielo,” which acquaints us more thoroughly with the count. From his aria, we
+discover that he is a lovesick sap. The simple, direct, and sentimental nature
+of the music mirrors the count himself. His serenade elicits no response, and
+he is crestfallen.
+On the other hand, we learn more about Figaro through his “patter-style” aria
+“Largo al factotum.” We discover that he is a man of irrepressible spirit and
+energy, he is clever and street-smart, and he is much more interesting and
+complex than the count. We also see that Figaro has genuine self-knowledge;
+he knows who and what he is, and he likes himself. The count hears this aria
+and recognizes his old employee. He hires Figaro on the spot to assist him in
+winning Rosina.
+Rosina drops a note to Figaro and Count Almaviva. In it she says she wants
+to know who Almaviva is. The note makes it clear that she is a strong young
+woman with a mind of her own. Indeed, she will prove to be the brains of the
+plot. This is already hinted at in the instrumental introduction to her entrance
+aria, “Una voce poco fa.”
+Rosina’s aria tells us that she is filled with youthful energy and optimism, she
+can be flirtatious and romantic, and that she cannot and will not be controlled
+by anyone-indeed, she is in control and the mistress of her own fate. Her
+aria is an entrance aria, serving to introduce her character, like the other
+two arias in this opera that we have considered thus far: Figaro’s “Largo al
+factotum” and Almaviva’s “Ecco, redente in cielo.”
+Rosina begins with recitative and then goes into a cavatina. A cavatina is an
+aria that shows off a singer’s ability to hold line. This particular cavatina is
+114
+Lectures 17 and 18: The Bel Canto Style and Rossini’s The Barber of Seville
+an example of Rossini at his best. It is virtuosic and pure bel canto, full of
+coloratura melismas. A melisma is an embellishment of the vocal line, when
+an ornamental group of different pitches are assigned to a single syllable.
+The bel canto style is characterized by highly embellished arias requiring an
+unusual vocal flexibility and the ability to reach very high notes.
+In fact, in bel canto opera, singers were expected to embellish their arias.
+Female singers who could do this well became superstar divas. Because
+they attracted large audiences, they won
+immense control: they could demand
+autonomy, huge fees, and a freedom
+not generally enjoyed by women
+at that time.
+We now turn to Dr. Bartolo’s aria “A
+un dottor della mia sorte.” From this
+aria we learn that Bartolo is a pompous,
+condescending blowhard who hasn’t a
+chance against the combined forces of
+Almaviva, Figaro, and Rosina.
+In another aria, “La calunnia è un
+venticello,” we learn about the character
+of Don Basilio, who makes Bartolo look like a saint. Basilio’s brand of
+intrigue is the lowest of the low and is bound to fail. His aria contains an
+example of a “Rossini crescendo.”
+We will now discuss the music lesson from Act 2 in The Barber of Seville.
+In this part of the opera, the count, disguised as a music teacher, gains access
+to Bartolo’s house. The music lesson commences with Rosina singing an
+incredibly ornate aria in the bel canto style. Bartolo, true to form, falls
+asleep in an armchair. Upon awaking, he regrets the passing of his musical
+era and proceeds to sing a light, opera seria-type aria in the style of the
+castrato Caffariello.
+In bel canto opera, singers
+were expected to embellish
+their arias.... Because
+[superstar divas] attracted
+large audiences... they
+could demand autonomy,
+huge fees, and a freedom
+not generally enjoyed by
+women at that time.
+115
+In conclusion, we note that the bel canto style is based on a deep-rooted
+Italian conviction that opera is essentially the highest manifestation
+of song and that its purpose is to delight and entertain its listeners with
+unsentimental, melodious, and spontaneous music. We know bel canto when
+we see and hear it because in this type of opera the melodic lines of arias
+are embellished, the melodies are tuneful and popular, there is no in-depth
+characterization (all of the characters are one-dimensional caricatures),
+dialogue is witty and sparkling, the opera overall is always comic, and the
+dramatic setup is predictable.
+Very few composers have equaled Rossini for sheer tunefulness. He
+was advised by Beethoven to stick with opera buffa. Beethoven’s advice
+notwithstanding, Rossini increasingly composed grand and serious operas.
+By the 1840s opera buffa fell out of favor in Italy, to be replaced by serious,
+grand opera; however, Rossini’s buffa operas never lost their popularity. ■
+116
+Lectures 19-22: Verdi and Otello
+Verdi and Otello
+Lectures 19-22
+At no point did Verdi purposely break with his past or experiment
+radically with new operatic theories. His evolution was toward
+refinement of dramatic content, toward refinement of technique, and
+in the end, of course, he brought Italian opera to a pinnacle that has
+never been surpassed. Verdi’s aim, then, was always toward refinement
+and intensification of dramatic line, singing technique, literary and
+emotional truth.
+T
+he career of Giuseppe Verdi (1813-1901) practically constitutes
+the history of Italian opera from 1850 to 1900. Verdi composed 26
+operas. He was not an innovator or reformer. Rather, his operatic craft
+slowly evolved across the span of his long compositional career.
+Verdi was born near Parma, Italy, to a middle-class family. His musical
+education was sponsored by a rich local merchant, Antonio Barezzi of
+Busseto. At Barezzi’s expense, Verdi moved at the age of eighteen to Milan
+to study music. He was not considered sufficiently accomplished to be
+accepted into the Milan conservatory, and so he studied privately. While
+in Milan, Verdi began his first opera, Oberto. Verdi eventually returned to
+Busseto and married Barezzi’s daughter Margherita. Oberto was performed
+at La Scala, and Verdi was commissioned to write three more operas. While
+he was working on this commission, his wife and two children died within a
+span of 22 months. Distraught, Verdi completed the comic opera Un Giorno
+de Regno, which failed miserably at its premiere in 1840. His contempt for
+any sort of criticism, musical or personal, stems from these events. His third
+opera, Nabucco, was his first big hit. From the start he was more interested
+in human drama and emotions than in writing pretty, popular bel cantostyle music. He reached a creative plateau between 1851 and 1853 with the
+composition of Rigoletto, La Traviata, and Il Trovatore.
+Verdi’s inheritance consisted of an operatic world dominated by bel canto.
+Composers Rossini, Donizetti, and Bellini were the great triumvirate of this
+world. The bel canto era was not unlike that which immediately preceded
+117
+the reforms of Metastasio, marked by a notable lack of dramatic integration
+of words and music. As we have discussed, the distinctive features of bel
+canto opera include compositional formulas that permit the rapid production
+of operas, as well as segmentation of the opera into the traditional divisions
+of recitative, aria, and ensemble.
+By the time of the operas of 1851-1853, Verdi had gone a long way
+toward breaking the mold. Despite the fact that he was a brilliant
+tunesmith in the Italian tradition, Verdi’s
+operas are not formulaic, nor do they
+clearly reflect the divisions of recitative,
+aria, and ensemble. Arias and vocal
+ensembles are intermingled and move
+smoothly from one to the other in Verdi’s
+operas. The variety of vocal forms
+and singing techniques is extraordinary.
+An example is the opening of Act 1 from
+La Traviata.
+Although we can identify individual
+sections, the overall effect in La
+Traviata is one of continuous forward
+motion in terms of both music and
+dramatic
+action.
+Verdi
+does
+not
+stop the action for dry recitative.
+The
+orchestra
+plays
+continuously,
+providing accompaniment here, background there, whatever is needed.
+The characters and chorus interact with each other with stunning
+flexibility. In this way La Traviata is much closer to what we now
+call music drama.
+Verdi has not completely broken with the bel canto style, however. In terms
+of its vocal usage and the direct, popular nature of its melodies, La Traviata is
+still bel canto. By improving on bel canto, rather than completely discarding
+it, Verdi became the undisputed king of Italian opera.
+Giuseppi Verdi composed 26
+operas over the course of his
+long career.
+The Teaching Company Collection.
+118
+Lectures 19-22: Verdi and Otello
+Against the backdrop of the 19th century, a literary age, Verdi as a dramatist
+sought ever-greater dramatic continuity in his operas. To this end, he used
+the technique known as parlante, a technique in which the distinction
+between aria and recitative is eliminated. In parlante, recitative-like vocal
+parts are underlaid by a memorable and tuneful orchestral accompaniment.
+Verdi reduced the length of the traditional recitative and blended it into a
+more continuous texture with the use of the orchestra. This allowed for much
+greater musical (and dramatic) continuity. It situated musical interest in the
+orchestra and the dramatic interest in the voices. A good musical example is
+in Rigoletto, Act 1, scene 7.
+Lyricism is the key to Verdi’s art. Verdi’s melodies never lost their direct
+and popular touch, and they are molded to the characters who sing them. An
+example of this is “La donna è mobile,” the Duke of Mantua’s aria from Act
+4 of Rigoletto.
+Verdi was an admirer of Beethoven’s use of motivic development, and he
+used the same technique in his operas. He also used what is known as a
+hinge theme. This is a theme that becomes associated with some element in
+the dramatic action and reappears in the course of the opera to connect large
+areas of the drama.
+Verdi’s mature operas share several characteristics. First, human emotions
+and psychological insight provide the basis for the story lines. Second, the
+bel canto divisions of recitative and aria are increasingly deemphasized
+in favor of musical continuity. Third, the orchestra plays a key dramatic
+role, and fourth, the libretti used are of high quality and are based on
+high-quality literature.
+Otello (1886) developed out of a lengthy period of creative gestation for
+Verdi. This period started with the premiere of Aida in 1871, upon which
+Verdi retired from the opera. Subsequently, four people close to him (his wife,
+his publisher, a conductor, and composer/librettist Arrigo Boito) conspired
+to bring him out of retirement. In July 1879, Verdi received a proposal to
+write an opera based on Shakespeare’s Othello, with Boito as librettist. He
+completed this new opera in 1886.
+119
+In thinking about the Otello libretto, it is helpful to know that people in the
+19th century, including, of course, Verdi, were fascinated by the plays of
+Shakespeare, whose extraordinary insights
+into the human condition and relationships
+appealed tremendously to the emotional
+and literary spirit of the age. Boito’s libretto
+of Otello is a masterpiece of reduction and
+distillation. Ultimately, as in any opera, it
+was up to Verdi to flesh out the characters
+and dramatic situations that Boito, as
+librettist, had to abbreviate.
+The libretto/opera is in four acts. Act 1
+presents Otello as a hero, Act 2 presents
+Otello in doubt, Act 3 reveals Otello’s
+degradation, and Act 4 brings about
+Otello’s destruction. From the standpoint of
+characterization, it is notable that two of the
+three main characters are polar opposites.
+Desdemona, Otello’s wife, is good incarnate, while Iago, Otello’s sergeant, is
+evil incarnate. Otello is the man in the middle, whose journey from good to
+evil, from control to chaos, is the essential dramatic line of the play/opera.
+In Act 1, the orchestra plays an extraordinary role in setting the stormy,
+symbolic opening scene. Otello’s entrance is one of the most magnificent in
+all of opera. Verdi manages a huge number of musical forces in this unique
+scene. We hear a wide variety of choruses along with solos, all interacting
+with each other.
+Also in this act, Iago and Roderigo are introduced. Iago’s music, with its
+singsong, mocking character, is descriptive of his derision of women. Verdi’s
+music establishes the characters of Iago and Roderigo.
+Iago soon begins to hatch part one of his plot, the downfall of Cassio. He
+makes sure Cassio has too much to drink. Cassio, as Iago plans, provokes
+a fight. Otello enters and strips Cassio of his rank. Otello has restored order
+In thinking about
+the Otello libretto,
+it is helpful to know
+that people in the
+19th century... were
+fascinated by the plays
+of Shakespeare, whose
+extraordinary insights...
+appealed tremendously
+to the emotional and
+literary spirit of the age.
+120
+Lectures 19-22: Verdi and Otello
+but has lost his friend in doing so. A good musical example of this part of the
+opera is “Va al porto...” through Iago’s explanation.
+The transcendent love of Otello and Desdemona is revealed in a duet. This
+love duet establishes Desdemona’s character, and the “kiss” theme at its
+conclusion becomes a hinge theme that will return with a powerful impact at
+the end of the opera.
+Act 2 of the opera truly belongs to Iago. The opening orchestral prelude
+begins with a violent, slimy figure that characterizes Iago, who persuades
+Cassio to ask Desdemona to intercede for him in obtaining Otello’s pardon.
+Iago’s credo is the most amazing aria in the whole opera. The orchestral
+introduction in F minor sets the mood of evil. Orchestral “infernal” dances
+play between Iago’s verses. His credo is almost a huge recitative, rather than
+an aria, which would be out of character for him. He is the archetype of evil
+incarnate. We know now that Otello does not have a chance against him;
+Iago is in control.
+Iago goes to work on Otello. He sows the seeds of jealous suspicion in Otello
+as they watch Cassio and Desdemona talking together. A musical example of
+this is “Ciò m’accora” through “può affermate il sospetto.”
+Iago’s poison spreads. Why is Otello reacting so quickly? Otello is an
+outsider, thirty years older than his bride and of a different race. As a result,
+it does not take much to unnerve him. Iago goads Otello to increased fury
+with lies about Cassio talking in his sleep about his love for Desdemona.
+The orchestra reflects Otello’s fury. Otello demands proof, and Iago tells him
+it exists in the form of the handkerchief that Otello once gave Desdemona.
+Iago assures Otello that Cassio now possesses this handkerchief. Otello is
+now completely blind with jealously and rage. These events are conveyed
+from “Pace, signor” through “Ah! sangue! sangue! sangue!”
+Iago and Otello join forces. Their duet of revenge ends Act 2. The orchestra
+plays a chilling passage, “Sì, pel ciel,” evocative of a descent into hell.
+121
+Act 3 is about Iago’s careful machinations to convince Otello beyond a
+shadow of a doubt that Desdemona is unfaithful to him. Otello’s rage is
+murderous and uncontrollable.
+Act 4 is about Desdemona, who is sixteen or seventeen years old and living
+in a land far from her home. Her husband has gone quite mad for reasons she
+does not understand. Her character is fleshed out in these moments before
+her death. She sings of lost love in The Willow Song.
+Otello’s enters Desdemona’s bedroom. From this moment on, the opera
+moves very swiftly to the final catastrophe. Otello realizes too late that
+Desdemona was innocent, and, in reaction to this understanding, he kills
+himself. The kiss theme returns to heighten the pathos. A musical example is
+the conclusion of the opera from “Pria d’ucciderti.”
+Verdi conceived Otello as an intimate drama, not as a spectacle. The premiere
+of this work was probably the greatest operatic triumph of all time. ■
+122
+Lectures 23 and 24: French Opera
+French Opera
+Lectures 23 and 24
+The point of this survey [of French opera] is threefold: to give us an
+overview of the circumstances surrounding the evolution of a distinctly
+French operatic style... to give us an idea of why and how French opera
+is different from Italian opera... and... to remind us that operatic
+content... is most often a function of the language... and the politics
+and economic class of its consumers.
+F
+rench-language opera came into being in 1669, a late start compared
+to that of Italian opera. The comparatively late development of
+French opera has much to do with the nature of the French language
+and the French spirit. The French language is not as well suited to a
+melismatic operatic singing style as the Italian language. Also, the French
+preferred their drama pure, in the theater, and unsullied by music, and
+they regarded theatrical music as an accompaniment to their favorite stage
+spectacle, ballet.
+Jean-Baptiste Lully (1632-1687) is almost singularly responsible for creating
+a French language operatic tradition. Italian by birth, Lully was a dancer and
+musician by training. He came to Paris at the age of fourteen. He quickly
+developed into a first-rate conductor and composer, and, through equal parts
+talent and scheming, he eventually became master of all music at the court
+of Louis XIV.
+Lully’s operas incorporated elements from musical and dramatic genres
+already popular in France, including French classical dramatic literature;
+huge, dramatic stage sets and machinery; and ballet. Staged professional
+dance had been popular entertainment in France since the 16th century, and
+Louis XIV fancied himself a dancer and was a tremendous patron of dance.
+Lully realized from the start that if opera was to become popular in France, it
+must contain a great amount of dance.
+Lully created a French national style of opera that encompassed magnificence,
+tragic drama, and dance. His operas are in five acts with a prologue devoted
+123
+to the glorification of Louis XIV. In these operas, the action unrolls with
+majestic indifference to realism and involves all kinds of improbable
+adventures. Characters engage in extended discourse on love and honor.
+Also, there are rarely any comic characters. Everything is stately, formal,
+and detached from reality.
+Lully’s greatest operatic contribution was his design of a recitative style
+suited to the long vowels and soft consonants of the French language. He
+claimed that his model was spoken drama. His recitatives are syllabic, with
+one pitch per syllable. The flexibility of the French language is reflected in
+the continuous changes of meter in these recitatives, which also fall into
+melodic patterns. (Italian recitatives do not have melodic patterns. They just
+keep on developing; they are “through composed.”)
+In contrast to Italian arias, Lully’s arias tend to be short and limited in vocal
+range, and they emphasize clear enunciation and textural clarity over vocal
+acrobatics. They generally do not stand alone as musical numbers, but tend
+to be merged with longer musical sequences. Also, they are not the essential
+events in the opera, and they do not use coloratura effects. Instead, they
+employ a vocal style that demanded less virtuosity from singers than the
+more florid style of Italian opera. A good musical example is the recitative/
+monologue from Lully’s Armide (1686).
+Lully established opera as an institution of the state. The dignified, formal
+splendor of his operas embodied the glorious age of Louis XIV. Their
+disadvantage is that, once the age of Louis XIV passed, these operas sounded
+empty and pompous. Their advantage is that they provided the foundation
+for generations of French and French-based opera composers.
+Jean-Philippe Rameau (1683-1764) was the foremost French musician of the
+18th century. He saw himself as the inheritor of a great and majestic tradition.
+We will begin by considering his opera Hippolyte et Aricie (1733).
+This opera is Rameau’s first. Like the operas of Lully and other French
+composers, Rameau’s operas display much less contrast between aria and
+recitative than contemporary Italian operas. A musical example of this is
+“Ah! faut-il” from Act 4, scene 1 of Hippolyte et Aricie.
+124
+Lectures 23 and 24: French Opera
+Rameau’s operas were also controversial. The operatic traditionalists,
+or Lullists, found Rameau’s operas too Italian and, as such, musically
+subversive. The operatic progressives on the
+other hand felt that Rameau was the savior of
+an operatic tradition that had grown tired and
+stale with age. French opera is, unfortunately,
+rarely heard outside France, because it is
+tailored to particular French tastes. Rameau’s
+music is, however, first rate and worth
+seeking out.
+Within twenty years the controversy over
+Rameau’s music had shifted 180 degrees.
+Jean-Jacques Rousseau (1712-1778) and his
+followers rejected traditional French opera
+and embraced the new Italian comic genre
+as an example of opera appropriate to the
+Enlightenment. Rameau’s operas became the tradition against which the new
+Enlightenment progressives rebelled.
+Rousseau, among his other talents, was a composer (of sorts). In 1752,
+inspired by Italian opera buffa, he wrote Le Devin du village (The Village
+Soothsayer). This work is very close to the popular French tradition
+of opéra comique.
+Christoph Willibald Gluck (1714-1787) was by nature a reformer; he
+effected a synthesis of elements of the new Italian opera and of traditional
+French opera. Though he worked across Europe, Gluck’s greatest fame
+was achieved in Paris under the patronage of the Austrian-born French
+queen Marie Antoinette. A musical example is from Act 2, scene 1 of
+Orfeo ed Euridice.
+The two major influences on Gluck’s work were his growing familiarity with
+traditional French opera and the spirit of the Enlightenment. In operatic terms
+this translated into an artistic goal of a non-formulaic, simple, unaffected
+expression of human feelings. In practical terms this meant that Gluck had to
+reign in his singers!
+In Orfeo ed Euridice...the arias are
+melodically simple
+and emotionally direct.
+The recitatives have
+a very high melodic
+content, irregular
+phrase structures, and
+rhythmic flexibility.
+125
+In Orfeo ed Euridice, Gluck’s version of the story of Orpheus, the arias
+are melodically simple and emotionally direct. The recitatives have a very
+high melodic content, irregular phrase structures and rhythmic flexibility.
+Everything is accompanied. Dance, hitherto a secondary element, is
+now integral to the action. Also, Gluck relies heavily on a chorus. This is
+uniquely French. The high degree of integration of dance, chorus, and solos
+is noteworthy. As a musical example we will consider Act 2, scene 1 of Orfeo
+ed Euridice.
+Gluck’s operas became a model for the next generation of French composers.
+They proved that it was possible to maintain the great tradition of French
+operatic pomp and magnificence while adhering to the spirit and new melodic
+naturalness of the Enlightenment.
+In the first half of the 19th century, Paris became the operatic capital of
+Europe. In typical French operatic tradition, early-19th-century French opera
+celebrated heroic figures, heightened dramatic situations, and magnificence.
+By the 1820s French grand opera had come into being. As royal patronage
+dwindled, opera increasingly became a middle-class entertainment to which
+the spectacular and dramatically obvious grand operas were designed to
+appeal. These operas indulged the French taste for grand spectacles and
+crowd scenes with lots of characters all singing
+at the same time.
+Giacomo
+Meyerbeer
+(1791-1864)
+almost
+singlehandedly established French grand opera.
+Born in Berlin as Jakob Liebmann Beer, he
+composed operas in both German and Italian
+before moving to France, where he earned fame
+and fortune. His operas have fallen into almost
+total obscurity. They were intended as popular
+entertainment and lack the musical and dramatic
+substance necessary to remain in the repertory.
+Nevertheless,
+Meyerbeer
+was
+particularly
+famous (and imitated widely) for his ability to
+manage large numbers of singers, dancers, and
+Giacomo Meyerbeer, now
+obscure, was admired
+and often imitated in his
+own day.
+Library of Congress, Music Division.
+126
+Lectures 23 and 24: French Opera
+choristers on stage. A good musical example is the conclusion of Act 2 from
+Les Huguenots.
+A development in tandem with grand opera was opéra comique. This type
+of opera employed spoken dialogue rather than recitative, and it featured
+somewhat less pretentious productions than grand opera. Composers
+of opéra comique included Jacques Offenbach, whose operas are still
+performed today.
+Lyric opera, another form that developed in France, represents a sort of
+halfway point between grand opera and opéra comique. Like opéra comique,
+lyric opera often uses spoken dialogue and directly appealing melodies.
+Like grand opera, lyric opera tends toward grandiosity. Included in this
+classification are Charles Gounod’s Faust and Romeo and Juliet, Camille
+Saint-Saens’ Samson and Delilah, and Georges Bizet’s (1838-1875)
+Carmen (1875).
+Carmen is one of the best-known lyric operas, its form combining elements of
+grand opera and opéra comique.
+Library of Congress, Prints and Photographs Division, LC-USZ62-23409.
+127
+Carmen remains one of the most beloved and frequently performed and
+adapted operas in the repertory. Its composer, Bizet, lived a short and
+unhappy life. He died nearly penniless three months after the premiere
+of Carmen.
+Carmen is about two very different people and their mutual destruction. It is
+a frank and powerful look at the brutal and transformational power of sex and
+desire, violence and fate. The titular character Carmen is the embodiment of
+temptation and primal, destructive sexuality. Don Jose is destroyed by his
+own sexuality, unleashed and set aflame by Carmen.
+The card scene in Act 2 of Carmen is an example of operatic drama at its
+most powerful. In this scene Carmen no longer finds Don Jose sexually
+appealing and tells him so. She makes it clear that she has no intention of
+being dominated by any man. Two of Carmen’s friends are telling each
+other’s fortunes with a deck of cards. Carmen joins them. She reads death
+in the cards. The musical motive associated with Carmen’s ultimate fate is
+heard as she turns over the cards. While her two friends sing their cheerful
+refrains, Carmen sings her fatalistic aria. Her acceptance of her fate imbues
+her with tragic beauty. As a musical example, we will consider the card trio
+from Act 2 of Carmen. ■
+128
+Lectures 23 and 24: French Opera
+
+129
+
+130
+Lectures 23 and 24: French Opera
+
+131
+132
+Lectures 23 and 24: French Opera
+
+133
+
+134
+Lectures 23 and 24: French Opera
+
+135
+
+136
+Lectures 23 and 24: French Opera
+
+137
+
+138
+Lectures 23 and 24: French Opera
+
+139
+140
+Lectures 23 and 24: French Opera
+141
+
+142
+Lectures 23 and 24: French Opera
+
+143
+
+144
+Lectures 23 and 24: French Opera
+
+145
+
+146
+Lectures 23 and 24: French Opera
+
+147
+
+148
+Lectures 23 and 24: French Opera
+
+149
+
+150
+Lectures 23 and 24: French Opera
+
+151
+
+152
+Lectures 23 and 24: French Opera
+
+153
+
+154
+Lectures 23 and 24: French Opera
+
+155
+
+156
+Lectures 23 and 24: French Opera
+
+157
+158
+Lectures 23 and 24: French Opera
+
+159
+
+160
+Lectures 23 and 24: French Opera
+
+161
+
+162
+Lectures 23 and 24: French Opera
+
+163
+
+164
+Lectures 23 and 24: French Opera
+
+165
+
+166
+Lectures 23 and 24: French Opera
+
+167
+
+168
+Lectures 23 and 24: French Opera
+
+169
+
+170
+Lectures 23 and 24: French Opera
+
+171
+
+172
+Lectures 23 and 24: French Opera
+
+173
+
+174
+Lectures 23 and 24: French Opera
+
+175
+
+176
+Lectures 23 and 24: French Opera
+
+177
+
+178
+Lectures 23 and 24: French Opera
+
+179
+
+180
+Lectures 23 and 24: French Opera
+
+181
+
+182
+Lectures 23 and 24: French Opera
+
+183
+German Opera Comes of Age
+Lecture 25
+German language opera, as an internationally-recognized genre
+of opera distinct then from the Italian and French operas we have
+studied, came into being in 1791 with... Mozart’s The Magic Flute.
+By comparison, Italian opera came into being in 1600... perhaps even
+earlier.... A distinctly French opera came into being in 1669.... Why
+did it take so long for a distinctly German operatic school to evolve?
+T
+he late development of German opera had much to do with the nature
+both of the German artistic/intellectual class and of the German
+language. True German opera-in terms of singing style and the type
+of stories set to music-evolved from native German roots.
+To understand the development of opera in different nations, it is useful to
+think about how language defines operatic style. For example, the Italian
+language lends itself to song. It is full of long, round vowels evenly
+interspersed with clean consonants that perfectly suit the melismatic/
+coloratura character of traditional Italian opera. In contrast, the French
+language does not have the clean consonants of Italian. Much less suited to
+coloratura, French lends itself better to the declamatory style developed by
+Lully. German on the other hand is a language dominated by consonants. The
+melismatic, vowel-dominated Italian singing style is not suited to German.
+Rather, German lends itself to syllabic style: one syllable per pitch.
+One type of musical performance from which German opera arose is
+singspiel. Singspiel literally means “sing-play” or “play with singing.” It is
+understood today is a partly sung, partly spoken German theatrical genre that
+had its roots in popular culture. The equivalent type of genre is England is
+called a ballad opera or operetta; in France it is opéra comique; in the U.S.A.
+it is a musical; in Italy there is no equivalent since all opera is sung. Mozart’s
+singspiel The Rescue from the Harem (1782) elevated a popular genre to the
+level of high art at a single stroke.
+184
+Lecture 25: German Opera Comes of Age
+The Magic Flute, both singspiel and opera, was the last major work Mozart
+completed before his death. It was commissioned by librettist/director/
+actor Emanuel Schikeneder for performance at a burgtheater, a type of
+music hall offering lower-middle-class entertainment. Mozart was working
+within a German tradition, but the tradition becomes operatic in his hands.
+The Magic Flute is half fairy-tale,
+filled with strange exotic people,
+beings, events, and locales, and
+half morality play about Masonic
+initiation ritual and Enlightenment
+ideals. Its music is brilliant and
+popular, highly memorable, and
+imbued with a folklike directness. A
+musical example is “Der Vogelfänger
+bin ich ja.”
+It is easy to see German opera’s
+roots in singspiel. German operatic
+melodies are well suited to the
+features of the German language, and spoken dialogue replaces dry recitative.
+Arias are simple in form; melodies are repeated and non-melismatic. Plots
+and story lines draw on German folktales with their supernatural characters
+and situations. Lacking a long, commercially profitable tradition, 19th-century
+German opera became an experimental genre.
+Carl Maria von Weber’s Der Freischütz (1821) is the definitive work
+that established 19th-century German opera. It exemplifies many of the
+characteristics of German operas from this century: Plots are drawn from
+medieval history, legend, or fairy-tale; stories typically include supernatural
+beings and happenings and stress wild, mysterious, and uncontrolled nature;
+supernatural incidents are essential plot elements; human characters often
+become the agents of supernatural forces; and the triumph of good over evil
+is often interpreted in terms of salvation or redemption.
+The Magic Flute... was the last
+major work Mozart completed
+before his death. It was
+commissioned by... Emanuel
+Schikeneder for performance
+at a burgtheater, a type of
+music hall offering lowermiddle-class entertainment.
+185
+Der Freischütz is one of the most influential operas of the 19th century. The
+famous Wolf’s Glen Scene is a brilliant depiction of supernatural horror,
+completely different from contemporary Italian bel canto opera and French
+grand and lyric opera in terms of the pervasive use of spoken dialogue,
+expressive content, and compositional technique. The content of background
+music is very strong and essential to the drama. ■
+186
+Lectures 26 and 27: Richard Wagner and Tristan und Isolde
+Richard Wagner and Tristan und Isolde
+Lectures 26 and 27
+Richard Wagner was... the single most influential, controversial, and
+talked-about composer of his time.... Ordinarily we associate this sort
+of artistic originality and power with... someone whose humanity and
+spirit reflect the high artistic goals for which they strive. Not Wagner.
+He was, frankly, one of the most repellent human beings who ever lived.
+This troubles and disappoints us.
+W
+agner (1813-1883) was megalomaniacal, ruthless, hedonistic,
+arrogant, and racist. His anti-Semitism and cries for racial purity
+approached madness. Many writers have speculated that his
+meanness sprang from an extraordinary insecurity based, in part, on his
+own unclear paternity. He demanded from society an unprecedented level of
+attention and luxury, to the point that one modern critic, Harold Schonberg,
+states that Wagner actually thought himself a god.
+Wagner was born in Leipzig in 1813. His legal father was Carl Friedrich
+Wagner, although his biological father may have been Ludwig Geyer, an
+actor and painter with whom his mother was having an affair and who was
+rumored to have been Jewish. Wagner was obsessed with the question of his
+paternity. Carl Wagner died when Richard was seven months old. Within a
+year his mother married Ludwig Geyer, who himself died seven years later.
+At fourteen Richard stopped calling himself Geyer and began using the
+name Wagner. At fifteen he decided to become a composer, despite the fact
+that he could hardly play an instrument and knew next to nothing about the
+mechanics of music.
+In terms of musical training, Wagner was an extraordinarily late bloomer.
+His two great musical influences were Beethoven’s Ninth Symphony and
+Weber’s Der Freischütz. Almost from the beginning, he wanted to write
+operas. He wrote his own libretti and controlled every aspect of his operas
+from stage design to direction. He wrote/composed thirteen complete operas.
+His early works were based on Italian, French, and German models.
+187
+Wagner’s revolutionary political activism in Germany in 1848 and 1849
+drove him into Swiss exile for nearly 10 years. While in Switzerland, he took
+a six-year break from composing, during which he reevaluated his career and
+the nature of the music he wanted to write. He had already concluded that
+both Italian and French opera were degenerate art forms. He wrote a series
+of treatises and essays that laid out his beliefs and new aesthetic doctrines.
+Like the Florentine Camerata, Wagner went back to ancient Greek drama for
+inspiration. He believed that Greek drama was superior for five reasons:
+*
+It represented a successful combination of the arts.
+*
+It took its subject matter from myth that illuminates human
+experience to the depths and in universal terms.
+*
+Both the content and the occasion of the performance had religious
+significance.
+*
+It was a religion of the purely human.
+*
+The entire community took part.
+Wagner was convinced that an artistic revolution was called for, in which
+all the resources of drama poetry, instrumental music, song, acting, gesture,
+costume, and scenery would be combined in the theatrical presentation
+of myth. He called his projected, all-encompassing music dramas
+Gesamtkunstwerk, the all-inclusive art form. A key to the concept of
+Gesamtkunstwerk was the orchestra, which had to perform for Wagner the
+same function as the chorus in a Greek drama. To achieve this orchestral/
+instrumental independence, Wagner invented the concept of leitmotif.
+A leitmotif is a musical motive associated with a particular person, thing, or
+dramatic idea. Musical examples include drink/death and desire leitmotifs
+from Tristan und Isolde. Leitmotifs are repeated, altered, fragmented,
+and developed, often in the voices, but more often in the orchestra. Each
+permutation offers some new and subtle twist on its meaning; it serves to
+underpin the truth. In Wagner’s music dramas the orchestra is no longer
+188
+Lectures 26 and 27: Richard Wagner and Tristan und Isolde
+just an accompaniment to the voices. It becomes a full partner with
+everything onstage.
+Wagner would not have formulated many of his theories about music
+drama if he had not studied Arthur Schopenhauer’s book The World as
+Will and Representation (1818). Schopenhauer (1788-1860) was a German
+philosopher. Wagner discovered Schopenhauer and his book around 1854.
+It was the most important intellectual event of Wagner’s life. Schopenhauer
+wrote that instrumental music alone was capable of expressing the deepest,
+most primal human thoughts and emotions. This inspired Wagner to develop
+the concept of leitmotif. A Wagnerian music drama unfolds on two different
+levels. The singers onstage present the world of
+human emotions, replete with the half-truths,
+delusions, and dishonesty that characterize
+conscious interaction. The orchestra reveals
+the unspoken truth. Wagner was also deeply
+affected by Schopenhauer’s view that only
+through total negation and death could salvation
+and transcendence be achieved.
+Tristan und Isolde (1859) exemplifies the
+quintessence of Wagner’s mature style. Aside
+from Beethoven’s Ninth Symphony, Tristan und
+Isolde is the most influential composition (not
+just opera) of the 19th century. It is a musical
+expression of Schopenhauer’s doctrine that existence is an inherently
+insatiable web of longings, willings, and strivings from which the only
+permanent liberation is the cessation of being.
+The opera’s prelude (overture) predicts the action to come. It is based on the
+drink/death and desire leitmotifs. The drink/death leitmotif is composed of
+an upward motive representing the physical action of raising the goblet of
+wine and a descending motive symbolic of death. It is performed together
+with a rising motive that does not resolve, symbolic of unfulfilled desire. The
+two leitmotifs are mirror images of each other: love/death and death/love,
+the underlying meaning being that, for Tristan and Isolde, love and death
+are connected.
+While in Switzerland,
+[Wagner] took a
+six-year break from
+composing, during
+which he reevaluated
+his career and the
+nature of the music
+he wanted to write.
+189
+The prelude is slow. It has no tonal center. It consists of one deceptive
+(unresolved) cadence after another, interspersed with long, pregnant pauses.
+All of this creates tension, and in doing so it prepares us for a story of
+unfulfilled emotional and sexual passion. The whole opera is, in many ways,
+one gigantic deceptive cadence after another!
+Tristan und Isolde is in three acts. Act 1 centers on the drinking of the love
+potion, Act 2 on the mortal wounding of Tristan, and Act 3 on the deaths
+of Tristan and Isolde. In Act 3, Isolde holds the dying Tristan in her arms
+and sings her transcendent liebestod (love/death) aria. It represents the
+moment at which Tristan and Isolde’s unconsummated passion transcends
+to realization at a higher plane. With the liebestod aria Wagner’s music must
+be, and is, as transcendent as the new reality that Isolde is already seeing as
+she approaches her death.
+Wagner was a paradox, representing the best and worst of human attributes.
+His music provoked huge controversy and created pro- and anti-Wagnerian
+cults. He changed music forever. ■
+190
+Lecture 28: Late Romantic German Opera-Richard Strauss and Salome
+Late Romantic German OperaRichard Strauss and Salome
+Lecture 28
+In his time, Richard Strauss was hailed as Wagner’s successor....
+Unlike Wagner, though, Strauss came to opera... relatively late in his
+compositional career. Strauss spent the first part of his career writing
+a series of extraordinary tone poems, purely orchestral works, which
+in reality functioned like instrumental operas in that each one of these
+tone poems tells a specific story and invokes explicit visual imagery. We
+should think of these tone poems as operas without words.
+R
+ichard Strauss’s (1864-1949) three greatest operas are Salome (1905),
+Elektra (1909), and Der Rosenkavalier (1911). Strauss was born in
+Munich in 1864. His father, Franz Strauss, was the most famous
+French horn player in Germany. Franz Strauss was a musical archconservative
+and anti-Wagnerian who gave his son the best and most conservative musical
+education his money and connections could buy. Franz saw to it that Richard
+received training as a pianist, violinist, conductor, and composer. Richard’s
+classically oriented compositional technique disintegrated with his eventual
+(and inevitable) exposure to the music of Hector Berlioz, Franz Liszt, and
+Richard Wagner.
+Fame came rapidly to Strauss. For a fascinated and star-hungry public, he
+inherited the mantle of Liszt and Wagner as a shocking modern composer
+and performer. The Strauss craze reached its peak in 1905 with the premiere
+of Salome, one of the most controversial operas of all time.
+The story of Salome comes from Matthew 14:6-11, which tells of the
+execution of John the Baptist by Herod Antipas at the request of Herod’s
+stepdaughter, the princess Salome. Oscar Wilde was fascinated by the story
+of Salome and wrote a play based on it that appeared in 1892. Wilde’s Salome
+is filled with a degree of eroticism, intrigue, and sexuality that is light years
+beyond the biblical account. Strauss sliced and diced a German translation of
+Wilde’s play to his own specifications, completing his opera in 1905.
+191
+Strauss’s Salome takes place on a terrace next to the banquet hall in the palace
+of Herod, circa 30-31 C.E. In his opera, Salome is a beautiful, sexually aware
+vixen of sixteen. Her character is depicted in her music. Salome is intrigued
+by the voice of John the Baptist, who is being held prisoner in a cistern next
+to the terrace. She has John brought out. His music is almost heroic and lacks
+the harmonic complexities that fill Salome’s music. An example of this is
+John’s entrance, “Wo ist er...” Salome is both repelled by and profoundly
+attracted to John. Her attempts to ingratiate herself to him are met with scorn.
+A drunken Herod, dangerously enamored of his stepdaughter, asks Salome to
+dance for him, and he promises her anything if she does. Her price for the
+dance is the head of John the Baptist. Terrified, Herod finally agrees to her
+demand. Salome embraces and kisses the severed head of John the Baptist. In
+horror Herod orders Salome killed. A
+musical example is the conclusion of
+the opera from “Sie ist ein Ungeheuer,
+deine Tochter” (“She is a monster,
+your daughter”).
+Salome is a veritable textbook of
+psychopathology. Within two years
+of its premiere, it had been performed
+in over fifty cities. Though many
+considered it pornographic, Salome is first and foremost a representative,
+from the world of opera, of the experimental, post-Victorian turn of
+the century. ■
+Strauss sliced and diced
+a German translation of
+[Oscar] Wilde’s play to
+his own specifications,
+completing his opera in 1905.
+192
+Lectures 29 and 30: Russian Opera
+Russian Opera
+Lectures 29 and 30
+Their lack of schooling in traditional music theory forced The Five to
+discover their own way of doing things, and in the process, they called
+on the materials closest at hand, which were, my friends, folk songs.
+Their frequent use of actual or imitated folk material for generating
+themes in a work has literary parallels in the borrowings by Pushkin
+and Gogol.
+T
+he rise of cultivated Russian music had much to do with the rise
+of nationalism in the 19th century. The French Revolution of 1789
+was a highly exportable model in an increasingly enlightened,
+middle-class Europe. In 1848 insurrections broke out across Europe, all
+of them eventually quelled by the ruling powers. Art replaced outlawed
+political activism as a mode of nationalistic self-expression. An example
+is the rise of musical nationalism, which characteristically incorporated
+actual folk music or folk-like music into the concert works and operas of
+Italian/non-German composers.
+Russian musical nationalism was a reaction less to the events of 1848 than
+to Russia’s fear of foreign influences. The development of concert music in
+Russia was dependent on the tastes of the aristocracy living in St. Petersburg.
+Until the 19th century, cultivated music in St. Petersburg consisted of Italian
+opera, light Viennese and Italian instrumental music, and aristocratic
+amateur concerts.
+Russia “emerged” and became part of the greater European community as a
+result of Napoleon’s defeat in 1812 and the Decembrist Revolt of 1825. The
+spirit of individual freedom and nationalism that powered the Decembrist
+Revolt was felt throughout the intellectual and artistic classes.
+In and around 1825 certain Russian writers, poets, and musicians tried to
+cultivate a uniquely Russian artistic tradition. Preeminent among these
+Russian nationalists was the poet and author Alexander Pushkin (17991837). Pushkin was a Lord Byron-inspired individualistic/nationalistic
+193
+rabble-rouser. He elevated the literary perception of the Russian language
+through the model of his own works. Among his works that were turned into
+operas are Eugene Onegin (Tchaikovsky), Queen of Spades (Tchaikovsky),
+Boris Godunov (Mussorgsky), and Ruslan and Lyudmila (Glinka).
+The history of Russian musical nationalism and opera began with Mikhail
+Glinka (1804-1857). Glinka was born into a wealthy family and received
+the piano and violin lessons typical for someone of his class. At age 20 he
+became a civil servant, working in the Ministry of Ways and Communication
+in St. Petersburg. In 1834, inspired by Pushkin and Gogol, Glinka decided
+to compose an opera in the Russian language on a Russian subject-A Life
+for the Czar. After his death in 1857 Glinka was canonized and deified as the
+father of Russian music.
+Ruslan and Lyudmila (1842) is generally considered Glinka’s masterpiece.
+Glinka’s score is filled with the sort of folk-inspired melodies, orientalisms,
+rhythmic irregularities, and orchestral effects that we have since come to
+associate with Russian music. A musical example is the overture to Ruslan
+and Lyudmila.
+The story of the opera is a fairy-tale about Ruslan and Lyudmila, two young
+aristocrats who are in love, and the sinister forces that separate them. Near
+the beginning of the opera, a chorus predicts the dramatic action. This choral
+music exemplifies the Russian style. Its main features are as follows:
+*
+Melodies are clearly folk-like and Slavic-sounding.
+*
+Dance rhythms are asymmetrical. The accents are not grouped in
+twos or threes as they are in Western music. They fall into unequal
+groupings, with accents falling all over the place. In this chorus we
+have groupings of five (so-called additive meter, where groupings
+of two and three beats are played in succession to add up to five).
+*
+The chorus sings in unison harmonies.
+*
+The word setting is syllabic. A musical example is Act 1, chorus.
+194
+Lectures 29 and 30: Russian Opera
+Among Lyudmila’s three suitors is the evil Farlaf, a sort of opera buffa bad
+guy. This is communicated through his patter aria (in rondo form). Ruslan,
+typical of Russian heroes, is a low voice, in this case a bass/baritone. His
+grief at finding his beloved Lyudmila in a coma-like sleep is expressed in the
+aria “O love of my life.”
+Following the death of Glinka in 1857, composer and teacher Mili Balakirev
+(1837-1910) quickly became the czar of Russian music. He gathered around
+him four young amateur composers (they all had other quite different
+professions). They came to be known, along with Balakirev, as The Five.
+This group included Cesar Cui, an army engineer (1835-1918); Modest
+Mussorgsky, an army officer (1839-1881); Nicolai Rimsky-Korsakov, a naval
+officer (1844-1908); and Aleksander Borodin, a scientist (1833-1887).
+To a great degree The Five were self-taught. Essential to their musical
+development was the belief that their duty was to create a Russian
+national music based on the characteristics of Russian folk music and the
+Russian language.
+A characteristically Russian music emerged from The Five. The pieces that
+they created share the following features:
+*
+They utilize Russian folk melodies or folk-like melodies as the
+essential thematic material.
+*
+They are essentially thematic, with minimal development in the
+German sense.
+*
+They are expressively powerful, lyric music that is often, to the
+Western ears, emotionally unrefined.
+Mussorgsky was the first of The Five to mature compositionally. Depression
+and alcohol led to his early death. He was known for only a handful of works,
+including his masterwork, the opera Boris Godunov.
+195
+There are six different
+versions of [Boris
+Godunov]. The most
+commonly heard
+version is one prepared
+by Mussorgsky’s friend
+Rimsky-Korsakov after
+Mussorgsky’s death.
+The story of Boris Godunov takes place between 1598 and 1605 and is based
+on historical events. There are six different versions of the opera. The most
+commonly heard version is one prepared
+by Mussorgsky’s friend Rimsky-Korsakov
+after Mussorgsky’s death. Boris Godunov
+consists of a prologue plus four acts. It is
+actually a series of set pieces, or tableaus,
+and it is based on a dramatic chronicle by
+Pushkin. Mussorgsky himself wrote the
+libretto, central to which are two issues: the
+relationship between ruler and ruled and the
+corrupting influence of power.
+No composer ever portrayed the peasant
+class as sympathetically as Mussorgsky
+does in Boris Godunov. Critical to this
+sympathetic portrayal is Mussorgsky’s extraordinary reproduction of Russian
+speech patterns in music. A musical example is the prologue, scene 2, Boris’
+ascension to the throne.
+We are introduced to Varlaam, a drunken priest, whose language and manner
+is only a step removed from the peasant class. A musical example of this
+introduction is Varlaam’s song.
+The death of Boris is as profound and moving as any moment in opera. The
+old divisions of recitative and aria are virtually nonexistent. Recitative-like
+music is always accompanied by the orchestra. A musical example is the
+death of Boris in Act 4, scene 2.
+Boris Godunov is the pinnacle of 19th-century Russian opera, a tradition only
+38 years before Boris with Glinka’s A Life for the Czar. The latter opera
+is what Otello, Tristan und Isolde, and Carmen are to 19th-century Italian,
+German, and French opera respectively: the culmination of what had come
+before and a difficult, if not impossible, act to follow. ■
+196
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+Verismo, Puccini, and Tosca
+Lectures 31 and 32
+The great operatic exponent of Italian verismo opera was Giacomo
+Antonio Domenico Michele Secondo Maria Puccini. According to
+Robert Donington, “Puccini is much the best of verismo and Tosca may
+well be the best of Puccini.”... Not long before he died, Puccini wrote
+to a friend, “Almighty God touched me with his little finger and said,
+‘Write for the theater, mind, only for the theater,’ and I have obeyed
+that supreme command.”
+V
+erismo (truth) opera grew out of the 19th-century philosophical
+movements of positivism and naturalism. Positivism posits that the
+only reality that humankind should concern itself with is observable
+fact; there are no mysteries left in the world that science cannot explain. An
+offshoot of positivism is naturalism: the study of human relations. Realist/
+verismo authors and composers tend
+to depict the worlds of the criminal,
+the dispossessed, and the demoralized
+for their emotional extremes and for
+their absence of pose and artifice.
+Giacomo
+Puccini
+(1858-1924)
+was the greatest composer of
+verismo operas. Primarily a man
+of the theater, he wrote 12 operas,
+3 of which remain among the most
+popular in the repertory: Tosca, La
+Bohème, and Madame Butterfly.
+Puccini was born in Lucca in 1858,
+the last in a five-generation line of
+respected musicians. He studied
+at the Milan Conservatory with
+Amilcare Ponchielli. His first huge
+success was La Bohème of 1896.
+Giacomo Puccini wrote three of
+the most popular operas in the
+modern repertory.
+Library of Congress, Prints and Photographs Division, LC-USZ62-33075.
+197
+Puccini was not an innovator. As a composer he was not controversial.
+Unlike Verdi, Puccini did not constantly evolve, seeking ever-greater drama
+and movement in his operas. He was, however, a superb and sympathetic
+melodist, whose other compositional skills were brought to bear directly on
+the dramatic materials before him: stage action, impulsive feeling, and truth
+in expression-often exaggerated expression.
+Many important critics, composers, and music historians of today have
+dismissed Puccini as an artless hack. They have backed up their criticisms
+with sound arguments regarding Puccini’s compositional technique and the
+content and nature of his libretti. However, opera in Italy has almost always
+been a popular entertainment, and Puccini’s operas are very much part of
+this tradition.
+We will now examine Puccini’s Tosca (1900). The large outline of the
+story is based on historical events surrounding the “liberation” of Rome by
+Napoleonic forces around 1800.
+Act 1 introduces us to the characters. Mario Cavaradossi (tenor) is the hero
+and lover of Floria Tosca, a hot-blooded, beautiful opera singer. Cesare
+Angelotti is a nationalist and freedom-fighter who has just escaped from
+prison. Vitellio Scarpia is the evil and sadistic chief of the secret police.
+Act 2 is one of the greatest of all Puccini’s operatic acts and the focal point in
+this opera. Scarpia desires Tosca and will use her to find Angelotti. Scarpia’s
+aria (“Ella verrà...”) demonstrates effortless vocal lyricism at the expense
+of dramatic reality. Scarpia could sound more evil than he does. This is the
+kind of thing that has put Tosca under fire from critics. Also noteworthy is
+Puccini’s melding of parlante, arias, etc. into a continuous flow of music. A
+musical example is Act 2 from Scarpia’s “Tosca è un buon falco!” to the end
+of Scarpia’s aria, “Ella verrà...”
+Scarpia tries to discover where Angelotti is hiding by questioning
+Cavaradossi, who resists him. A musical example is “Ov’è Angelotti?” The
+questioning turns ugly, and thenTosca enters. In her presence, Scarpia has
+Cavaradossi tortured in an adjoining room. This scene of brutal torture is
+198
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+unique in opera. Puccini piles on the agony to a climax of unbearable tension.
+Its depiction of the worst of human behavior is typical of verismo.
+Tosca cannot bear her psychological torture any longer. She tells Scarpia
+where Angelotti is hiding. Scarpia orders the end of Cavaradossi’s torture. A
+musical example is the torture scene from Scarpia’s “Orsù, Tosca, parlate” to
+his “Portatelo qui.”
+Cavaradossi learns of Napoleon’s victory at Marengo. He revives and sings
+a victory song. Scarpia orders him to the gallows and forbids Tosca to
+accompany him. Puccini continues to
+pile one climactic moment upon the
+next; please refer to the part of the
+opera from Cavaradossi’s “Vittoriá!”
+to Scarpia’s “Voi noi.”
+Tosca
+tries
+to
+negotiate
+for
+Cavaradossi’s life. Scarpia reveals
+that the price is Tosca herself. A
+musical example is the part of the
+opera
+from
+Tosca’s
+“Quanto?”
+through Scarpia’s “Già. Mi dicon venal.” Tosca is repelled and feels that
+God has abandoned her. She sings one of Puccini’s most beloved and famous
+arias, “Vissi d’arte.”
+Tosca agrees to yield to Scarpia in exchange for Cavaradossi’s life and a
+safe-conduct pass. Scarpia appears to agree to her request. He writes the
+pass, but when he tries to embrace her, she plunges a knife into him and
+kills him. Please refer to the segment of the opera from Scarpia’s “Io tenni la
+promessa” to the end of the scene.
+Puccini’s operas exhibit a wonderful combination of words and music. His
+stories are dramatically compelling, and his balance of words and music
+heightens and deepens the dramatic meaning and expressive content.
+[Puccini’s] stories are
+dramatically compelling, and
+his balance of words and
+music heightens and deepens
+the dramatic meaning and
+expressive content.
+199
+We conclude the course with an examination of Richard Strauss’s last opera,
+Capriccio (1941). Capriccio takes place outside Paris around 1775, at a
+time when Gluck’s operatic reforms were raising a storm of discussion and
+controversy. It is an opera about opera, particularly about the relationship
+between words and music. In one scene a poet, composer, and a stage director
+argue the relative merits of their respective crafts. A musical example is
+scene 9 from Capriccio.
+Is opera words or music? It is neither one exclusively, but rather an
+indefinable combination of both. The whole is always greater than its
+constituent parts. ■
+200
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+201
+
+202
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+203
+
+204
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+205
+
+206
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+207
+
+208
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+209
+
+210
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+211
+
+212
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+213
+
+214
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+215
+
+216
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+217
+
+218
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+219
+
+220
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+221
+
+222
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+223
+
+224
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+225
+
+226
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+227
+
+228
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+229
+
+230
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+231
+
+232
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+233
+
+234
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+235
+
+236
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+237
+
+238
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+239
+
+240
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+241
+
+242
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+243
+
+244
+Lectures 31 and 32: Verismo, Puccini, and Tosca
+
+245
+
+246
+Timeline
+Timeline
+c. 1440............................................. Josquin des Prez born (d. 1521).
+c. 1546............................................. Giulio Caccini born (d. 1618).
+1561................................................. Jacopo Peri born (d. c.1633).
+1562................................................. Ottavio Rinuccini born (d.1621).
+1567................................................. Claudio Monteverdi born (d. 1643).
+1573-1592....................................... Florentine Camerata.
+1588................................................. English defeat Spanish Armada.
+1598................................................. Daphne, considered first opera, by Peri
+and Corsi.
+1600................................................. Peri’s Euridice.
+1604................................................. Shakespeare’s Othello.
+1607................................................. Monteverdi’s Orfeo.
+1618................................................. Beginning of Thirty Years’ War.
+1630................................................. Boston founded by Puritans.
+1632................................................. Jean-Baptiste Lully born (d. 1687).
+1649................................................. King Charles I of England beheaded.
+1660................................................. Alessandro Scarlatti born (d. 1725).
+247
+1661................................................. Louis XIV becomes King of France.
+1675................................................. Antonio Vivaldi born (d. 1741).
+1683................................................. Jean-Philippe Rameau born (d. 1764).
+1685................................................. Revocation of Edict of Nantes
+in France.
+1687................................................. Isaac Newton’s Principia Mathematica.
+1688................................................. England’s Glorious Revolution.
+1698................................................. Pietro Metastasio born (d. 1782).
+1710................................................. Giovanni Battista Pergolesi born
+(d. 1736).
+1712................................................. Jean-Jacques Rousseau born (d. 1778).
+1714................................................. Christoph Willibald von Gluck born
+(d. 1787).
+1715................................................. Scarlatti’s Tigrane.
+1719................................................. Rediscovery of Pompeii.
+1733................................................. Pergolesi’s La serva padrona.
+1751................................................. First volumes of French Encyclopedia.
+1756................................................. Wolfgang Amadeus Mozart born
+(d.1791).
+1776................................................. Declaration of Independence.
+1781................................................. Mozart’s Idomeneo.
+248
+Timeline
+1786................................................. Mozart’s Marriage of Figaro; Carl
+Maria von Weber born (d. 1826).
+1788................................................. Arthur Schopenhauer born (d. 1860).
+1789................................................. French Revolution begins.
+1791................................................. Mozart’s The Magic Flute; Giacomo
+Meyerbeer born (d. 1864).
+1792................................................. Gioacchino Antonio Rossini born
+(d. 1868).
+1797................................................. Gaetano Donizetti born (d. 1848).
+1801................................................. Vincenzo Bellini born (d. 1835).
+1804................................................. Mikhail Glinka born (d. 1857).
+1808................................................. Goethe’s Faust.
+1813................................................. Giuseppe Verdi born (d. 1901); Richard
+Wagner born (d. 1883).
+1815................................................. Battle of Waterloo.
+1833................................................. Aleksandr Borodin born (d. 1887).
+1835................................................. Cesar Cui born (d. 1918).
+1837................................................. Mili Balakirev born (d. 1910).
+1838................................................. Queen Victoria crowned; George Bizet
+born (d. 1875).
+1839................................................. Modest Mussorgsky born (d. 1881).
+249
+1841................................................. Saxophone invented.
+1842................................................. Glinka’s Russlan and Lyudmila.
+1844................................................. Nicolai Rimsky-Korsakov born
+(d. 1908).
+1848................................................. Communist Manifesto by Marx
+and Engels.
+1853................................................. Crimean War begins.
+1858................................................. Giacomo Puccini born (d. 1924).
+1859................................................. Wagner’s Tristan und Isolde.
+1861................................................. Russian serfs emancipated.
+1863................................................. Lincoln’s Gettysburg Address.
+1864................................................. Richard Strauss born (d.1949).
+1868-1869....................................... Mussorgsky’s Boris Godunov.
+1869................................................. Opening of Suez Canal.
+1870................................................. Franco-Prussian War.
+1877................................................. Invention of phonograph.
+1900................................................. Freud’s The Interpretation of Dreams;
+Puccini’s Tosca.
+1901................................................. Boer War.
+1905................................................. Einstein’s special theory of relativity.
+250
+Timeline
+1918................................................. Armistice ending the First World War.
+1920................................................. League of Nations formed.
+1939................................................. Beginning of World War II.
+1941................................................. Strauss’s Capriccio.
+251
+Glossary
+aria: The general term for an extended solo in opera-the equivalent of a
+soliloquy-which brings the action and “real time” to a temporary halt, and
+in which the character expresses his or her feelings about the action and
+events just described. Arias generally have a high melodic profile and are
+typically accompanied by the full orchestra.
+aria da capo: A baroque aria form schematized as A-B-A ́. An initial musical
+phrase (A) is followed by a contrasting passage (B). The initial phrase is then
+recapitulated but now embellished and ornamented by the singer.
+arioso: A sung passage with enough melodic contour to sound aria-like, but
+which has a syllabic sort of setting and the narrative quality of a recitative.
+baritone: The middle category of male voice, higher in range and lighter in
+timbre than bass, but lower and heavier than tenor.
+bass: The lowest category male voice-rich, dark, heavy, and powerful.
+basso profundo: An unusually deep bass voice.
+bel canto opera: A style of early-19th-century Italian opera that stresses
+simple, songlike melodies and harmonic accompaniment and that cultivates
+a highly decorous style of singing.
+cadenza: A florid, improvised passage to be performed by singers before the
+final bars of an aria or movement.
+castrato: A male soprano whose soprano voice has been preserved by
+castration prior to puberty.
+cavatina: A slow and lyric aria meant to display the singer’s breath control,
+line, and beauty of tone.
+252
+Glossary
+coloratura: Literally, “coloration” or “coloring.” As used in music, the term
+refers to brilliantly ornamented writing for the voice, or to the type of voice
+agile enough to specialize in such music.
+coloratura soprano: The highest of the soprano voices, characterized by
+broad range, clear quality, and exceptional agility.
+comic opera: An expression sometimes used in English either as a translation
+of the French opéra comique or the Italian opera buffa.
+commedia dell’arte: Traveling musical companies that originated in
+16th-century Italy. Their performances led eventually to comic opera.
+contralto: The lowest category of female voice.
+countertenor: An exceptionally high male voice, comparable to the
+female contralto.
+dramatic voice: A heavier, darker, and more forceful voice than a lyric
+voice; used in reference to soprano, tenor, and baritone voices.
+ensemble: Continuously sung passages in which any number of singers may
+participate. Ensembles were typically used to end acts. They reached their
+highest state of development in opera buffa.
+Gesamtkunstwerk: “The all-inclusive art form,” Richard Wagner’s term for
+his all-encompassing music dramas.
+grand opera: A spectacular and dramatic genre of opera, developed in early19th-century France and designed to appeal especially to the middle class.
+This term is often used to refer to 19th-century opera in general.
+homophony: A melodic texture in which one melody line predominates with
+all other musical material heard as secondary or as accompaniment.
+253
+intermezzo: A comic interlude inserted between the acts of Italian opera
+seria during the second half of the 17th century and the first half of the
+18th century.
+intermezzo/Intermedio: Musical prologues and interludes inserted into the
+spoken Italian dramas of the late 16th century.
+leitmotif: A theme or motive associated with a particular person, thing, or
+dramatic idea.
+libretto: Literally “little book.” The verbal text of an opera, written for the
+composer to set to music.
+lyric opera: An operatic genre that combines opéra comique’s use of spoken
+dialogue and direct, appealing melodies with grand opera’s tendency toward
+numerous performers and grandiose singing.
+lyric voice: A fairly light, warm, clear, and flexible voice; used in reference
+to soprano, tenor, and baritone voices.
+madrigal: A work for four to six voices that freely mixes polyphonic and
+homophonic textures and uses word-painting.
+melodrama: A genre of musical theater that combines spoken dialogue with
+background music.
+mezzo-soprano: The middle category of female voice, between contralto
+and soprano.
+monophony: A melodic texture consisting of a single unaccompanied
+melody line.
+music drama: An operatic form created by Richard Wagner. Refers to a
+through-composed operatic work which stresses dramatic and psychological
+content and in which voices and orchestra are completely intertwined and of
+equal importance.
+254
+Glossary
+opera: A drama which combines soliloquy, dialogue, scenery, action, and
+continuous (or nearly continuous) music, the whole greater than the parts.
+opera buffa: A general designation for Italian operas of the middle and
+late 18th century that do not come under the heading of opera seria. These
+productions were melodically simpler and more “popular” than Baroque
+opera seria.
+opéra comique: A popular French operatic genre that developed concurrently
+with grand opera in the early 19th century but employed spoken dialogue
+rather than recitative and featured somewhat less pretentious productions
+than grand opera.
+opera seria: “Serious” opera of the Baroque era-elaborate and
+grandiose productions typically based on subjects from ancient history
+and/or mythology.
+operetta: Literally, “little opera.” During the 19th century, the term came to
+mean a lighter type of opera, usually with spoken dialogue separating the
+musical numbers.
+overture: An instrumental prelude to an opera.
+parlante: Literally, “talking”; a compositional technique used by Giuseppe
+Verdi and other late-19th-century operatic composers in which recitativelike vocal lines were underlaid with continuous thematic music played
+by the orchestra.
+pastorale: The style of dramatic poetry that dominated Italian theater in
+the late 16th and early 17th centuries, featuring sylvan settings and mild love
+adventures and usually ending happily.
+polyphony: A melodic texture consisting of two or more simultaneous
+melody lines of equal importance.
+255
+recitative: A style of writing for the voice in which the rhythms and
+inflections of speech are retained. In opera, it is used for action, dialogue, and
+narrative. Recitatives are most typically secco or “dry” (i.e., accompanied
+only by basso continuo).
+ritornello: An instrumental refrain.
+sinfonia: An independent musical piece that acts as an introduction
+or a postlude.
+singspiel: German for “sing-play.” Refers to a partly sung, partly spoken
+German theatrical genre with its roots in popular culture.
+soprano: The highest category of female voice.
+spinto soprano: The soprano voice lying between the lyric and dramatic
+soprano voices and having qualities of both.
+tenor: The highest category of male voice.
+tone poem: A purely instrumental work that tells a specific story and invokes
+explicit imagery; a term created by Richard Strauss.
+verismo opera: A genre of opera characterized by dramatic and expressive
+realism and naturalism, especially in the portrayal of people, events, and
+emotions. This genre was popular among Italian and French opera composers
+in the late 19th and early 20th centuries.
+voci bianchi: Literally, “white voices,” referring to those of the castrati.
+word-painting: A compositional technique that seeks to form an expressive
+syntax by matching literary descriptions with corresponding musical events;
+this technique is characteristic of madrigals.
+256
+Biographical Notes
+Biographical Notes
+Bernard de Ventadorn (c. 1150-1180): Important French troubadour poet
+and composer of the second half of the 12th century.
+Bizet, Georges (183875): French opera composer famous for Carmen,
+his greatest work and the most popular opera of all time. A master dramatist,
+Bizet deftly establishes character and mood through his music.
+Boito, Arrigo (1842-1918): Italian librettist and composer. Boito’s libretti
+for Verdi’s Otello and Falstaff are considered among the greatest in all
+Italian opera.
+Da Ponte, Lorenzo (1749-1838): Italian librettist and poet. Da Ponte rose
+to the peak of his achievement with his libretti for Mozart’s operas The
+Marriage of Figaro, Don Giovanni and Così fan tutte.
+Caccini, Giulio (15511618): One of the earliest Italian opera composers
+and a member of the Florentine Camerata.
+Gesualdo, Carlo, Prince of Venosa (c. 1560-1613): Italian lutenist
+and composer, famous for his innovations of harmonic progressions
+and dissonance.
+Glinka, Mikhail (1804-1857): Russian composer regarded as the founder
+of Russian musical nationalism. His operatic masterpiece is Ruslan and
+Lyudmila of 1836.
+Gluck, Christoph Willibald (1714-1787): Major composer who effected a
+synthesis of elements of Italian opera and traditional French opera. Essential
+features of his operatic style include melodically simple and emotionally
+direct arias; recitatives that demonstrate a high melodic content; the use of
+dance as integral to the dramatic action; strong reliance on choruses, and a
+high degree of integration of dance, chorus and solos.
+257
+Hofmannsthal, Hugo von (1874-1929): Great Austrian librettist who wrote
+the libretti for many of Richard Strauss’s operas.
+Josquin des Prez (c. 1440-1521): Preeminent composer of the Renaissance
+who used both polyphonic and homophonic styles. His madrigals represent
+the Renaissance ideal of emotional and character expressivity.
+Leonin (Magister Leoninus) (c. 1135-c. 1201): Composer and poet of the
+Notre Dame school and greatest exponent of florid organum.
+Lully, Jean-Baptiste (1632-1687): Major French composer, who laid the
+foundation for the French operatic tradition. Lully created a national style
+that focused on magnificence, tragic drama and dance. He designed a type
+of recitative that was modeled on spoken drama, using one pitch per syllable
+and reflecting the flexibility of the French language, with its continuous
+changes of meter. His arias tend to be short and limited in vocal range, with
+an emphasis on clear enunciation.
+Machaut, Guillaume de (c. 1300-1377): Important composer of sacred and
+secular music; master of polyphonic technique and musical eloquence.
+Mahler, Gustav (1860-1911): Great Austrian composer and opera conductor
+of the late romantic era. Although he never wrote an opera, Mahler was a
+master of smaller-scale vocal music and his orchestral music has deep
+affinities with vocal music in its expressive content.
+Metastasio, Pietro (1698-1782): Greatest librettist of the first half of the
+18th century. Metastasio standardized his libretti into a formulaic dramatic
+procedure and formularized arias into a structure known as the “da capo”
+aria. His reforms influenced the development of opera seria.
+Meyerbeer, Giacomo (1791-1864): German-born composer who almost
+single-handedly established French grand opera. Meyerbeer was famous for
+his ability to manage enormous forces on stage. His most famous opera is
+Les Huguenots of 1836. His operas have fallen into obscurity because they
+lack musical and dramatic substance.
+258
+Biographical Notes
+Monteverdi, Claudio (1567-1643): Italian composer credited with the
+creation of the first opera, Orfeo of 1607. Monteverdi did not invent
+opera, but elevated it to a level of artistic viability and substance it had not
+previously enjoyed. His most important contribution to the genre was an
+elevated form of recitative: arioso. He was the first composer to use purely
+instrumental passages in ensemble numbers in opera. He was in advance of
+his time in his use of dissonance and chromatic harmonies and in his ability
+to express fundamental emotions through music. Many of his operas are still
+performed today.
+Mozart, Wolfgang Amadeus (1756-1791): Great Austrian composer of
+the classical era. His operas are widely regarded as his greatest contribution
+to musical history. A major aspect of Mozart’s significance as an opera
+composer is his unprecedented genius for musical characterization and
+dramatic momentum. He is a consummate master of complex and subtle
+vocal and orchestral manipulation. Mozart’s music does not just decorate the
+libretto. It creates a whole new drama, revealing subtleties and truths that
+go beyond the libretto. It energizes the dramatic action and fleshes out his
+characters, imbuing them with an extraordinary range of moods, emotions,
+subtlety, unconscious motivation and humanity.
+Mussorgsky, Modest (1839-1881): Great Russian composer and member of
+the so-called Russian Five, a group of composers who established the Russian
+national style of the mid to late 19th century. His opera Boris Godunov is the
+pinnacle of Russian opera.
+Pergolesi, Giovanni (1710-1736): Italian composer of La serva padrona
+(1733), the first important opera buffa that laid the foundation for subsequent
+contributions to the genre.
+Peri, Jacopo (1561-1633): One of the earliest Italian opera composers and
+member of the Florentine Camerata. Peri is known for his operas Daphne
+and Euridice.
+Puccini, Giacomo (1858-1924): Great Italian composer of universally
+popular operas. Puccini was the greatest exponent of the opera verismo style,
+which found inspiration in the dark side of human nature. He was a superb
+259
+lyricist and consummate dramatist. Among his best-loved and renowned
+operas are Madam Butterfly, Tosca and La Bohème.
+Rameau, Jean-Philippe (1683-1764): Foremost French composer of the
+18th century. Rameau’s operas display much less contrast between aria and
+recitative than contemporary Italian operas. Although Rameau’s operas are
+rarely heard outside France because they are tailored to particular French
+tastes, they are worth seeking out for their musical value.
+Rinuccini, Ottavio (1562-1621): Italian poet/librettist and member of the
+Florentine Camerata. Rinuccini wrote the libretti for the earliest operas:
+Caccini’s Euridice and Peri’s Daphne.
+Rossini, Gioacchino (1792-1868): Greatest Italian composer of the bel
+canto style. Rossini had a great gift for wit, comedy and compositional
+innovation. He pioneered the use of strings instead of harpsichord or piano
+to accompany recitative. He invented the long, orchestral type of crescendo
+known as the “Rossini crescendo.” He was a master of orchestral color and
+musical characterization. His opera, The Barber of Seville remains one of
+the best-loved and greatest comic operas of all time. Its most famous aria,
+“Largo al factotum,” introduces the character of Figaro and is a brilliant
+example of musical characterization.
+Rousseau, Jean-Jacques (1712-1778): Swiss-born French philosopher
+and composer who embraced the Italian opera buffa genre as an example of
+opera appropriate to the Enlightenment. His Le Devin du village (1752) is
+very close to the popular French tradition of opéra comique.
+Scarlatti, Alessandro (1660-1725): Founder of the Neapolitan school
+of opera, Scarlatti’s operas exerted substantial influence on other
+opera composers.
+Strauss, Richard (1864-1949): Brilliant German composer, whose music
+stretches Wagnerian concepts to further limits. Strauss’s psychopathological
+and erotic masterpiece Salome represents experimental, post-Victorian trends
+at the turn of the 20th century.
+260
+Biographical Notes
+Verdi, Giuseppe (1813-1901): Greatest Italian opera composer of the
+second half of the 19th century. Verdi’s operas endure because of their use of
+well-written libretti, their melodic beauty, their focus on human emotions,
+their psychological insight, and their unsurpassed dramatic power. Among
+Verdi’s greatest operas are Rigoletto, La Traviata and Otello.
+Wagner, Richard (1813-1883): Great German composer whose operas
+revolutionized music and whose opera, Tristan and Isolde is considered,
+along with Beethoven’s Ninth Symphony, the most influential composition
+of the 19th century. Wagner developed the concept of the music drama
+(Gesamtkunstwerk) as an artistic genre that encompasses all types of art:
+drama, music, poetry, dance, etc. He created the leitmotif whereby musical
+motives are assigned to characters, things or concepts and he gave the
+orchestra unprecedented power as the purveyor of inner meanings and
+unspoken truths.
+Weber, Carl Maria von (1786-1826): German composer whose opera Der
+Freischütz became the definitive work that established 19th-century German
+opera, characterized by the use of spoken dialogue, and plots that hinge on
+the supernatural as found in German medieval legend.
+Weelkes, Thomas (c. 1575-1623): One of the great English madrigal
+composers. Weelkes was a master of word painting.
+261
+Bibliography
+General Sources
+Donington, Robert. Opera and its Symbols. Yale University Press, 1990.
+Grout, Donald. A Short History of Opera. 2d ed. Columbia University
+Press, 1965.
+Grout, Donald, and Claude Palisca. A History of Western Music. 5th ed.
+W.W. Norton, 1996.
+Hamm, Charles. Opera. Allyn and Bacon, 1966.
+Kerman, Joseph. Opera as Drama. University of California Press, 1988.
+Mordden, Ethan. Opera Anecdotes. 1985. Reprint, Norton, 1996.
+New Grove Dictionary of Music, The. Macmillan Publishers, 1980.
+Palisca, Claude, ed. Norton Anthology of Western Music. 3d ed.
+W. W. Norton, 1980.
+Plaut, Eric. Grand Opera-Mirror of the Western Mind. Ivan R. Dee, 1993.
+Schonberg, Harold. The Lives of the Great Composers. Norton, 1970.
+Weiss, Piero, and Richard Taruskin. Music in the Western World.
+Schirmer, 1984.
+Italian Opera
+Kimbell, David. Italian Opera. Cambridge University Press, 1991.
+262
+Bibliography
+Mozart
+Dent, Edward. Mozart’s Operas. Clarendon/Oxford University Press, 1991.
+Heartz, Daniel. Mozart’s Operas. University of California Press, 1990.
+Mann, William. The Operas of Mozart. Oxford University Press, 1977.
+Puccini
+Osborne, Charles. The Complete Operas of Puccini. Atheneum, 1982.
+Strauss
+Del Mar, Normen. Richard Strauss-A Critical Commentary of His Life and
+Works. Cornell University Press, 1986.
+Verdi
+Budden, Julien. The Operas of Verdi. Cassell, 1973.
+Hepokoski, James. Otello. Cambridge University Press, 1987.
+Phillips-Matz. Verdi. Oxford University Press, 1993.
+Wagner
+Magee, Brian. Aspects of Wagner. Oxford University Press, 1988.
+Millington, Barry. Wagner. Princeton University Press, 1984.
