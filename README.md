@@ -12,14 +12,14 @@ A Python tool for extracting content from PDFs and other documents, then splitti
 - Optional OpenAI-powered cleanup when `OPENAI_API_KEY` is provided
 - Token-aware splitting (uses mlx-embeddings for efficient token counts)
 - Hierarchical splitting strategy (paragraphs → lines → sentences → words)
-- Output format: one chunk per line for easy processing
+- Structured JSONL output (`*_docs.jsonl` + `*_chunks.jsonl`) for durable storage and re-embedding
 
 ## Installation
 
 1. Install required dependencies:
 
 ```bash
-pip install PyMuPDF mlx-embeddings numpy llama-index langchain langchain-text-splitters
+pip install PyMuPDF mlx-embeddings numpy faiss-cpu llama-index langchain langchain-text-splitters openai python-dotenv
 ```
 
 2. Make the script executable (optional):
@@ -40,8 +40,8 @@ This will:
 - Extract text from `input.pdf`
 - Write the cleaned text to `output_extracted.txt`
 - Split it into chunks of ~256 tokens each
-- Write chunks to `output_chunks.txt` (one per line)
-- Save MLX embeddings to `output_embeddings.npy`
+- Persist chunk metadata + embeddings to `output_chunks.jsonl`
+- Write document-level provenance to `output_docs.jsonl`
 
 ### Advanced Usage
 
@@ -71,19 +71,18 @@ After chunking, you can query the embeddings with FAISS:
 
 ```bash
 python chunk_search.py \
-  --chunks output_chunks.txt \
-  --embeddings output_embeddings.npy \
+  --chunks output_chunks.jsonl \
   --query "Monteverdi opera reforms" \
   --top-k 3 \
   --with-context
 ```
 
-This prints the best-matching chunk(s) plus optional neighbors for quick inspection.
+This prints the best-matching chunk(s) with doc IDs, page numbers, spans, and optional neighbors for quick inspection.
 
 ### Command-Line Options
 
 - `input_file` - Path to input file (PDF, TXT, or Markdown)
-- `output_file` - Base name for output files (will create `*_extracted.txt` and `*_chunks.txt`)
+- `output_file` - Base name for output files (creates `*_extracted.txt`, `*_docs.jsonl`, and `*_chunks.jsonl`)
 - `--chunk-size` - Maximum tokens per chunk (default: 256)
 - `--chunk-overlap` - Token overlap between consecutive chunks (default: 30 tokens)
 - `--strategy` - Chunking approach to use (`smart`, `sentence`, `llama`, or `langchain`)
@@ -92,28 +91,23 @@ Add an `.env` file with `OPENAI_API_KEY=...` (or export the variable in your she
 
 ### Output Format
 
-The tool creates two output files:
+Each run emits three artifacts:
 
-1. **`*_extracted.txt`** - Cleaned extracted text
-2. **`*_chunks.txt`** - Chunked text with one chunk per line
-3. **`*_embeddings.npy`** - NumPy array containing an embedding vector for each chunk
+1. **`*_extracted.txt`** – Cleaned extracted text (exactly what was chunked and embedded).
+2. **`*_docs.jsonl`** – One JSON object per source with provenance (`doc_id`, extractor info, pipeline version, etc.).
+3. **`*_chunks.jsonl`** – One JSON object per chunk containing the embedded text, spans, embeddings, model metadata, and overlap details.
 
-The chunks file has newlines within chunks escaped as `\n` so each chunk occupies exactly one line. This makes it easy to process with standard Unix tools:
+Because the chunks are JSON, you can inspect or filter them with standard tools:
 
 ```bash
 # Count chunks
-wc -l output_chunks.txt
+jq -c '.' output_chunks.jsonl | wc -l
 
-# View first chunk
-head -n 1 output_chunks.txt
+# View the first chunk record
+head -n 1 output_chunks.jsonl | jq
 
-# Read cleaned extracted text
+# Read the cleaned extracted text
 less output_extracted.txt
-
-# Process each chunk
-while IFS= read -r chunk; do
-    echo "Processing: ${chunk:0:50}..."
-done < output_chunks.txt
 ```
 
 ## How It Works
@@ -125,12 +119,13 @@ The tool uses a lightweight PyMuPDF helper (`pdf_extractor.py`) to read PDFs and
 ```python
 from pdf_extractor import extract_text_from_pdf
 
-text = extract_text_from_pdf("filename.pdf")
+result = extract_text_from_pdf("filename.pdf")
+text = result.final_text  # cleaned (optionally AI-polished) text
 ```
 
 Plain `.txt` and `.md` files are read directly from disk without additional processing.
 
-If an `OPENAI_API_KEY` environment variable is present (for example via a local `.env` file), the raw extracted text is additionally passed through OpenAI's `gpt-4o-mini` for light cleanup before chunking.
+If an `OPENAI_API_KEY` environment variable is present (for example via a local `.env` file), the raw extracted text is additionally passed through OpenAI's `gpt-5` for light cleanup before chunking.
 
 ### 2. Smart Chunking
 
@@ -156,11 +151,7 @@ If you select the `llama` strategy, the tool delegates chunking to `llama_index.
 
 ### 3. Output
 
-Chunks are written to the output file with:
-- One chunk per line
-- Newlines escaped as `\n`
-- Statistics printed to console
-- Embeddings saved alongside the chunks for downstream vector search
+Each chunk is stored as a JSON object containing the embedded text, spans, embedding vector, and model metadata. This makes it straightforward to rebuild FAISS indices, audit changes, or migrate to new embedding models without re-running extraction.
 
 ## Examples
 
@@ -176,30 +167,23 @@ Extracting content from: research_paper.pdf
 Extracted 45230 characters
 Estimated tokens: 11307
 
-Writing extracted text to: chunks_extracted.txt
-✓ Successfully wrote extracted text to chunks_extracted.txt
+✓ Wrote cleaned text to chunks_extracted.txt
 
 Chunking with size=500, overlap=75, strategy=smart
 Created 24 chunks
 
-Writing chunks to: chunks_chunks.txt
-✓ Successfully wrote 24 chunks to chunks_chunks.txt
-
 Generating embeddings for 24 chunks
 Embeddings shape: (24, 384)
 
-Writing embeddings to: chunks_embeddings.npy
-✓ Successfully wrote embeddings to chunks_embeddings.npy
+📄 Output files:
+  Extracted:  chunks_extracted.txt
+  Document metadata: chunks_docs.jsonl
+  Chunks & embeddings: chunks_chunks.jsonl
 
 Chunk statistics:
   Min tokens: 387
   Max tokens: 500
   Avg tokens: 476.2
-
-📄 Output files:
-  Extracted:  chunks_extracted.txt
-  Chunks:     chunks_chunks.txt
-  Embeddings: chunks_embeddings.npy
 ```
 
 ### Example 2: Large documents with bigger chunks
@@ -211,19 +195,22 @@ python pdf_chunker.py large_book.pdf book_chunks.txt --chunk-size 2000 --chunk-o
 ### Example 3: Process the output
 
 ```python
-# Read chunks back in Python
-with open("output_chunks.txt", "r", encoding="utf-8") as f:
-    chunks = [line.strip().replace("\\n", "\n") for line in f]
-
-# Load embeddings
+import json
 import numpy as np
-embeddings = np.load("output_embeddings.npy")
 
-# Read cleaned text
+chunks = []
+embeddings = []
+with open("output_chunks.jsonl", "r", encoding="utf-8") as f:
+    for line in f:
+        record = json.loads(line)
+        chunks.append(record["text"])
+        embeddings.append(record["embedding"])
+
+embedding_matrix = np.array(embeddings, dtype=np.float32)
+
 with open("output_extracted.txt", "r", encoding="utf-8") as f:
     extracted = f.read()
 
-# Process each chunk
 for i, chunk in enumerate(chunks, 1):
     print(f"Chunk {i}: {len(chunk)} chars")
     # Send to LLM, analyze, etc.

@@ -9,7 +9,8 @@ from __future__ import annotations
 import os
 import re
 import unicodedata
-from typing import List
+from dataclasses import dataclass
+from typing import List, Tuple
 
 import fitz  # PyMuPDF
 
@@ -46,6 +47,21 @@ Do not change the text structure, do not write conclusions about it. Your only j
 Keep the text in its original language, regardless of what it is."""
 
 
+@dataclass(frozen=True)
+class PageContent:
+    number: int
+    raw: str
+    clean: str
+
+
+@dataclass(frozen=True)
+class ExtractionResult:
+    final_text: str
+    clean_text: str
+    pages: List[PageContent]
+    clean_page_offsets: List[int]
+    ai_used: bool
+    extractor: str
 def clean_pdf_text(text: str) -> str:
     """Normalize common PDF artifacts while keeping the text readable."""
     if not text:
@@ -126,15 +142,9 @@ def clean_pdf_text(text: str) -> str:
     return text.strip()
 
 
-def extract_text_from_pdf(pdf_path: str) -> str:
+def extract_text_from_pdf(pdf_path: str) -> ExtractionResult:
     """
     Extract text from a PDF file using PyMuPDF and clean the output.
-
-    Args:
-        pdf_path: File system path to the PDF.
-
-    Returns:
-        Cleaned text extracted from the document.
     """
     if not os.path.exists(pdf_path):
         raise FileNotFoundError(f"PDF file not found: {pdf_path}")
@@ -144,34 +154,53 @@ def extract_text_from_pdf(pdf_path: str) -> str:
     except Exception as exc:  # pragma: no cover - mirrors upstream helper
         raise RuntimeError(f"Failed to open PDF: {exc}") from exc
 
-    full_text: List[str] = []
     extraction_flags = (
         fitz.TEXT_PRESERVE_LIGATURES
         | fitz.TEXT_PRESERVE_WHITESPACE
         | fitz.TEXT_PRESERVE_IMAGES
     )
 
+    page_contents: List[PageContent] = []
     try:
-        for page in doc:
-            full_text.append(page.get_text(flags=extraction_flags))
+        for number, page in enumerate(doc, start=1):
+            raw_text = page.get_text(flags=extraction_flags)
+            clean_text = clean_pdf_text(raw_text)
+            page_contents.append(PageContent(number=number, raw=raw_text, clean=clean_text))
     finally:
         doc.close()
 
-    combined_text = "".join(full_text)
-    cleaned = clean_pdf_text(combined_text)
-    return _apply_ai_cleanup_if_configured(cleaned)
+    clean_parts: List[str] = []
+    offsets: List[int] = []
+    current_offset = 0
+    for page in page_contents:
+        offsets.append(current_offset)
+        clean_parts.append(page.clean)
+        current_offset += len(page.clean)
+    combined_clean = "".join(clean_parts)
+
+    final_text, ai_used = _apply_ai_cleanup_if_configured(combined_clean)
+    extractor_info = _build_extractor_info(extraction_flags)
+
+    return ExtractionResult(
+        final_text=final_text,
+        clean_text=combined_clean,
+        pages=page_contents,
+        clean_page_offsets=offsets,
+        ai_used=ai_used,
+        extractor=extractor_info,
+    )
 
 
-def _apply_ai_cleanup_if_configured(text: str) -> str:
+def _apply_ai_cleanup_if_configured(text: str) -> Tuple[str, bool]:
     if not text:
-        return text
+        return text, False
     if OpenAI is None:
         print("Skipping AI cleanup: openai package not installed")
-        return text
+        return text, False
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
         print("Skipping AI cleanup: OPENAI_API_KEY not set")
-        return text
+        return text, False
 
     try:
         print(f"Running AI cleanup with OpenAI model {CLEANUP_MODEL}")
@@ -186,11 +215,23 @@ def _apply_ai_cleanup_if_configured(text: str) -> str:
         cleaned = response.choices[0].message.content
         if cleaned:
             print("✓ AI cleanup succeeded")
-            return cleaned
+            return cleaned, True
         print("Warning: AI cleanup returned empty content, using raw cleaned text")
     except Exception as exc:  # pragma: no cover - network call
         print(f"Warning: AI cleanup failed ({exc}), using raw cleaned text")
-    return text
+    return text, False
 
 
-__all__ = ["extract_text_from_pdf", "clean_pdf_text"]
+def _build_extractor_info(flags: int) -> str:
+    active: List[str] = []
+    if flags & fitz.TEXT_PRESERVE_LIGATURES:
+        active.append("LIG")
+    if flags & fitz.TEXT_PRESERVE_WHITESPACE:
+        active.append("WHITESPACE")
+    if flags & fitz.TEXT_PRESERVE_IMAGES:
+        active.append("IMAGES")
+    flag_str = "|".join(active) if active else "DEFAULT"
+    return f"pymupdf@{getattr(fitz, '__version__', 'unknown')} flags={flag_str}"
+
+
+__all__ = ["extract_text_from_pdf", "clean_pdf_text", "ExtractionResult", "PageContent"]

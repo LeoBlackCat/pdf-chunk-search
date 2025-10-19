@@ -5,10 +5,12 @@ Lightweight FAISS-backed search over chunk embeddings.
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
-import re
-from typing import Iterable, List, Sequence, Tuple
+from typing import Iterable, List, Tuple
+
+import json
 
 import faiss  # type: ignore
 import numpy as np
@@ -16,14 +18,43 @@ import numpy as np
 from embeddings import embed_texts
 
 
-def load_chunks(path: Path) -> List[str]:
-    with path.open("r", encoding="utf-8") as f:
-        return [line.rstrip("\n") for line in f]
+def load_chunk_records(path: Path) -> tuple[List[dict], np.ndarray]:
+    records: List[dict] = []
+    vectors: List[np.ndarray] = []
+    with path.open("r", encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if not line:
+                continue
+            data = json.loads(line)
+            vector = np.array(data.get("embedding", []), dtype=np.float32)
+            if vector.ndim == 1 and vector.size:
+                vectors.append(vector)
+            elif vector.size == 0:
+                vectors.append(np.zeros((0,), dtype=np.float32))
+            else:
+                raise ValueError("Expected 1-D embedding vectors in chunks JSONL")
+            records.append(data)
+
+    if not vectors:
+        return records, np.zeros((0, 0), dtype=np.float32)
+
+    dim = max((vec.size for vec in vectors), default=0)
+    if dim == 0:
+        return records, np.zeros((len(vectors), 0), dtype=np.float32)
+
+    matrix = np.zeros((len(vectors), dim), dtype=np.float32)
+    for idx, vec in enumerate(vectors):
+        if vec.size:
+            matrix[idx, : vec.size] = vec
+    return records, matrix
 
 
 def build_index(vectors: np.ndarray) -> faiss.IndexFlatIP:
     if vectors.ndim != 2:
         raise ValueError(f"Embeddings must be 2-D (got shape {vectors.shape})")
+    if vectors.shape[0] == 0 or vectors.shape[1] == 0:
+        raise ValueError("No embeddings available to build an index")
     dim = vectors.shape[1]
     index = faiss.IndexFlatIP(dim)
     index.add(vectors)
@@ -32,7 +63,7 @@ def build_index(vectors: np.ndarray) -> faiss.IndexFlatIP:
 
 def search_chunks(
     query: str,
-    chunks: Sequence[str],
+    records: List[dict],
     embeddings: np.ndarray,
     top_k: int = 3,
     include_neighbors: bool = False,
@@ -44,18 +75,21 @@ def search_chunks(
     if query_vec.size == 0:
         return []
 
-    recall_k = _recall_k(top_k, len(chunks))
+    recall_k = _recall_k(top_k, len(records))
     index = build_index(embeddings)
     D, I = index.search(query_vec, recall_k)
 
     candidates = []
     for score, idx in zip(D[0], I[0]):
-        if idx < 0 or idx >= len(chunks):
+        if idx < 0 or idx >= len(records):
             continue
+        record = records[idx]
         candidates.append(
             {
-                "index": int(idx),
-                "text": chunks[idx],
+                "index": record.get("id", int(idx)),
+                "list_index": int(idx),
+                "record": record,
+                "text": record.get("text", ""),
                 "cos": float(score),
                 "vec": embeddings[idx],
             }
@@ -66,16 +100,28 @@ def search_chunks(
 
     results: List[dict] = []
     for item in final:
+        record = item.get("record", {})
         payload = {
-            "index": int(item["index"]),
+            "chunk_id": record.get("id", item.get("index")),
+            "doc_id": record.get("doc_id"),
+            "page": record.get("page"),
+            "span": record.get("span"),
             "score": float(item.get("rerank", item.get("cos", 0.0))),
             "cosine": float(item.get("cos", 0.0)),
-            "chunk": item["text"],
+            "text": record.get("text", item.get("text", "")),
         }
+        if clean_span := record.get("clean_span"):
+            payload["clean_span"] = clean_span
         if include_neighbors:
-            idx = payload["index"]
-            payload["previous"] = chunks[idx - 1] if idx > 0 else None
-            payload["next"] = chunks[idx + 1] if idx + 1 < len(chunks) else None
+            list_idx = item.get("list_index", 0)
+            if list_idx > 0:
+                payload["previous"] = records[list_idx - 1].get("text")
+            else:
+                payload["previous"] = None
+            if list_idx + 1 < len(records):
+                payload["next"] = records[list_idx + 1].get("text")
+            else:
+                payload["next"] = None
         results.append(payload)
     return results
 
@@ -202,12 +248,7 @@ def parse_args(argv: Iterable[str]) -> argparse.Namespace:
     parser.add_argument(
         "--chunks",
         required=True,
-        help="Path to *_chunks.txt file",
-    )
-    parser.add_argument(
-        "--embeddings",
-        required=True,
-        help="Path to *_embeddings.npy file",
+        help="Path to chunks JSONL file",
     )
     parser.add_argument(
         "--query",
@@ -232,25 +273,19 @@ def main(argv: Iterable[str]) -> int:
     args = parse_args(argv)
 
     chunks_path = Path(args.chunks)
-    embeddings_path = Path(args.embeddings)
 
     if not chunks_path.exists():
         raise FileNotFoundError(f"Chunks file not found: {chunks_path}")
-    if not embeddings_path.exists():
-        raise FileNotFoundError(f"Embeddings file not found: {embeddings_path}")
 
-    chunks = load_chunks(chunks_path)
-    embeddings = np.load(embeddings_path)
+    records, embeddings = load_chunk_records(chunks_path)
 
-    if embeddings.shape[0] != len(chunks):
-        raise ValueError(
-            f"Embedding rows ({embeddings.shape[0]}) "
-            f"do not match chunk count ({len(chunks)})"
-        )
+    if embeddings.size == 0 or embeddings.shape[0] == 0:
+        print("No embeddings found in the provided chunks file.")
+        return 0
 
     results = search_chunks(
         args.query,
-        chunks,
+        records,
         embeddings,
         top_k=args.top_k,
         include_neighbors=args.with_context,
@@ -264,8 +299,17 @@ def main(argv: Iterable[str]) -> int:
         print(f"\nResult #{idx}")
         print(f"  Score : {result['score']:.4f}")
         print(f"  Cosine: {result['cosine']:.4f}")
-        print(f"  Index : {result['index']}")
-        print(f"  Chunk : {result['chunk']}")
+        if result.get("chunk_id") is not None:
+            print(f"  Chunk ID : {result['chunk_id']}")
+        if result.get("doc_id"):
+            print(f"  Doc ID   : {result['doc_id']}")
+        if result.get("page"):
+            print(f"  Page     : {result['page']}")
+        if result.get("span"):
+            print(f"  Span     : {result['span']}")
+        if result.get("clean_span"):
+            print(f"  CleanSpan: {result['clean_span']}")
+        print(f"  Text     : {result['text']}")
         if args.with_context:
             if result.get("previous"):
                 print(f"  Prev  : {result['previous']}")
