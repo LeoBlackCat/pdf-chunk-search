@@ -14,7 +14,12 @@ import numpy as np
 
 from chunker import split_text, token_count
 from embeddings import embed_texts
-from pdf_extractor import ExtractionResult, PageContent, extract_text_from_pdf
+from pdf_extractor import (
+    CLEANUP_MODEL,
+    ExtractionResult,
+    PageContent,
+    extract_text_from_pdf,
+)
 
 
 EMBEDDING_MODEL_ID = "mlx-community/all-MiniLM-L6-v2-4bit"
@@ -22,104 +27,160 @@ TOKENIZER_ID = "mlx-miniLM"
 
 
 def extract_and_chunk(
-    input_file: str,
-    output_file: str,
+    input_files: List[str],
+    output_prefix: str,
     chunk_size: int = 256,
     chunk_overlap: Optional[int] = None,
     strategy: str = "sentence",
 ) -> None:
-    """
-    Extract content from a file and split it into chunks, emitting JSONL metadata.
-    """
-    input_path = Path(input_file)
-    if not input_path.exists():
-        raise FileNotFoundError(f"Input file not found: {input_file}")
+    """Extract and chunk one or more files, emitting JSONL metadata and embeddings."""
 
-    output_path = Path(output_file)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    if not input_files:
+        raise ValueError("At least one input file must be provided")
 
-    extraction = _extract_document(input_path)
-    final_text = extraction.final_text
+    output_base = Path(output_prefix)
+    output_dir = output_base.parent if output_base.parent != Path("") else Path(".")
+    output_dir.mkdir(parents=True, exist_ok=True)
 
-    if not final_text:
-        print("Warning: No text content extracted from file")
-        return
-
-    print(f"Extracted {len(final_text)} characters")
-    print(f"Estimated tokens: {token_count(final_text)}")
-
-    extracted_file = output_path.parent / f"{output_path.stem}_extracted.txt"
-    chunks_json = output_path.parent / f"{output_path.stem}_chunks.jsonl"
-    docs_json = output_path.parent / f"{output_path.stem}_docs.jsonl"
-
-    extracted_file.write_text(final_text, encoding="utf-8")
-    print(f"\n✓ Wrote cleaned text to {extracted_file}")
-
-    if strategy == "sentence":
-        effective_overlap = 0
-    else:
-        overlap_input = chunk_overlap if chunk_overlap is not None else 30
-        effective_overlap = max(0, min(overlap_input, max(0, chunk_size - 1)))
-
-    print(
-        f"\nChunking with size={chunk_size}, overlap={effective_overlap}, strategy={strategy}"
-    )
-    chunks = split_text(
-        final_text,
-        chunk_size=chunk_size,
-        chunk_overlap=effective_overlap if strategy != "sentence" else 0,
-        strategy=strategy,
-    )
-    print(f"Created {len(chunks)} chunks")
-
-    print(f"\nGenerating embeddings for {len(chunks)} chunks")
-    embeddings = embed_texts(chunks)
-    if embeddings.size == 0:
-        print("Warning: No embeddings generated")
-    else:
-        print(f"Embeddings shape: {embeddings.shape}")
+    docs_path = output_dir / f"{output_base.name}_docs.jsonl"
+    chunks_path = output_dir / f"{output_base.name}_chunks.jsonl"
+    embeddings_path = output_dir / f"{output_base.name}_embeddings.npy"
 
     timestamp = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-    doc_id = _compute_doc_id(input_path)
-    doc_record = _build_doc_record(
-        input_path=input_path,
-        extraction=extraction,
-        chunk_count=len(chunks),
-        chunk_size=chunk_size,
-        chunk_overlap=effective_overlap,
-        strategy=strategy,
-        embeddings=embeddings,
-        doc_id=doc_id,
-        timestamp=timestamp,
-        extracted_path=extracted_file,
-        chunks_path=chunks_json,
-    )
+    effective_overlap = 0 if strategy == "sentence" else max(0, min((chunk_overlap if chunk_overlap is not None else 30), max(0, chunk_size - 1)))
 
-    chunk_records = _build_chunk_records(
-        chunks=chunks,
-        embeddings=embeddings,
-        extraction=extraction,
-        doc_id=doc_id,
-        timestamp=timestamp,
-        effective_overlap=effective_overlap,
-    )
+    all_embeddings: List[np.ndarray] = []
+    chunk_records: List[dict] = []
+    doc_records: List[dict] = []
+    current_chunk_id = 0
 
-    docs_json.write_text(json.dumps(doc_record, ensure_ascii=False) + "\n", encoding="utf-8")
-    with chunks_json.open("w", encoding="utf-8") as fh:
+    for idx, file_path in enumerate(input_files):
+        input_path = Path(file_path)
+        if not input_path.exists():
+            print(f"Skipping missing file: {file_path}")
+            continue
+
+        print(f"\nExtracting content from: {input_path}")
+        extraction = _extract_document(input_path)
+        final_text = extraction.final_text
+
+        if not final_text:
+            print(f"Warning: No text content extracted from {input_path}")
+            continue
+
+        print(f"Extracted {len(final_text)} characters")
+        print(f"Estimated tokens: {token_count(final_text)}")
+
+        clean_filename = (
+            f"{output_base.name}_{idx:04d}_{input_path.stem}_extracted.txt"
+        )
+        extracted_file = output_dir / clean_filename
+        extracted_file.write_text(final_text, encoding="utf-8")
+        print(f"✓ Wrote cleaned text to {extracted_file}")
+
+        print(
+            f"Chunking with size={chunk_size}, overlap={effective_overlap}, strategy={strategy}"
+        )
+        doc_chunks = split_text(
+            final_text,
+            chunk_size=chunk_size,
+            chunk_overlap=effective_overlap if strategy != "sentence" else 0,
+            strategy=strategy,
+        )
+        print(f"Created {len(doc_chunks)} chunks")
+
+        if doc_chunks:
+            print(f"Generating embeddings for {len(doc_chunks)} chunks")
+            doc_embeddings = embed_texts(doc_chunks)
+            print(f"Embeddings shape: {doc_embeddings.shape}")
+        else:
+            doc_embeddings = np.zeros((0, 0), dtype=np.float32)
+            print("No chunks produced; skipping embedding generation")
+
+        embedding_dim = int(doc_embeddings.shape[1]) if doc_embeddings.size else 0
+
+        doc_id = _compute_doc_id(input_path)
+        pipeline_version = _build_pipeline_version(
+            extraction=extraction,
+            chunk_size=chunk_size,
+            chunk_overlap=effective_overlap,
+            strategy=strategy,
+            embedding_dim=embedding_dim,
+        )
+
+        final_text_hash = hashlib.sha256(final_text.encode("utf-8")).hexdigest()
+        clean_text_hash = hashlib.sha256(extraction.clean_text.encode("utf-8")).hexdigest()
+
+        doc_record = _build_doc_record(
+            input_path=input_path,
+            extraction=extraction,
+            chunk_count=len(doc_chunks),
+            chunk_size=chunk_size,
+            chunk_overlap=effective_overlap,
+            strategy=strategy,
+            embeddings_dim=embedding_dim,
+            doc_id=doc_id,
+            timestamp=timestamp,
+            extracted_path=extracted_file,
+            chunks_path=chunks_path,
+            embeddings_path=embeddings_path,
+            chunk_id_start=current_chunk_id,
+            pipeline_version=pipeline_version,
+            doc_index=idx,
+            final_text_hash=final_text_hash,
+            clean_text_hash=clean_text_hash,
+        )
+        doc_records.append(doc_record)
+
+        new_chunk_records = _build_chunk_records(
+            chunks=doc_chunks,
+            embeddings=doc_embeddings,
+            extraction=extraction,
+            doc_id=doc_id,
+            timestamp=timestamp,
+            effective_overlap=effective_overlap,
+            chunk_id_start=current_chunk_id,
+            pipeline_version=pipeline_version,
+        )
+        chunk_records.extend(new_chunk_records)
+        if doc_embeddings.size:
+            all_embeddings.append(doc_embeddings)
+
+        chunk_sizes = [token_count(c) for c in doc_chunks]
+        if chunk_sizes:
+            print(f"Chunk statistics for {input_path.name}:")
+            print(f"  Min tokens: {min(chunk_sizes)}")
+            print(f"  Max tokens: {max(chunk_sizes)}")
+            print(f"  Avg tokens: {sum(chunk_sizes) / len(chunk_sizes):.1f}")
+
+        current_chunk_id += len(doc_chunks)
+
+    if not doc_records:
+        print("No documents were successfully processed.")
+        return
+
+    with docs_path.open("w", encoding="utf-8") as fh:
+        for record in doc_records:
+            fh.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+    with chunks_path.open("w", encoding="utf-8") as fh:
         for record in chunk_records:
             fh.write(json.dumps(record, ensure_ascii=False) + "\n")
 
-    chunk_sizes = [token_count(c) for c in chunks]
-    if chunk_sizes:
-        print("\nChunk statistics:")
-        print(f"  Min tokens: {min(chunk_sizes)}")
-        print(f"  Max tokens: {max(chunk_sizes)}")
-        print(f"  Avg tokens: {sum(chunk_sizes) / len(chunk_sizes):.1f}")
+    if all_embeddings:
+        embedding_matrix = np.concatenate(all_embeddings, axis=0)
+    else:
+        embedding_matrix = np.zeros((0, 0), dtype=np.float32)
+    np.save(embeddings_path, embedding_matrix)
+
+    print(
+        f"\nProcessed {len(doc_records)} document(s); total chunks: {len(chunk_records)}"
+    )
 
     print("\n📄 Output files:")
-    print(f"  Extracted:  {extracted_file}")
-    print(f"  Document metadata: {docs_json}")
-    print(f"  Chunks & embeddings: {chunks_json}")
+    print(f"  Document metadata: {docs_path}")
+    print(f"  Chunks metadata:  {chunks_path}")
+    print(f"  Embeddings:       {embeddings_path}")
 
 
 def _extract_document(input_path: Path) -> ExtractionResult:
@@ -155,30 +216,33 @@ def _build_doc_record(
     chunk_size: int,
     chunk_overlap: int,
     strategy: str,
-    embeddings: np.ndarray,
+    embeddings_dim: int,
     doc_id: str,
     timestamp: str,
     extracted_path: Path,
     chunks_path: Path,
+    embeddings_path: Path,
+    chunk_id_start: int,
+    pipeline_version: str,
+    doc_index: int,
+    final_text_hash: str,
+    clean_text_hash: str,
 ) -> dict:
     file_stat = input_path.stat()
-    embedding_dim = int(embeddings.shape[1]) if embeddings.size else 0
-    clean_component = "python-clean-v1"
-    if extraction.ai_used:
-        clean_component += "+gpt-5"
-    pipeline_version = (
-        f"extract={extraction.extractor};"
-        f"clean={clean_component};"
-        f"chunk={strategy}-v1({chunk_size}/{chunk_overlap});"
-        f"embed={EMBEDDING_MODEL_ID}@{embedding_dim}"
-    )
+    chunk_id_end = chunk_id_start + chunk_count - 1 if chunk_count else None
+    suffix = input_path.suffix.lower()
+    source_type = suffix.lstrip(".") or "unknown"
 
     record = {
+        "schema_version": "doc.v1",
+        "doc_index": doc_index,
         "doc_id": doc_id,
         "file_name": input_path.name,
         "source_path": str(input_path.resolve()),
         "filesize": file_stat.st_size,
-        "pdf_sha256": doc_id,
+        "file_sha256": doc_id,
+        "pdf_sha256": doc_id if suffix == ".pdf" else None,
+        "source_type": source_type,
         "pages": len(extraction.pages),
         "extracted_at": timestamp,
         "extractor": extraction.extractor,
@@ -189,14 +253,43 @@ def _build_doc_record(
         "chunk_overlap": chunk_overlap,
         "chunk_strategy": strategy,
         "embedding_model": EMBEDDING_MODEL_ID,
-        "embedding_dim": embedding_dim,
-        "normalized_embeddings": bool(embeddings.size),
+        "embedding_dim": embeddings_dim,
+        "normalized_embeddings": bool(embeddings_dim),
         "tokenizer_id": TOKENIZER_ID,
         "ai_cleanup_used": extraction.ai_used,
+        "ai_cleanup_model": CLEANUP_MODEL if extraction.ai_used else None,
+        "metric": "ip_cosine",
         "chunks_path": str(chunks_path),
         "extracted_text_path": str(extracted_path),
+        "embeddings_path": str(embeddings_path),
+        "chunk_id_start": chunk_id_start,
+        "chunk_id_end": chunk_id_end,
+        "chunk_id_range": [chunk_id_start, chunk_id_end] if chunk_count else [],
+        "span_scope": "doc_final",
+        "final_text_sha256": final_text_hash,
+        "clean_text_sha256": clean_text_hash,
     }
     return record
+
+
+def _build_pipeline_version(
+    *,
+    extraction: ExtractionResult,
+    chunk_size: int,
+    chunk_overlap: int,
+    strategy: str,
+    embedding_dim: int,
+) -> str:
+    clean_component = "python-clean-v1"
+    if extraction.ai_used:
+        clean_component += f"+{CLEANUP_MODEL}"
+    pipeline_version = (
+        f"extract={extraction.extractor};"
+        f"clean={clean_component};"
+        f"chunk={strategy}-v1({chunk_size}/{chunk_overlap});"
+        f"embed={EMBEDDING_MODEL_ID}@{embedding_dim or 0}"
+    )
+    return pipeline_version
 
 
 def _build_chunk_records(
@@ -207,6 +300,8 @@ def _build_chunk_records(
     doc_id: str,
     timestamp: str,
     effective_overlap: int,
+    chunk_id_start: int,
+    pipeline_version: str,
 ) -> List[dict]:
     records: List[dict] = []
     final_text = extraction.final_text
@@ -217,6 +312,7 @@ def _build_chunk_records(
     clean_search_pos = 0
 
     for idx, chunk_text in enumerate(chunks):
+        global_chunk_id = chunk_id_start + idx
         start = final_text.find(chunk_text, search_pos)
         if start == -1:
             snippet = chunk_text.strip()
@@ -245,29 +341,35 @@ def _build_chunk_records(
             total_length=total_length,
         )
 
-        vector = embeddings[idx] if embeddings.size else np.array([], dtype=np.float32)
+        emb_dim = embeddings.shape[1] if embeddings.ndim == 2 else 0
+
         record = {
-            "id": idx,
+            "schema_version": "chunk.v1",
+            "id": global_chunk_id,
             "doc_id": doc_id,
+            "doc_chunk_index": idx,
             "text": chunk_text,
             "page": page_number,
+            "span_scope": "doc_final",
             "span": {"char_start": start, "char_end": end},
             "model": EMBEDDING_MODEL_ID,
-            "dim": int(vector.shape[0]) if vector.size else (int(embeddings.shape[1]) if embeddings.size else 0),
-            "normalized": bool(vector.size),
+            "dim": int(emb_dim),
+            "normalized": bool(emb_dim),
             "tokenizer_id": TOKENIZER_ID,
             "token_count": token_count(chunk_text),
             "hash": hashlib.sha256(chunk_text.encode("utf-8")).hexdigest(),
             "created_at": timestamp,
-            "embedding": vector.tolist(),
             "overlap_prev_tokens": effective_overlap if idx > 0 else 0,
             "overlap_next_tokens": effective_overlap if idx < len(chunks) - 1 else 0,
+            "metric": "ip_cosine",
+            "pipeline_version": pipeline_version,
         }
         if clean_pos != -1:
             record["clean_span"] = {
                 "char_start": clean_pos,
                 "char_end": clean_pos + len(chunk_text),
             }
+            record["clean_span_scope"] = "doc_clean"
         records.append(record)
     return records
 
@@ -300,20 +402,21 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  %(prog)s document.pdf output.txt
-  %(prog)s document.pdf output.txt --chunk-size 1000
-  %(prog)s document.pdf output.txt --chunk-size 800 --chunk-overlap 100
+  %(prog)s output/run document.pdf
+  %(prog)s output/run doc1.pdf doc2.pdf --chunk-size 1000
+  %(prog)s output/run doc.pdf --chunk-size 800 --chunk-overlap 100
         """
     )
     
     parser.add_argument(
-        "input_file",
-        help="Input file path (PDF, TXT, or Markdown)"
+        "output_prefix",
+        help="Output file prefix (base path without extension)"
     )
-    
+
     parser.add_argument(
-        "output_file",
-        help="Output file path (one chunk per line)"
+        "input_files",
+        nargs="+",
+        help="Input file paths (PDF, TXT, or Markdown)"
     )
     
     parser.add_argument(
@@ -344,8 +447,8 @@ Examples:
     
     try:
         extract_and_chunk(
-            args.input_file,
-            args.output_file,
+            args.input_files,
+            args.output_prefix,
             args.chunk_size,
             args.chunk_overlap,
             args.strategy,

@@ -9,7 +9,8 @@ A Python tool for extracting content from PDFs and other documents, then splitti
 - Optional LlamaIndex-powered sentence splitter and LangChain recursive splitter modes
 - Automatic MLX embeddings generated for every chunk
 - FAISS-powered vector search across the generated chunks
-- Optional OpenAI-powered cleanup when `OPENAI_API_KEY` is provided
+- Batch multiple documents into a single chunk/embedding set
+- Optional OpenAI-powered cleanup (gpt-4o-mini) when `OPENAI_API_KEY` is provided
 - Token-aware splitting (uses mlx-embeddings for efficient token counts)
 - Hierarchical splitting strategy (paragraphs → lines → sentences → words)
 - Structured JSONL output (`*_docs.jsonl` + `*_chunks.jsonl`) for durable storage and re-embedding
@@ -33,15 +34,26 @@ chmod +x pdf_chunker.py
 ### Basic Usage
 
 ```bash
-python pdf_chunker.py input.pdf output.txt
+python pdf_chunker.py output/law law1.pdf
 ```
 
-This will:
-- Extract text from `input.pdf`
-- Write the cleaned text to `output_extracted.txt`
-- Split it into chunks of ~256 tokens each
-- Persist chunk metadata + embeddings to `output_chunks.jsonl`
-- Write document-level provenance to `output_docs.jsonl`
+You can list multiple PDFs (or text files) to consolidate them into a single chunk set:
+
+```bash
+python pdf_chunker.py output/law law1.pdf law2.pdf law3.pdf
+```
+
+Each run:
+- Extracts text from every input file
+- Writes the cleaned text for each document to `output/law_####_<name>_extracted.txt`
+- Splits the cleaned text into ~256-token chunks (default `sentence` strategy)
+- Stores chunk metadata in `output/law_chunks.jsonl`
+- Stores document-level metadata in `output/law_docs.jsonl`
+- Saves embeddings for all chunks in `output/law_embeddings.npy`
+
+### Multiple Inputs
+
+You can pass any mix of PDFs, Markdown, or plain-text files. They will be processed sequentially and merged into one metadata/embedding set. Chunk IDs remain unique and align with both the JSONL metadata and the saved `.npy` embedding matrix, so you can rebuild a FAISS index or re-run searches at any time.
 
 ### Advanced Usage
 
@@ -72,17 +84,18 @@ After chunking, you can query the embeddings with FAISS:
 ```bash
 python chunk_search.py \
   --chunks output_chunks.jsonl \
+  --embeddings output_embeddings.npy \
   --query "Monteverdi opera reforms" \
   --top-k 3 \
   --with-context
 ```
 
-This prints the best-matching chunk(s) with doc IDs, page numbers, spans, and optional neighbors for quick inspection.
+This prints the best-matching chunk(s) with chunk IDs, doc IDs, per-document chunk indexes, page numbers, spans, and optional neighbors for quick inspection.
 
 ### Command-Line Options
 
-- `input_file` - Path to input file (PDF, TXT, or Markdown)
-- `output_file` - Base name for output files (creates `*_extracted.txt`, `*_docs.jsonl`, and `*_chunks.jsonl`)
+- `output_prefix` - Base name for output files (creates `*_extracted.txt`, `*_docs.jsonl`, `*_chunks.jsonl`, `*_embeddings.npy`)
+- `input_files` - One or more input files (PDF, TXT, or Markdown)
 - `--chunk-size` - Maximum tokens per chunk (default: 256)
 - `--chunk-overlap` - Token overlap between consecutive chunks (default: 30 tokens)
 - `--strategy` - Chunking approach to use (`smart`, `sentence`, `llama`, or `langchain`; default: `sentence`)
@@ -95,7 +108,13 @@ Each run emits three artifacts:
 
 1. **`*_extracted.txt`** – Cleaned extracted text (exactly what was chunked and embedded).
 2. **`*_docs.jsonl`** – One JSON object per source with provenance (`doc_id`, extractor info, pipeline version, etc.).
-3. **`*_chunks.jsonl`** – One JSON object per chunk containing the embedded text, spans, embeddings, model metadata, and overlap details.
+3. **`*_chunks.jsonl`** – One JSON object per chunk containing the embedded text, span metadata, model details, and overlap statistics (embedding vectors are stored separately in `*_embeddings.npy`).
+
+Chunk records use `span_scope="doc_final"` so `char_start/char_end` are offsets within the cleaned (and optionally AI-polished) document text. If `clean_span` is present it references the pre-AI cleaned text (`clean_span_scope="doc_clean"`). Both document and chunk records include `schema_version`, `pipeline_version`, and `metric` fields for future migrations.
+
+Each chunk line retains only metadata (no inline vectors). Embeddings are stored in `*_embeddings.npy`, in the same order as the JSONL records, which makes it easy to rebuild FAISS indices or migrate to a different vector database.
+Chunk IDs are monotonically increasing integers (`id`) and double as FAISS vector IDs.
+Document records include matching provenance (e.g., `pipeline_version="extract=pymupdf@1.26.5;clean=python-clean-v1+gpt-4o-mini;chunk=sentence-v1(256/0);embed=mlx-community/all-MiniLM-L6-v2-4bit@384"`).
 
 Because the chunks are JSON, you can inspect or filter them with standard tools:
 
@@ -125,7 +144,7 @@ text = result.final_text  # cleaned (optionally AI-polished) text
 
 Plain `.txt` and `.md` files are read directly from disk without additional processing.
 
-If an `OPENAI_API_KEY` environment variable is present (for example via a local `.env` file), the raw extracted text is additionally passed through OpenAI's `gpt-5` for light cleanup before chunking.
+If an `OPENAI_API_KEY` environment variable is present (for example via a local `.env` file), the raw extracted text is additionally passed through OpenAI's `gpt-4o-mini` for light cleanup before chunking.
 
 ### 2. Smart Chunking
 
@@ -158,7 +177,7 @@ Each chunk is stored as a JSON object containing the embedded text, spans, embed
 ### Example 1: Process a PDF with default settings
 
 ```bash
-python pdf_chunker.py research_paper.pdf chunks.txt
+python pdf_chunker.py chunks/research research_paper.pdf
 ```
 
 Output:
@@ -167,7 +186,7 @@ Extracting content from: research_paper.pdf
 Extracted 45230 characters
 Estimated tokens: 11307
 
-✓ Wrote cleaned text to chunks_extracted.txt
+✓ Wrote cleaned text to chunks/research_0000_research_paper_extracted.txt
 
 Chunking with size=500, overlap=75, strategy=smart
 Created 24 chunks
@@ -176,9 +195,9 @@ Generating embeddings for 24 chunks
 Embeddings shape: (24, 384)
 
 📄 Output files:
-  Extracted:  chunks_extracted.txt
-  Document metadata: chunks_docs.jsonl
-  Chunks & embeddings: chunks_chunks.jsonl
+  Document metadata: chunks/research_docs.jsonl
+  Chunks metadata:  chunks/research_chunks.jsonl
+  Embeddings:       chunks/research_embeddings.npy
 
 Chunk statistics:
   Min tokens: 387
@@ -189,7 +208,7 @@ Chunk statistics:
 ### Example 2: Large documents with bigger chunks
 
 ```bash
-python pdf_chunker.py large_book.pdf book_chunks.txt --chunk-size 2000 --chunk-overlap 200
+python pdf_chunker.py chunks/book large_book.pdf --chunk-size 2000 --chunk-overlap 200
 ```
 
 ### Example 3: Process the output

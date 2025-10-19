@@ -18,36 +18,15 @@ import numpy as np
 from embeddings import embed_texts
 
 
-def load_chunk_records(path: Path) -> tuple[List[dict], np.ndarray]:
+def load_chunk_records(path: Path) -> List[dict]:
     records: List[dict] = []
-    vectors: List[np.ndarray] = []
     with path.open("r", encoding="utf-8") as fh:
         for line in fh:
             line = line.strip()
             if not line:
                 continue
-            data = json.loads(line)
-            vector = np.array(data.get("embedding", []), dtype=np.float32)
-            if vector.ndim == 1 and vector.size:
-                vectors.append(vector)
-            elif vector.size == 0:
-                vectors.append(np.zeros((0,), dtype=np.float32))
-            else:
-                raise ValueError("Expected 1-D embedding vectors in chunks JSONL")
-            records.append(data)
-
-    if not vectors:
-        return records, np.zeros((0, 0), dtype=np.float32)
-
-    dim = max((vec.size for vec in vectors), default=0)
-    if dim == 0:
-        return records, np.zeros((len(vectors), 0), dtype=np.float32)
-
-    matrix = np.zeros((len(vectors), dim), dtype=np.float32)
-    for idx, vec in enumerate(vectors):
-        if vec.size:
-            matrix[idx, : vec.size] = vec
-    return records, matrix
+            records.append(json.loads(line))
+    return records
 
 
 def build_index(vectors: np.ndarray) -> faiss.IndexFlatIP:
@@ -106,6 +85,7 @@ def search_chunks(
             "doc_id": record.get("doc_id"),
             "page": record.get("page"),
             "span": record.get("span"),
+            "doc_chunk_index": record.get("doc_chunk_index"),
             "score": float(item.get("rerank", item.get("cos", 0.0))),
             "cosine": float(item.get("cos", 0.0)),
             "text": record.get("text", item.get("text", "")),
@@ -251,6 +231,11 @@ def parse_args(argv: Iterable[str]) -> argparse.Namespace:
         help="Path to chunks JSONL file",
     )
     parser.add_argument(
+        "--embeddings",
+        required=True,
+        help="Path to embeddings .npy file",
+    )
+    parser.add_argument(
         "--query",
         required=True,
         help="Query text to search for",
@@ -273,15 +258,24 @@ def main(argv: Iterable[str]) -> int:
     args = parse_args(argv)
 
     chunks_path = Path(args.chunks)
+    embeddings_path = Path(args.embeddings)
 
     if not chunks_path.exists():
         raise FileNotFoundError(f"Chunks file not found: {chunks_path}")
+    if not embeddings_path.exists():
+        raise FileNotFoundError(f"Embeddings file not found: {embeddings_path}")
 
-    records, embeddings = load_chunk_records(chunks_path)
+    records = load_chunk_records(chunks_path)
+    embeddings = np.load(embeddings_path)
 
     if embeddings.size == 0 or embeddings.shape[0] == 0:
-        print("No embeddings found in the provided chunks file.")
+        print("No embeddings found in the provided embeddings file.")
         return 0
+
+    if embeddings.shape[0] != len(records):
+        raise ValueError(
+            f"Embedding rows ({embeddings.shape[0]}) do not match chunk count ({len(records)})"
+        )
 
     results = search_chunks(
         args.query,
@@ -303,6 +297,8 @@ def main(argv: Iterable[str]) -> int:
             print(f"  Chunk ID : {result['chunk_id']}")
         if result.get("doc_id"):
             print(f"  Doc ID   : {result['doc_id']}")
+        if result.get("doc_chunk_index") is not None:
+            print(f"  DocIdx   : {result['doc_chunk_index']}")
         if result.get("page"):
             print(f"  Page     : {result['page']}")
         if result.get("span"):
