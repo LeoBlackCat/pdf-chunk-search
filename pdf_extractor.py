@@ -27,9 +27,7 @@ if load_dotenv is not None:  # load variables from .env automatically if availab
     load_dotenv()
 
 
-CLEANUP_MODEL = "gpt-5-a
-CLEANUP_TEMPERATURE = 0.0
-CLEANUP_MAX_TOKENS = 8000
+CLEANUP_MODEL = "gpt-5"
 CLEANUP_SYSTEM_PROMPT = """# GOAL
 
 Adjust the content below to make it clean and readable:
@@ -120,6 +118,11 @@ def clean_pdf_text(text: str) -> str:
     text = re.sub(r"\s+([.,])\s+", r"\1 ", text)
     text = re.sub(r"[\u200b\u200c\u200d\ufeff\u200e\u200f]", "", text)
     text = re.sub(r"(?<=\w)-\s*\n\s*(?=\w)", "", text)
+
+    # Remove decorative or placeholder glyphs (e.g., standalone "z" dropcaps)
+    text = re.sub(r"(?m)^\s*z\s*\n", "", text)
+    text = re.sub(r"(?m)^z\s+", "", text)
+
     return text.strip()
 
 
@@ -163,12 +166,15 @@ def _apply_ai_cleanup_if_configured(text: str) -> str:
     if not text:
         return text
     if OpenAI is None:
+        print("Skipping AI cleanup: openai package not installed")
         return text
     api_key = os.getenv("OPENAI_API_KEY")
     if not api_key:
+        print("Skipping AI cleanup: OPENAI_API_KEY not set")
         return text
 
     try:
+        print(f"Running AI cleanup with OpenAI model {CLEANUP_MODEL}")
         client = OpenAI(api_key=api_key)
         response = client.chat.completions.create(
             model=CLEANUP_MODEL,
@@ -176,12 +182,12 @@ def _apply_ai_cleanup_if_configured(text: str) -> str:
                 {"role": "system", "content": CLEANUP_SYSTEM_PROMPT},
                 {"role": "user", "content": text},
             ],
-            temperature=CLEANUP_TEMPERATURE,
-            max_tokens=CLEANUP_MAX_TOKENS,
         )
         cleaned = response.choices[0].message.content
         if cleaned:
+            print("✓ AI cleanup succeeded")
             return cleaned
+        print("Warning: AI cleanup returned empty content, using raw cleaned text")
     except Exception as exc:  # pragma: no cover - network call
         print(f"Warning: AI cleanup failed ({exc}), using raw cleaned text")
     return text
