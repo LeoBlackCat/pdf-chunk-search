@@ -27,7 +27,7 @@ if load_dotenv is not None:  # load variables from .env automatically if availab
     load_dotenv()
 
 
-CLEANUP_MODEL = "gpt-4o-mini"
+CLEANUP_MODEL = "gpt-5-a
 CLEANUP_TEMPERATURE = 0.0
 CLEANUP_MAX_TOKENS = 8000
 CLEANUP_SYSTEM_PROMPT = """# GOAL
