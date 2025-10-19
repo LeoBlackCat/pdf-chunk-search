@@ -8,6 +8,8 @@ A Python tool for extracting content from PDFs and other documents, then splitti
 - Smart text chunking with configurable size and overlap
 - Optional LlamaIndex-powered sentence splitter and LangChain recursive splitter modes
 - Automatic MLX embeddings generated for every chunk
+- FAISS-powered vector search across the generated chunks
+- Optional OpenAI-powered cleanup when `OPENAI_API_KEY` is provided
 - Token-aware splitting (uses mlx-embeddings for efficient token counts)
 - Hierarchical splitting strategy (paragraphs → lines → sentences → words)
 - Output format: one chunk per line for easy processing
@@ -36,6 +38,7 @@ python pdf_chunker.py input.pdf output.txt
 
 This will:
 - Extract text from `input.pdf`
+- Write the cleaned text to `output_extracted.txt`
 - Split it into chunks of ~256 tokens each
 - Write chunks to `output_chunks.txt` (one per line)
 - Save MLX embeddings to `output_embeddings.npy`
@@ -62,6 +65,21 @@ python pdf_chunker.py document.pdf chunks.txt --strategy llama --chunk-size 512 
 python pdf_chunker.py document.pdf chunks.txt --strategy langchain --chunk-size 512 --chunk-overlap 40
 ```
 
+### Search the Chunks
+
+After chunking, you can query the embeddings with FAISS:
+
+```bash
+python chunk_search.py \
+  --chunks output_chunks.txt \
+  --embeddings output_embeddings.npy \
+  --query "Monteverdi opera reforms" \
+  --top-k 3 \
+  --with-context
+```
+
+This prints the best-matching chunk(s) plus optional neighbors for quick inspection.
+
 ### Command-Line Options
 
 - `input_file` - Path to input file (PDF, TXT, or Markdown)
@@ -70,12 +88,15 @@ python pdf_chunker.py document.pdf chunks.txt --strategy langchain --chunk-size 
 - `--chunk-overlap` - Token overlap between consecutive chunks (default: 30 tokens)
 - `--strategy` - Chunking approach to use (`smart`, `sentence`, `llama`, or `langchain`)
 
+Add an `.env` file with `OPENAI_API_KEY=...` (or export the variable in your shell) to enable OpenAI-powered cleanup during extraction.
+
 ### Output Format
 
 The tool creates two output files:
 
-1. **`*_chunks.txt`** - Chunked text with one chunk per line
-2. **`*_embeddings.npy`** - NumPy array containing an embedding vector for each chunk
+1. **`*_extracted.txt`** - Cleaned extracted text
+2. **`*_chunks.txt`** - Chunked text with one chunk per line
+3. **`*_embeddings.npy`** - NumPy array containing an embedding vector for each chunk
 
 The chunks file has newlines within chunks escaped as `\n` so each chunk occupies exactly one line. This makes it easy to process with standard Unix tools:
 
@@ -85,6 +106,9 @@ wc -l output_chunks.txt
 
 # View first chunk
 head -n 1 output_chunks.txt
+
+# Read cleaned extracted text
+less output_extracted.txt
 
 # Process each chunk
 while IFS= read -r chunk; do
@@ -105,6 +129,8 @@ text = extract_text_from_pdf("filename.pdf")
 ```
 
 Plain `.txt` and `.md` files are read directly from disk without additional processing.
+
+If an `OPENAI_API_KEY` environment variable is present (for example via a local `.env` file), the raw extracted text is additionally passed through OpenAI's `gpt-4o-mini` for light cleanup before chunking.
 
 ### 2. Smart Chunking
 
@@ -150,6 +176,9 @@ Extracting content from: research_paper.pdf
 Extracted 45230 characters
 Estimated tokens: 11307
 
+Writing extracted text to: chunks_extracted.txt
+✓ Successfully wrote extracted text to chunks_extracted.txt
+
 Chunking with size=500, overlap=75, strategy=smart
 Created 24 chunks
 
@@ -168,6 +197,7 @@ Chunk statistics:
   Avg tokens: 476.2
 
 📄 Output files:
+  Extracted:  chunks_extracted.txt
   Chunks:     chunks_chunks.txt
   Embeddings: chunks_embeddings.npy
 ```
@@ -189,6 +219,10 @@ with open("output_chunks.txt", "r", encoding="utf-8") as f:
 import numpy as np
 embeddings = np.load("output_embeddings.npy")
 
+# Read cleaned text
+with open("output_extracted.txt", "r", encoding="utf-8") as f:
+    extracted = f.read()
+
 # Process each chunk
 for i, chunk in enumerate(chunks, 1):
     print(f"Chunk {i}: {len(chunk)} chars")
@@ -209,9 +243,11 @@ for i, chunk in enumerate(chunks, 1):
 
 - **PyMuPDF** - PDF extraction
 - **mlx-embeddings** - Token counting and embeddings
+- **faiss-cpu** - Vector search backend
 - **numpy** - Embedding storage
 - **llama-index** - Optional sentence-splitter strategy (`--strategy llama`)
 - **langchain** / **langchain-text-splitters** - Optional RecursiveCharacterTextSplitter (`--strategy langchain`)
+- **openai** / **python-dotenv** - Optional AI cleanup when `OPENAI_API_KEY` is supplied
 
 ## Troubleshooting
 

@@ -45,8 +45,13 @@ def extract_and_chunk(
     
     # Generate output filenames
     output_path = Path(output_file)
+    extracted_file = output_path.parent / f"{output_path.stem}_extracted.txt"
     chunks_file = output_path.parent / f"{output_path.stem}_chunks.txt"
     embeddings_file = output_path.parent / f"{output_path.stem}_embeddings.npy"
+
+    print(f"\nWriting extracted text to: {extracted_file}")
+    extracted_file.write_text(text_content, encoding="utf-8")
+    print(f"✓ Successfully wrote extracted text to {extracted_file}")
     
     # Split into chunks
     if strategy == "sentence":
@@ -92,6 +97,7 @@ def extract_and_chunk(
     print(f"  Avg tokens: {sum(chunk_sizes) / len(chunk_sizes):.1f}")
     
     print(f"\n📄 Output files:")
+    print(f"  Extracted:  {extracted_file}")
     print(f"  Chunks:     {chunks_file}")
     print(f"  Embeddings: {embeddings_file}")
 

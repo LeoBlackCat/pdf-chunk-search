@@ -1,5 +1,9 @@
 PyMuPDF
 mlx-embeddings
+faiss-cpu
+numpy
 llama-index
 langchain
 langchain-text-splitters
+openai
+python-dotenv

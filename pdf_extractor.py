@@ -2,8 +2,7 @@
 PDF text extraction utilities using PyMuPDF.
 
 This module borrows its logic from the clean_pdf.py helper referenced
-by the project, but keeps only the purely local pieces needed for
-offline extraction (no OpenAI dependency).
+by the project, but keeps only the purely local pieces for extraction.
 """
 from __future__ import annotations
 
@@ -13,6 +12,40 @@ import unicodedata
 from typing import List
 
 import fitz  # PyMuPDF
+
+try:
+    from dotenv import load_dotenv
+except ImportError:  # pragma: no cover - optional dependency
+    load_dotenv = None
+
+try:
+    from openai import OpenAI
+except ImportError:  # pragma: no cover - optional dependency
+    OpenAI = None
+
+if load_dotenv is not None:  # load variables from .env automatically if available
+    load_dotenv()
+
+
+CLEANUP_MODEL = "gpt-4o-mini"
+CLEANUP_TEMPERATURE = 0.0
+CLEANUP_MAX_TOKENS = 8000
+CLEANUP_SYSTEM_PROMPT = """# GOAL
+
+Adjust the content below to make it clean and readable:
+Remove repeated strings that do not add value to the text.
+
+Remove any content unrelated to the text itself (e.g., metadata, artifacts, or extraction errors).
+
+Format the output as unstructured but clear text.
+
+Do not add extra text, introductions, conclusions, or commentary—only rewrite the provided content as it is.
+
+Do not interpret, analyze, or alter the meaning, intent, or narrative of the text—just reformat it for clarity and readability.
+
+Do not change the text structure, do not write conclusions about it. Your only job is to make it readable. 
+
+Keep the text in its original language, regardless of what it is."""
 
 
 def clean_pdf_text(text: str) -> str:
@@ -122,7 +155,36 @@ def extract_text_from_pdf(pdf_path: str) -> str:
         doc.close()
 
     combined_text = "".join(full_text)
-    return clean_pdf_text(combined_text)
+    cleaned = clean_pdf_text(combined_text)
+    return _apply_ai_cleanup_if_configured(cleaned)
+
+
+def _apply_ai_cleanup_if_configured(text: str) -> str:
+    if not text:
+        return text
+    if OpenAI is None:
+        return text
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        return text
+
+    try:
+        client = OpenAI(api_key=api_key)
+        response = client.chat.completions.create(
+            model=CLEANUP_MODEL,
+            messages=[
+                {"role": "system", "content": CLEANUP_SYSTEM_PROMPT},
+                {"role": "user", "content": text},
+            ],
+            temperature=CLEANUP_TEMPERATURE,
+            max_tokens=CLEANUP_MAX_TOKENS,
+        )
+        cleaned = response.choices[0].message.content
+        if cleaned:
+            return cleaned
+    except Exception as exc:  # pragma: no cover - network call
+        print(f"Warning: AI cleanup failed ({exc}), using raw cleaned text")
+    return text
 
 
 __all__ = ["extract_text_from_pdf", "clean_pdf_text"]
