@@ -18,6 +18,7 @@ from pdf_extractor import (
     CLEANUP_MODEL,
     ExtractionResult,
     PageContent,
+    apply_ai_cleanup_if_configured,
     extract_text_from_pdf,
 )
 
@@ -32,6 +33,7 @@ def extract_and_chunk(
     chunk_size: int = 256,
     chunk_overlap: Optional[int] = None,
     strategy: str = "sentence",
+    use_ai_cleanup: bool = False,
 ) -> None:
     """Extract and chunk one or more files, emitting JSONL metadata and embeddings."""
 
@@ -61,7 +63,7 @@ def extract_and_chunk(
             continue
 
         print(f"\nExtracting content from: {input_path}")
-        extraction = _extract_document(input_path)
+        extraction = _extract_document(input_path, use_ai_cleanup=use_ai_cleanup)
         final_text = extraction.final_text
 
         if not final_text:
@@ -183,19 +185,23 @@ def extract_and_chunk(
     print(f"  Embeddings:       {embeddings_path}")
 
 
-def _extract_document(input_path: Path) -> ExtractionResult:
+def _extract_document(input_path: Path, use_ai_cleanup: bool) -> ExtractionResult:
     suffix = input_path.suffix.lower()
     if suffix == ".pdf":
-        return extract_text_from_pdf(str(input_path))
+        return extract_text_from_pdf(str(input_path), use_ai_cleanup=use_ai_cleanup)
     if suffix in {".txt", ".md"}:
         raw_text = input_path.read_text(encoding="utf-8")
+        if use_ai_cleanup:
+            final_text, ai_used = apply_ai_cleanup_if_configured(raw_text)
+        else:
+            final_text, ai_used = raw_text, False
         page = PageContent(number=1, raw=raw_text, clean=raw_text)
         return ExtractionResult(
-            final_text=raw_text,
+            final_text=final_text,
             clean_text=raw_text,
             pages=[page],
             clean_page_offsets=[0],
-            ai_used=False,
+            ai_used=ai_used,
             extractor="plaintext@1.0",
         )
     raise ValueError(
@@ -442,6 +448,11 @@ Examples:
             "use 'llama' for LlamaIndex SentenceSplitter or 'langchain' for RecursiveCharacterTextSplitter)"
         )
     )
+    parser.add_argument(
+        "--ai-clean",
+        action="store_true",
+        help="Use OpenAI cleanup (gpt-4o-mini) when extracting PDFs or text",
+    )
     
     args = parser.parse_args()
     
@@ -452,6 +463,7 @@ Examples:
             args.chunk_size,
             args.chunk_overlap,
             args.strategy,
+            use_ai_cleanup=args.ai_clean,
         )
     except KeyboardInterrupt:
         print("\n\nInterrupted by user")

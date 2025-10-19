@@ -10,7 +10,7 @@ A Python tool for extracting content from PDFs and other documents, then splitti
 - Automatic MLX embeddings generated for every chunk
 - FAISS-powered vector search across the generated chunks
 - Batch multiple documents into a single chunk/embedding set
-- Optional OpenAI-powered cleanup (gpt-4o-mini) when `OPENAI_API_KEY` is provided
+- Optional OpenAI-powered cleanup (gpt-4o-mini) when `--ai-clean` is used and `OPENAI_API_KEY` is provided
 - Token-aware splitting (uses mlx-embeddings for efficient token counts)
 - Hierarchical splitting strategy (paragraphs → lines → sentences → words)
 - Structured JSONL output (`*_docs.jsonl` + `*_chunks.jsonl`) for durable storage and re-embedding
@@ -41,6 +41,12 @@ You can list multiple PDFs (or text files) to consolidate them into a single chu
 
 ```bash
 python pdf_chunker.py output/law law1.pdf law2.pdf law3.pdf
+```
+
+To include OpenAI cleanup (requires `OPENAI_API_KEY`):
+
+```bash
+python pdf_chunker.py output/law law1.pdf law2.pdf --ai-clean
 ```
 
 Each run:
@@ -99,8 +105,9 @@ This prints the best-matching chunk(s) with chunk IDs, doc IDs, per-document chu
 - `--chunk-size` - Maximum tokens per chunk (default: 256)
 - `--chunk-overlap` - Token overlap between consecutive chunks (default: 30 tokens)
 - `--strategy` - Chunking approach to use (`smart`, `sentence`, `llama`, or `langchain`; default: `sentence`)
+- `--ai-clean` - Enable OpenAI cleanup (requires `OPENAI_API_KEY`)
 
-Add an `.env` file with `OPENAI_API_KEY=...` (or export the variable in your shell) to enable OpenAI-powered cleanup during extraction.
+Add an `.env` file with `OPENAI_API_KEY=...` (or export the variable in your shell) **and** pass `--ai-clean` to enable OpenAI-powered cleanup during extraction.
 
 ### Output Format
 
@@ -144,7 +151,7 @@ text = result.final_text  # cleaned (optionally AI-polished) text
 
 Plain `.txt` and `.md` files are read directly from disk without additional processing.
 
-If an `OPENAI_API_KEY` environment variable is present (for example via a local `.env` file), the raw extracted text is additionally passed through OpenAI's `gpt-4o-mini` for light cleanup before chunking.
+If you pass `--ai-clean` and an `OPENAI_API_KEY` is available (for example via a local `.env` file), the raw extracted text is additionally passed through OpenAI's `gpt-4o-mini` for light cleanup before chunking.
 
 ### 2. Smart Chunking
 

@@ -144,7 +144,7 @@ def clean_pdf_text(text: str) -> str:
     return text.strip()
 
 
-def extract_text_from_pdf(pdf_path: str) -> ExtractionResult:
+def extract_text_from_pdf(pdf_path: str, use_ai_cleanup: bool = False) -> ExtractionResult:
     """
     Extract text from a PDF file using PyMuPDF and clean the output.
     """
@@ -180,7 +180,10 @@ def extract_text_from_pdf(pdf_path: str) -> ExtractionResult:
         current_offset += len(page.clean)
     combined_clean = "".join(clean_parts)
 
-    final_text, ai_used = _apply_ai_cleanup_if_configured(combined_clean)
+    if use_ai_cleanup:
+        final_text, ai_used = apply_ai_cleanup_if_configured(combined_clean)
+    else:
+        final_text, ai_used = combined_clean, False
     extractor_info = _build_extractor_info(extraction_flags)
 
     return ExtractionResult(
@@ -193,7 +196,7 @@ def extract_text_from_pdf(pdf_path: str) -> ExtractionResult:
     )
 
 
-def _apply_ai_cleanup_if_configured(text: str) -> Tuple[str, bool]:
+def apply_ai_cleanup_if_configured(text: str) -> Tuple[str, bool]:
     if not text:
         return text, False
     if OpenAI is None:
@@ -238,4 +241,10 @@ def _build_extractor_info(flags: int) -> str:
     return f"pymupdf@{getattr(fitz, '__version__', 'unknown')} flags={flag_str}"
 
 
-__all__ = ["extract_text_from_pdf", "clean_pdf_text", "ExtractionResult", "PageContent"]
+__all__ = [
+    "extract_text_from_pdf",
+    "clean_pdf_text",
+    "ExtractionResult",
+    "PageContent",
+    "apply_ai_cleanup_if_configured",
+]
