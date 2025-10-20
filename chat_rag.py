@@ -6,7 +6,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -88,7 +88,7 @@ def format_context_block(
 
 
 def build_system_prompt(context_blocks: List[str]) -> str:
-    today = datetime.utcnow().strftime("%d %b %Y")
+    today = datetime.now(timezone.utc).strftime("%d %b %Y")
     header = (
         f"Today Date: {today}\n\n"
         "Given the following conversation, relevant context, and a follow up question, "
@@ -123,9 +123,7 @@ def call_lmstudio(
 
     if not stream:
         data = response.json()
-        message = data["choices"][0]["message"]["content"]
-        print(message)
-        return message
+        return data["choices"][0]["message"]["content"]
 
     collected: List[str] = []
     for line in response.iter_lines(decode_unicode=True):
@@ -237,6 +235,9 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     if args.show_context:
         print("\n".join(context_blocks))
+        print()
+
+    print(f"User prompt: {args.query}")
 
     system_prompt = build_system_prompt(context_blocks)
     print(">>> Sending request to LM Studio...")
@@ -249,9 +250,10 @@ def main(argv: Optional[List[str]] = None) -> int:
         stream=not args.no_stream,
     )
 
-    print("\n---")
-    print("LM Studio response:")
-    print(response_text)
+    if args.no_stream:
+        print("\n---")
+        print("LM Studio response:")
+        print(response_text)
     return 0
 
 
