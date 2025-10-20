@@ -13,6 +13,11 @@ from typing import Dict, List, Optional
 import numpy as np
 import requests
 
+try:
+    import yaml  # type: ignore
+except ImportError:  # pragma: no cover - optional dependency
+    yaml = None
+
 from chunk_search import load_chunk_records, search_chunks
 
 
@@ -87,16 +92,49 @@ def format_context_block(
     return "\n".join(block)
 
 
-def build_system_prompt(context_blocks: List[str]) -> str:
-    today = datetime.now(timezone.utc).strftime("%d %b %Y")
-    header = (
-        f"Today Date: {today}\n\n"
+DEFAULT_PROMPTS: Dict[str, str] = {
+    "standard": (
+        "Today Date: {date}\n\n"
         "Given the following conversation, relevant context, and a follow up question, "
         "reply with an answer to the current question the user is asking. "
         "Return only your response to the question given the above information following "
         "the users instructions as needed.\n"
         "Context:\n"
-    )
+    ),
+    "context_only": (
+        "Today Date: {date}\n\n"
+        "You can only answer questions about the provided context.\n"
+        "If you know the answer but it is not based on the provided context, do not provide the answer; "
+        "state that the answer is not in the context provided.\n\n"
+        "Context:\n"
+    ),
+}
+
+
+def load_prompt_templates(prompt_file: Optional[Path]) -> Dict[str, str]:
+    templates = dict(DEFAULT_PROMPTS)
+    if prompt_file is None:
+        return templates
+    if not prompt_file.exists():
+        raise FileNotFoundError(f"Prompt file not found: {prompt_file}")
+    if yaml is None:
+        raise ImportError("PyYAML is required to load prompt templates from a file.")
+    with prompt_file.open("r", encoding="utf-8") as fh:
+        data = yaml.safe_load(fh)
+    if not isinstance(data, dict):
+        raise ValueError("Prompt file must contain a mapping of prompt names to template strings.")
+    for name, template in data.items():
+        if not isinstance(name, str) or not isinstance(template, str):
+            raise ValueError("Prompt file entries must map string names to string templates.")
+        templates[name] = template
+    return templates
+
+
+def build_system_prompt(context_blocks: List[str], template: str) -> str:
+    today = datetime.now(timezone.utc).strftime("%d %b %Y")
+    header = template.format(date=today)
+    if not header.endswith("\n"):
+        header += "\n"
     return header + "".join(context_blocks)
 
 
@@ -180,6 +218,18 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
         action="store_true",
         help="Print the RAG context blocks before sending the request",
     )
+    parser.add_argument(
+        "--prompt-file",
+        type=str,
+        default=None,
+        help="Optional YAML file containing named prompt templates",
+    )
+    parser.add_argument(
+        "--prompt-name",
+        type=str,
+        default="standard",
+        help="Prompt template key to use (default: standard)",
+    )
     return parser.parse_args(argv)
 
 
@@ -233,13 +283,20 @@ def main(argv: Optional[List[str]] = None) -> int:
         for idx, result in enumerate(results)
     ]
 
+    prompt_file = Path(args.prompt_file) if args.prompt_file else None
+    prompt_templates = load_prompt_templates(prompt_file)
+    if args.prompt_name not in prompt_templates:
+        available = ", ".join(sorted(prompt_templates))
+        raise ValueError(f"Prompt '{args.prompt_name}' not found. Available prompts: {available}")
+    prompt_template = prompt_templates[args.prompt_name]
+
     if args.show_context:
         print("\n".join(context_blocks))
         print()
 
     print(f"User prompt: {args.query}")
 
-    system_prompt = build_system_prompt(context_blocks)
+    system_prompt = build_system_prompt(context_blocks, prompt_template)
     print(">>> Sending request to LM Studio...")
     response_text = call_lmstudio(
         api_base=args.api_base,
