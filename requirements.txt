@@ -7,3 +7,4 @@ langchain
 langchain-text-splitters
 openai
 python-dotenv
+requests
