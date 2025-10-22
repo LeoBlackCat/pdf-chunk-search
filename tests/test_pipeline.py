@@ -83,3 +83,34 @@ def test_pipeline_with_search(tmp_path: Path):
 
     joined_output = "\n".join(output_lines).lower()
     assert any(term in joined_output for term in ["african", "vernacular"]), "Query signal not present in output"
+
+
+def test_chunker_accepts_directories(tmp_path: Path):
+    md_dir = tmp_path / "notes"
+    md_dir.mkdir()
+    md_file = md_dir / "sample.md"
+    md_file.write_text("# Sample Title\n\nThis is a short note about African-American English.", encoding="utf-8")
+
+    output_prefix = tmp_path / "mix_output"
+    sample_pdf = Path("examples") / "bk_tcco_000301.pdf"
+    assert sample_pdf.exists(), "Sample PDF is missing in examples/"
+
+    cmd = [
+        sys.executable,
+        "pdf_chunker.py",
+        str(output_prefix),
+        str(sample_pdf),
+        str(md_dir),
+    ]
+    subprocess.run(cmd, check=True)
+
+    docs_path = output_prefix.with_name(f"{output_prefix.name}_docs.jsonl")
+    assert docs_path.exists(), "Doc metadata not created for mixed inputs"
+
+    doc_records = [json.loads(line) for line in docs_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(doc_records) >= 2, "Expected at least two document records"
+
+    md_record = next((rec for rec in doc_records if rec.get("file_name", "").endswith(".md")), None)
+    assert md_record is not None, "Markdown document record missing"
+    assert md_record.get("title") == "Sample Title"
+    assert md_record.get("source_directory") == str(md_dir.resolve())

@@ -5,10 +5,11 @@ PDF Chunker - Extract and chunk content from PDFs and plain text files.
 import argparse
 import hashlib
 import json
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import List, Optional
+from typing import Iterable, List, Optional
 
 import numpy as np
 
@@ -25,6 +26,57 @@ from pdf_extractor import (
 
 EMBEDDING_MODEL_ID = "mlx-community/all-MiniLM-L6-v2-4bit"
 TOKENIZER_ID = "mlx-miniLM"
+DIRECTORY_EXTENSIONS = {".pdf", ".md"}
+SUPPORTED_EXTENSIONS = {".pdf", ".md", ".txt"}
+
+
+def _collect_input_paths(inputs: Iterable[str]) -> List[Path]:
+    """Expand files and directories into a flat list of supported files (no recursion)."""
+    resolved: List[Path] = []
+    seen = set()
+
+    for raw in inputs:
+        path = Path(raw)
+        if path.is_dir():
+            files = sorted(
+                child
+                for child in path.iterdir()
+                if child.is_file() and child.suffix.lower() in DIRECTORY_EXTENSIONS
+            )
+            if not files:
+                print(f"Warning: No supported files found in directory {path}")
+            for child in files:
+                try:
+                    key = child.resolve(strict=True)
+                except FileNotFoundError:
+                    print(f"Skipping missing file: {child}")
+                    continue
+                if key in seen:
+                    continue
+                resolved.append(child)
+                seen.add(key)
+            continue
+
+        if not path.exists():
+            print(f"Skipping missing file: {path}")
+            continue
+
+        suffix = path.suffix.lower()
+        if suffix not in SUPPORTED_EXTENSIONS:
+            print(f"Skipping unsupported file type: {path}")
+            continue
+
+        try:
+            key = path.resolve(strict=True)
+        except FileNotFoundError:
+            print(f"Skipping missing file: {path}")
+            continue
+        if key in seen:
+            continue
+        resolved.append(path)
+        seen.add(key)
+
+    return resolved
 
 
 def extract_and_chunk(
@@ -34,11 +86,16 @@ def extract_and_chunk(
     chunk_overlap: Optional[int] = None,
     strategy: str = "sentence",
     use_ai_cleanup: bool = False,
+    save_extracted_text: bool = False,
 ) -> None:
     """Extract and chunk one or more files, emitting JSONL metadata and embeddings."""
 
     if not input_files:
         raise ValueError("At least one input file must be provided")
+    resolved_inputs = _collect_input_paths(input_files)
+    if not resolved_inputs:
+        raise ValueError("No supported input files were found.")
+    print(f"Discovered {len(resolved_inputs)} input file(s).")
 
     output_base = Path(output_prefix)
     output_dir = output_base.parent if output_base.parent != Path("") else Path(".")
@@ -56,11 +113,7 @@ def extract_and_chunk(
     doc_records: List[dict] = []
     current_chunk_id = 0
 
-    for idx, file_path in enumerate(input_files):
-        input_path = Path(file_path)
-        if not input_path.exists():
-            print(f"Skipping missing file: {file_path}")
-            continue
+    for idx, input_path in enumerate(resolved_inputs):
 
         print(f"\nExtracting content from: {input_path}")
         extraction = _extract_document(input_path, use_ai_cleanup=use_ai_cleanup)
@@ -73,12 +126,14 @@ def extract_and_chunk(
         print(f"Extracted {len(final_text)} characters")
         print(f"Estimated tokens: {token_count(final_text)}")
 
-        clean_filename = (
-            f"{output_base.name}_{idx:04d}_{input_path.stem}_extracted.txt"
-        )
-        extracted_file = output_dir / clean_filename
-        extracted_file.write_text(final_text, encoding="utf-8")
-        print(f"✓ Wrote cleaned text to {extracted_file}")
+        extracted_file: Optional[Path] = None
+        if save_extracted_text:
+            clean_filename = (
+                f"{output_base.name}_{idx:04d}_{input_path.stem}_extracted.txt"
+            )
+            extracted_file = output_dir / clean_filename
+            extracted_file.write_text(final_text, encoding="utf-8")
+            print(f"✓ Wrote cleaned text to {extracted_file}")
 
         print(
             f"Chunking with size={chunk_size}, overlap={effective_overlap}, strategy={strategy}"
@@ -112,6 +167,7 @@ def extract_and_chunk(
 
         final_text_hash = hashlib.sha256(final_text.encode("utf-8")).hexdigest()
         clean_text_hash = hashlib.sha256(extraction.clean_text.encode("utf-8")).hexdigest()
+        doc_title = _infer_doc_title(input_path, extraction)
 
         doc_record = _build_doc_record(
             input_path=input_path,
@@ -131,6 +187,8 @@ def extract_and_chunk(
             doc_index=idx,
             final_text_hash=final_text_hash,
             clean_text_hash=clean_text_hash,
+            doc_title=doc_title,
+            source_directory=str(input_path.parent.resolve()),
         )
         doc_records.append(doc_record)
 
@@ -156,6 +214,17 @@ def extract_and_chunk(
             print(f"  Avg tokens: {sum(chunk_sizes) / len(chunk_sizes):.1f}")
 
         current_chunk_id += len(doc_chunks)
+
+        if (idx + 1) % 10 == 0:
+            cpu_percent = _current_cpu_percent()
+            if cpu_percent is not None:
+                print(f"\nSystem CPU usage after {idx + 1} files: {cpu_percent:.1f}%")
+            else:
+                print(f"\nSystem CPU usage after {idx + 1} files: unavailable")
+            try:
+                input("Press Enter to continue...")
+            except EOFError:
+                pass
 
     if not doc_records:
         print("No documents were successfully processed.")
@@ -216,6 +285,17 @@ def _compute_doc_id(input_path: Path) -> str:
     return f"sha256:{hashlib.sha256(data).hexdigest()}"
 
 
+def _infer_doc_title(input_path: Path, extraction: ExtractionResult) -> Optional[str]:
+    suffix = input_path.suffix.lower()
+    if suffix == ".md":
+        for line in extraction.final_text.splitlines():
+            stripped = line.strip()
+            if stripped.startswith("#"):
+                return stripped.lstrip("#").strip()
+    stem = input_path.stem.replace("_", " ").strip()
+    return stem or None
+
+
 def _build_doc_record(
     *,
     input_path: Path,
@@ -227,7 +307,7 @@ def _build_doc_record(
     embeddings_dim: int,
     doc_id: str,
     timestamp: str,
-    extracted_path: Path,
+    extracted_path: Optional[Path],
     chunks_path: Path,
     embeddings_path: Path,
     chunk_id_start: int,
@@ -235,6 +315,8 @@ def _build_doc_record(
     doc_index: int,
     final_text_hash: str,
     clean_text_hash: str,
+    doc_title: Optional[str] = None,
+    source_directory: Optional[str] = None,
 ) -> dict:
     file_stat = input_path.stat()
     chunk_id_end = chunk_id_start + chunk_count - 1 if chunk_count else None
@@ -268,7 +350,7 @@ def _build_doc_record(
         "ai_cleanup_model": CLEANUP_MODEL if extraction.ai_used else None,
         "metric": "ip_cosine",
         "chunks_path": str(chunks_path),
-        "extracted_text_path": str(extracted_path),
+        "extracted_text_path": str(extracted_path) if extracted_path else None,
         "embeddings_path": str(embeddings_path),
         "chunk_id_start": chunk_id_start,
         "chunk_id_end": chunk_id_end,
@@ -277,6 +359,10 @@ def _build_doc_record(
         "final_text_sha256": final_text_hash,
         "clean_text_sha256": clean_text_hash,
     }
+    if doc_title:
+        record["title"] = doc_title
+    if source_directory:
+        record["source_directory"] = source_directory
     return record
 
 
@@ -439,6 +525,25 @@ def _estimate_page(
     return extraction.pages[approx_index].number
 
 
+def _current_cpu_percent() -> Optional[float]:
+    """Return a best-effort estimate of the current system CPU utilisation percentage."""
+    try:
+        import psutil  # type: ignore
+
+        return float(psutil.cpu_percent(interval=0.1))
+    except ModuleNotFoundError:
+        pass
+
+    if hasattr(os, "getloadavg"):
+        try:
+            load1, _, _ = os.getloadavg()
+            cpu_count = os.cpu_count() or 1
+            return float(min(100.0, (load1 / cpu_count) * 100.0))
+        except OSError:
+            return None
+    return None
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Extract and chunk content from PDFs and plain text files",
@@ -459,7 +564,7 @@ Examples:
     parser.add_argument(
         "input_files",
         nargs="+",
-        help="Input file paths (PDF, TXT, or Markdown)"
+        help="Input files or directories (PDF, TXT, or Markdown; directories scan only PDFs and Markdown)"
     )
     
     parser.add_argument(
@@ -490,6 +595,11 @@ Examples:
         action="store_true",
         help="Use OpenAI cleanup (gpt-4o-mini) when extracting PDFs or text",
     )
+    parser.add_argument(
+        "--save-extracted-text",
+        action="store_true",
+        help="Write cleaned extracted text alongside other outputs",
+    )
     
     args = parser.parse_args()
     
@@ -501,6 +611,7 @@ Examples:
             args.chunk_overlap,
             args.strategy,
             use_ai_cleanup=args.ai_clean,
+            save_extracted_text=args.save_extracted_text,
         )
     except KeyboardInterrupt:
         print("\n\nInterrupted by user")

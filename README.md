@@ -59,7 +59,7 @@ Each run:
 
 ### Multiple Inputs
 
-You can pass any mix of PDFs, Markdown, or plain-text files. They will be processed sequentially and merged into one metadata/embedding set. Chunk IDs remain unique and align with both the JSONL metadata and the saved `.npy` embedding matrix, so you can rebuild a FAISS index or re-run searches at any time.
+You can pass any mix of PDFs, Markdown, or plain-text files, as well as directories containing PDFs/Markdown (non-recursive). They will be processed sequentially and merged into one metadata/embedding set. Chunk IDs remain unique and align with both the JSONL metadata and the saved `.npy` embedding matrix, so you can rebuild a FAISS index or re-run searches at any time.
 
 ### Advanced Usage
 
