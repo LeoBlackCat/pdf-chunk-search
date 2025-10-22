@@ -9,7 +9,7 @@ from typing import List, Tuple
 import faiss  # type: ignore
 import numpy as np
 
-from embeddings import embed_texts
+from .embeddings import embed_texts
 
 
 def build_index(vectors: np.ndarray) -> faiss.IndexFlatIP:

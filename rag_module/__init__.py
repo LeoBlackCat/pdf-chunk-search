@@ -18,11 +18,15 @@ from .formatting import (
     format_context_blocks,
     load_prompt_templates,
 )
+from .embeddings import (
+    embed_texts,
+)
 
 __all__ = [
     "DEFAULT_PROMPTS",
     "build_index",
     "build_system_prompt",
+    "embed_texts",
     "format_context_block",
     "format_context_blocks",
     "load_chunk_records",
